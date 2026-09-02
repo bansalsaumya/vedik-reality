@@ -85,7 +85,16 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="flex items-center">
+            <div className="flex items-center space-x-3">
+              {/* Theme Switcher Button */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full bg-charcoal-800 hover:bg-gold-500/20 text-gold-500 border border-gold-500/40 transition-colors shadow-md flex items-center justify-center"
+                title={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
+              >
+                {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+              </button>
+
               <a
                 href={`tel:${settings.phone.replace(/\s+/g, '')}`}
                 className="flex items-center space-x-2 text-xs font-semibold text-slate-200 bg-charcoal-800/90 hover:bg-charcoal-700 border border-gold-500/40 hover:border-gold-400 px-4 py-2.5 rounded-full transition-all shadow-md whitespace-nowrap shrink-0"
@@ -94,6 +103,7 @@ export default function Navbar() {
                 <span className="whitespace-nowrap">{settings.phone}</span>
               </a>
             </div>
+
 
 
           </div>

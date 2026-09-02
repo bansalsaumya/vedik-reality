@@ -4,38 +4,104 @@
 
 @layer base {
   body {
-    @apply bg-[#0A0C0F] text-slate-100 font-sans antialiased overflow-x-hidden;
+    @apply font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0F1115;
-}
-::-webkit-scrollbar-thumb {
-  background: #222834;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+/* Light Theme Styling Rules */
+html.light-theme body {
+  background-color: #FAF7F2 !important;
+  color: #1A1D24 !important;
 }
 
-/* Glassmorphism & Gold Gradients */
-.glass-panel {
+html.light-theme .glass-panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E5DFD5 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light-theme .glass-card {
+  background: #FFFFFF !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #E5DFD5 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light-theme .glass-card:hover {
+  border-color: #C59B27 !important;
+  box-shadow: 0 15px 35px rgba(197, 155, 39, 0.12) !important;
+}
+
+html.light-theme header {
+  background-color: rgba(250, 247, 242, 0.95) !important;
+  border-bottom: 1px solid #E5DFD5 !important;
+}
+
+html.light-theme header .text-slate-200,
+html.light-theme header .text-charcoal-800 {
+  color: #1A1D24 !important;
+}
+
+html.light-theme section.bg-ivory,
+html.light-theme div.bg-ivory {
+  background-color: #FAF7F2 !important;
+}
+
+html.light-theme section.bg-cream,
+html.light-theme div.bg-cream {
+  background-color: #F4EFEA !important;
+}
+
+html.light-theme section.bg-charcoal-950,
+html.light-theme div.bg-charcoal-950 {
+  background-color: #FAF7F2 !important;
+}
+
+html.light-theme .gold-button {
+  background: #1A1D24 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #C59B27 !important;
+}
+
+html.light-theme .gold-button:hover {
+  background: #C59B27 !important;
+  color: #1A1D24 !important;
+}
+
+/* Dark Theme Styling Rules (Default) */
+html.dark-theme body, body {
+  background-color: #0A0C0F;
+  color: #FAF8F5;
+}
+
+html.dark-theme .glass-panel, .glass-panel {
   background: rgba(15, 17, 21, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-.glass-card {
+html.dark-theme .glass-card, .glass-card {
   background: rgba(24, 28, 36, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.dark-theme .gold-button, .gold-button {
+  background: linear-gradient(135deg, #D4AF37 0%, #B88E10 100%);
+  color: #0A0C0F !important;
+  border: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+html.dark-theme .gold-button:hover, .gold-button:hover {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 .gold-gradient-text {
@@ -47,19 +113,12 @@
   display: inline-block;
 }
 
-.gold-border {
-  border-color: rgba(212, 175, 55, 0.3);
-}
-
-.gold-button {
-  background: linear-gradient(135deg, #D4AF37 0%, #B88E10 100%);
-  color: #0A0C0F !important;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-.gold-button:hover {
-  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+html.light-theme .gold-gradient-text {
+  background: linear-gradient(135deg, #9E7B1C 0%, #C59B27 50%, #856A1E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #9E7B1C;
 }
 
 /* Custom Select Dropdowns */
@@ -77,6 +136,26 @@
 .custom-select option {
   background-color: #0F1115 !important;
   color: #FAF8F5 !important;
+}
+
+html.light-theme .custom-select option {
+  background-color: #FFFFFF !important;
+  color: #1A1D24 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1115;
+}
+::-webkit-scrollbar-thumb {
+  background: #222834;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
 }
 
 /* Ken Burns Zoom Effect */
