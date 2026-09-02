@@ -37,7 +37,7 @@ export default function SearchFilterBar({ className = "" }) {
           <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="w-full bg-charcoal-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-colors"
+            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
           >
             <option value="">All Prime Locations</option>
             <option value="Golf Course Road">Golf Course Road, Gurgaon</option>
@@ -56,7 +56,7 @@ export default function SearchFilterBar({ className = "" }) {
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full bg-charcoal-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-colors"
+            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
           >
             <option value="">All Categories</option>
             <option value="Apartment">Luxury Apartment</option>
@@ -74,7 +74,7 @@ export default function SearchFilterBar({ className = "" }) {
           <select
             value={bhk}
             onChange={(e) => setBhk(e.target.value)}
-            className="w-full bg-charcoal-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-colors"
+            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
           >
             <option value="">Any Configuration</option>
             <option value="3 BHK">3 BHK</option>
@@ -91,7 +91,7 @@ export default function SearchFilterBar({ className = "" }) {
           <select
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
-            className="w-full bg-charcoal-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-colors"
+            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
           >
             <option value="">Any Budget</option>
             <option value="30000000">Up to ₹ 3.0 Cr</option>

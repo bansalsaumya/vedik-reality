@@ -132,7 +132,7 @@ export default function PropertiesPage() {
                 <select
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none custom-select"
                 >
                   <option value="">All Locations</option>
                   <option value="Golf Course Road">Golf Course Road</option>
@@ -150,7 +150,7 @@ export default function PropertiesPage() {
                 <select
                   value={type}
                   onChange={(e) => setType(e.target.value)}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none custom-select"
                 >
                   <option value="">All Types</option>
                   <option value="Apartment">Luxury Apartment</option>
@@ -168,7 +168,7 @@ export default function PropertiesPage() {
                 <select
                   value={bhk}
                   onChange={(e) => setBhk(e.target.value)}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:border-gold-500 focus:outline-none custom-select"
                 >
                   <option value="">Any Configuration</option>
                   <option value="3 BHK">3 BHK</option>
@@ -217,7 +217,7 @@ export default function PropertiesPage() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
-                  className="bg-charcoal-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none"
+                  className="bg-charcoal-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:border-gold-500 focus:outline-none custom-select"
                 >
                   <option value="newest">Newest Added</option>
                   <option value="price_asc">Price: Low to High</option>
