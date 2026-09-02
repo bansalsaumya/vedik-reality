@@ -47,15 +47,14 @@
   display: inline-block;
 }
 
-
 .gold-border {
   border-color: rgba(212, 175, 55, 0.3);
 }
 
 .gold-button {
-  background: linear-gradient(135deg, #D4AF37 0%, #B89220 100%);
-  color: #0A0C0F;
-  font-weight: 600;
+  background: linear-gradient(135deg, #D4AF37 0%, #B88E10 100%);
+  color: #0A0C0F !important;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 .gold-button:hover {
@@ -63,20 +62,7 @@
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Ken Burns Zoom Effect for Hero Slider */
-@keyframes kenburns {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Custom Luxury Select Dropdowns */
+/* Custom Select Dropdowns */
 .custom-select {
   appearance: none;
   -webkit-appearance: none;
@@ -89,8 +75,23 @@
 }
 
 .custom-select option {
-  background-color: #0F1115;
-  color: #FAF8F5;
-  padding: 10px;
+  background-color: #0F1115 !important;
+  color: #FAF8F5 !important;
 }
 
+/* Ken Burns Zoom Effect */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 12s infinite alternate ease-in-out;
+}

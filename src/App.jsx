@@ -21,6 +21,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-charcoal-950 font-sans text-slate-100 selection:bg-gold-500 selection:text-charcoal-950">
+
+
       <Navbar />
 
       <main className="flex-grow">

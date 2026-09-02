@@ -60,12 +60,12 @@ export default function HeroSlider() {
             <img
               src={slide.image}
               alt={slide.title}
-              className={`w-full h-full object-cover filter brightness-[0.65] contrast-[1.05] ${
+              className={`w-full h-full object-cover filter brightness-[0.7] contrast-[1.05] ${
                 isActive ? 'animate-kenburns' : ''
               }`}
             />
-            {/* Dark Vignette Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/50 to-charcoal-950/70" />
+            {/* Dark Vignette Overlay for Text Legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/70" />
           </div>
         );
       })}
@@ -74,7 +74,7 @@ export default function HeroSlider() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 my-auto text-left w-full">
         
         {/* Subtle Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal-900/90 border border-gold-500/40 backdrop-blur-md mb-6 shadow-xl">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-gold-500/50 backdrop-blur-md mb-6 shadow-xl">
           <ShieldCheck className="w-4 h-4 text-gold-500" />
           <span className="text-xs font-semibold tracking-widest text-gold-400 uppercase">
             {HERO_SLIDES[currentSlide].location}
@@ -82,13 +82,13 @@ export default function HeroSlider() {
         </div>
 
         {/* Main Hero Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-100 tracking-tight leading-[1.15] max-w-3xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-3xl drop-shadow-lg">
           Find a Property That <br />
-          <span className="text-gold-400 font-serif">Fits Your Future</span>
+          <span className="gold-gradient-text font-serif">Fits Your Future</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 text-base sm:text-lg text-slate-300 font-normal max-w-xl leading-relaxed">
+        <p className="mt-6 text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed drop-shadow">
           Discover thoughtfully selected residential and commercial properties with <strong className="text-gold-400 font-semibold">Vedik Reality</strong>. Verified luxury listings and personalized advisory.
         </p>
 
@@ -104,12 +104,13 @@ export default function HeroSlider() {
 
           <button
             onClick={() => setEnquiryModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-slate-200 bg-charcoal-900/90 hover:bg-charcoal-800 border border-gold-500/40 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-white bg-black/60 hover:bg-black/80 border border-gold-500/50 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg"
           >
             <PhoneCall className="w-4 h-4 text-gold-500" />
             <span>Talk to Us</span>
           </button>
         </div>
+
 
         {/* Slide Indicator Dots */}
         <div className="mt-8 flex items-center gap-2 justify-start">

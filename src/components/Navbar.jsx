@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MessageSquare, Menu, X, ShieldCheck, User } from 'lucide-react';
+import { Phone, MessageSquare, Menu, X, ShieldCheck, User, Sun, Moon } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 export default function Navbar() {
   const { settings } = useSettings();
   const { admin } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,6 +94,8 @@ export default function Navbar() {
                 <span className="whitespace-nowrap">{settings.phone}</span>
               </a>
             </div>
+
+
           </div>
 
 
