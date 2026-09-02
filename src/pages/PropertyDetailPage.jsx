@@ -7,12 +7,16 @@ import {
 import EnquiryModal from '../components/EnquiryModal';
 import { useSettings } from '../context/SettingsContext';
 
+import { FALLBACK_PROPERTIES } from '../data/fallbackData';
+
 export default function PropertyDetailPage() {
   const { slugOrId } = useParams();
   const { settings } = useSettings();
 
-  const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [property, setProperty] = useState(() => {
+    return FALLBACK_PROPERTIES.find(p => p.slug === slugOrId || String(p.id) === String(slugOrId)) || FALLBACK_PROPERTIES[0];
+  });
+  const [loading, setLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -23,22 +27,20 @@ export default function PropertyDetailPage() {
 
   useEffect(() => {
     const fetchProperty = async () => {
-      setLoading(true);
       try {
         const res = await fetch(`/api/properties/${slugOrId}`);
         const data = await res.json();
-        if (res.ok) {
+        if (res.ok && data && data.title) {
           setProperty(data);
         }
       } catch (err) {
-        console.error('Error fetching property details:', err);
-      } finally {
-        setLoading(false);
+        console.error('Error fetching property details, using fallback:', err);
       }
     };
 
     fetchProperty();
   }, [slugOrId]);
+
 
   const handleSidebarLeadSubmit = async (e) => {
     e.preventDefault();

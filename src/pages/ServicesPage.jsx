@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Home, Building, TrendingUp, ShieldCheck, Key, Globe, ArrowRight } from 'lucide-react';
 import EnquiryModal from '../components/EnquiryModal';
 
+import { FALLBACK_SERVICES } from '../data/fallbackData';
+
 export default function ServicesPage() {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState(FALLBACK_SERVICES);
+  const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
 
@@ -12,11 +14,11 @@ export default function ServicesPage() {
     fetch('/api/services')
       .then(res => res.json())
       .then(data => {
-        if (data.services) setServices(data.services);
+        if (data.services && data.services.length > 0) setServices(data.services);
       })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false));
+      .catch(err => console.error(err));
   }, []);
+
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-charcoal-950 text-slate-100">

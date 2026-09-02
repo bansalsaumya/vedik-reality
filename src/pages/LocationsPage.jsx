@@ -2,19 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 
+import { FALLBACK_LOCATIONS } from '../data/fallbackData';
+
 export default function LocationsPage() {
-  const [locations, setLocations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [locations, setLocations] = useState(FALLBACK_LOCATIONS);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch('/api/locations')
       .then(res => res.json())
       .then(data => {
-        if (data.locations) setLocations(data.locations);
+        if (data.locations && data.locations.length > 0) setLocations(data.locations);
       })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false));
+      .catch(err => console.error(err));
   }, []);
+
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-charcoal-950 text-slate-100">

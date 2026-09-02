@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Building, ShieldCheck, PhoneCall, Sparkles } from 'lucide-react';
 import EnquiryModal from '../components/EnquiryModal';
 
+import { FALLBACK_PROJECTS } from '../data/fallbackData';
+
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState(FALLBACK_PROJECTS);
+  const [loading, setLoading] = useState(false);
   const [selectedProj, setSelectedProj] = useState(null);
 
   useEffect(() => {
     fetch('/api/projects')
       .then(res => res.json())
       .then(data => {
-        if (data.projects) setProjects(data.projects);
+        if (data.projects && data.projects.length > 0) setProjects(data.projects);
       })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false));
+      .catch(err => console.error(err));
   }, []);
+
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-charcoal-950 text-slate-100">

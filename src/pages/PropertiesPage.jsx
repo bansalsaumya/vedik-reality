@@ -3,12 +3,14 @@ import { useSearchParams } from 'react-router-dom';
 import { Search, Filter, SlidersHorizontal, MapPin, Building, Home, DollarSign, X } from 'lucide-react';
 import PropertyCard from '../components/PropertyCard';
 
+import { FALLBACK_PROPERTIES } from '../data/fallbackData';
+
 export default function PropertiesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   
-  const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [totalCount, setTotalCount] = useState(0);
+  const [properties, setProperties] = useState(FALLBACK_PROPERTIES);
+  const [loading, setLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState(FALLBACK_PROPERTIES.length);
 
   // Filters State
   const [search, setSearch] = useState(searchParams.get('search') || '');
@@ -20,7 +22,6 @@ export default function PropertiesPage() {
   const [sort, setSort] = useState('newest');
 
   const fetchProperties = async () => {
-    setLoading(true);
     try {
       const params = new URLSearchParams();
       if (search) params.append('search', search);
@@ -33,16 +34,23 @@ export default function PropertiesPage() {
 
       const res = await fetch(`/api/properties?${params.toString()}`);
       const data = await res.json();
-      if (data.properties) {
+      if (data.properties && data.properties.length > 0) {
         setProperties(data.properties);
         setTotalCount(data.total || data.properties.length);
+      } else if (!search && !location && !type && !bhk && !maxPrice && !status) {
+        setProperties(FALLBACK_PROPERTIES);
+        setTotalCount(FALLBACK_PROPERTIES.length);
+      } else {
+        setProperties([]);
+        setTotalCount(0);
       }
     } catch (err) {
-      console.error('Error fetching properties:', err);
-    } finally {
-      setLoading(false);
+      console.error('Error fetching properties, using fallback:', err);
+      setProperties(FALLBACK_PROPERTIES);
+      setTotalCount(FALLBACK_PROPERTIES.length);
     }
   };
+
 
   useEffect(() => {
     fetchProperties();

@@ -9,15 +9,20 @@ import PropertyCard from '../components/PropertyCard';
 import EnquiryModal from '../components/EnquiryModal';
 import { useSettings } from '../context/SettingsContext';
 
+import {
+  FALLBACK_PROPERTIES, FALLBACK_PROJECTS, FALLBACK_LOCATIONS,
+  FALLBACK_SERVICES, FALLBACK_TESTIMONIALS
+} from '../data/fallbackData';
+
 export default function HomePage() {
   const { settings } = useSettings();
-  const [featuredProperties, setFeaturedProperties] = useState([]);
-  const [latestProperties, setLatestProperties] = useState([]);
-  const [projects, setProjects] = useState([]);
-  const [locations, setLocations] = useState([]);
-  const [services, setServices] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [featuredProperties, setFeaturedProperties] = useState(FALLBACK_PROPERTIES.slice(0, 3));
+  const [latestProperties, setLatestProperties] = useState(FALLBACK_PROPERTIES);
+  const [projects, setProjects] = useState(FALLBACK_PROJECTS);
+  const [locations, setLocations] = useState(FALLBACK_LOCATIONS);
+  const [services, setServices] = useState(FALLBACK_SERVICES);
+  const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
+  const [loading, setLoading] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
   useEffect(() => {
@@ -37,24 +42,23 @@ export default function HomePage() {
         const servData = await servRes.json();
         const testData = await testRes.json();
 
-        if (propsData.properties) {
+        if (propsData.properties && propsData.properties.length > 0) {
           const featured = propsData.properties.filter(p => p.is_featured === 1);
           setFeaturedProperties(featured.length > 0 ? featured : propsData.properties.slice(0, 3));
           setLatestProperties(propsData.properties);
         }
-        if (projData.projects) setProjects(projData.projects);
-        if (locData.locations) setLocations(locData.locations);
-        if (servData.services) setServices(servData.services);
-        if (testData.testimonials) setTestimonials(testData.testimonials);
+        if (projData.projects && projData.projects.length > 0) setProjects(projData.projects);
+        if (locData.locations && locData.locations.length > 0) setLocations(locData.locations);
+        if (servData.services && servData.services.length > 0) setServices(servData.services);
+        if (testData.testimonials && testData.testimonials.length > 0) setTestimonials(testData.testimonials);
       } catch (err) {
-        console.error('Error loading homepage data:', err);
-      } finally {
-        setLoading(false);
+        console.error('API load error, using fallbacks:', err);
       }
     };
 
     loadHomeData();
   }, []);
+
 
   const whyChooseUsPillars = [
     {
