@@ -7,21 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
+        ivory: '#FAF7F2',     // Warm Off-White / Ivory
+        cream: '#F4EFEA',     // Soft Beige / Light Cream
+        sand: '#EAE3D9',      // Accent Light Sand
         charcoal: {
-          950: '#0A0C0F',
-          900: '#0F1115',
-          800: '#181C24',
-          700: '#222834',
-          600: '#323B4D',
+          950: '#0D0F12',
+          900: '#14171F',
+          800: '#1A1D24',     // Deep Charcoal
+          700: '#2A303C',
+          600: '#4A5568',
         },
         gold: {
-          400: '#F3E5AB',
-          500: '#D4AF37',
+          400: '#D4AF37',
+          500: '#C59B27',     // Elegant Gold
           600: '#AA8828',
-          700: '#856A1E',
+          700: '#9E7B1C',     // Warm Bronze
         },
-        ivory: '#FAF8F5',
-        beige: '#F4EFEA',
+        borderlight: '#E5DFD5', // Very light beige border
       },
       fontFamily: {
         serif: ['Cinzel', 'Playfair Display', 'Georgia', 'serif'],

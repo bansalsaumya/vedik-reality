@@ -20,7 +20,8 @@ export default function App() {
   const [globalModalOpen, setGlobalModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-charcoal-950 font-sans text-slate-100 selection:bg-gold-500 selection:text-charcoal-950">
+    <div className="min-h-screen flex flex-col justify-between bg-ivory text-charcoal-800 font-sans selection:bg-gold-500 selection:text-white">
+
 
 
       <Navbar />

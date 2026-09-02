@@ -142,38 +142,73 @@ export const FALLBACK_PROJECTS = [
   {
     id: 1,
     slug: 'vedik-grand-avenue',
+    title: 'Vedik Grand Avenue Township',
     name: 'Vedik Grand Avenue Township',
     location: 'Golf Course Road, Gurgaon',
     type: 'Ultra Luxury Residential',
+    price_starting: '₹ 4.5 Cr Onwards',
     price_range: '₹ 4.5 Cr - ₹ 12.0 Cr',
     status: 'Under Construction',
     is_featured: 1,
+    developer: 'Vedik Infrastructure',
+    builder_name: 'Vedik Infrastructure',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80',
     description: 'A 25-acre integrated township designed by international architects featuring private skywalks, 75,000 sq.ft. clubhouse, and 5-star concierge.',
     amenities: ['75,000 Sq.Ft. Clubhouse', 'Sky Bridge Walkway', 'All Weather Heated Pool', 'Private Movie Theater', 'Tennis & Squash Courts'],
     images: [
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80'
     ],
-    rera_number: 'HRERA-GGM-2024-900'
+    rera_number: 'HRERA-GGM-2024-900',
+    possession_date: '2026/27'
   },
   {
     id: 2,
     slug: 'the-sovereign-estates',
+    title: 'The Sovereign Estate Villas',
     name: 'The Sovereign Estate Villas',
     location: 'Golf Course Extension, Gurgaon',
     type: 'Gated Villa Sanctuary',
+    price_starting: '₹ 8.0 Cr Onwards',
     price_range: '₹ 8.0 Cr - ₹ 16.5 Cr',
     status: 'New Launch',
     is_featured: 1,
+    developer: 'Sovereign Luxury Living',
+    builder_name: 'Sovereign Luxury Living',
+    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
     description: 'Only 40 ultra-luxurious bespoke villas crafted for leaders and icons. Private lifts, private infinity pools, and personal butler services.',
     amenities: ['Private Infinity Pool', 'Bespoke Architecture', 'Gated Perimeter', 'Organic Kitchen Garden', 'Exclusive Heli-pad Access'],
     images: [
       'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80'
     ],
-    rera_number: 'HRERA-GGM-2024-901'
+    rera_number: 'HRERA-GGM-2024-901',
+    possession_date: '2026/27'
+  },
+  {
+    id: 3,
+    slug: 'cyber-horizon-towers',
+    title: 'Cyber Horizon Commercial Hub',
+    name: 'Cyber Horizon Commercial Hub',
+    location: 'Southern Peripheral Road (SPR)',
+    type: 'Grade-A Commercial',
+    price_starting: '₹ 2.10 Cr Onwards',
+    price_range: '₹ 2.10 Cr - ₹ 8.5 Cr',
+    status: 'Under Construction',
+    is_featured: 1,
+    developer: 'Horizon Commercials',
+    builder_name: 'Horizon Commercials',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
+    description: 'State-of-the-art corporate office complex featuring LEED Gold certification, high-speed elevators, and high rental yield guarantee.',
+    amenities: ['LEED Gold Certified', '100% Power Backup', 'Valet Parking', 'High Speed Elevators', 'Food Court'],
+    images: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80'
+    ],
+    rera_number: 'HRERA-GGM-2024-902',
+    possession_date: '2025/26'
   }
 ];
+
 
 export const FALLBACK_LOCATIONS = [
   {

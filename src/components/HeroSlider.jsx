@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, PhoneCall, ShieldCheck } from 'lucide-react';
-import SearchFilterBar from './SearchFilterBar';
 import EnquiryModal from './EnquiryModal';
 
 const HERO_SLIDES = [
@@ -45,7 +44,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between pt-24 pb-12 overflow-hidden bg-charcoal-950">
+    <div className="relative min-h-[85vh] flex flex-col justify-between pt-28 pb-16 overflow-hidden bg-charcoal-950">
       
       {/* Background Images with Automatic Crossfade & Ken Burns Zoom */}
       {HERO_SLIDES.map((slide, index) => {
@@ -110,41 +109,21 @@ export default function HeroSlider() {
             <span>Talk to Us</span>
           </button>
         </div>
+      </div>
 
-
-        {/* Slide Indicator Dots */}
-        <div className="mt-8 flex items-center gap-2 justify-start">
+      {/* Slide Indicator Dots */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 flex items-center justify-between w-full">
+        <div className="flex items-center gap-2">
           {HERO_SLIDES.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? 'w-8 bg-gold-500' : 'w-2 bg-slate-600 hover:bg-slate-400'
+                currentSlide === idx ? 'w-8 bg-gold-400' : 'w-2 bg-white/40 hover:bg-white/70'
               }`}
-              aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
         </div>
-
-      </div>
-
-
-      {/* Floating Property Search Filter Bar */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8">
-        <SearchFilterBar />
-      </div>
-
-      {/* Animated Scroll Indicator */}
-      <div className="relative z-20 flex justify-center mt-6">
-        <a
-          href="#featured-properties"
-          className="flex flex-col items-center text-xs text-slate-400 hover:text-gold-400 transition-colors group"
-        >
-          <span className="tracking-widest uppercase text-[10px] mb-1 font-medium group-hover:text-gold-400">
-            Scroll to Explore
-          </span>
-          <ChevronDown className="w-4 h-4 animate-bounce text-gold-500" />
-        </a>
       </div>
 
       {/* Enquiry Modal */}

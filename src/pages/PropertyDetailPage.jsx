@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   MapPin, BedDouble, Maximize2, ShieldCheck, PhoneCall, MessageCircle,
-  Building, CheckCircle2, Share2, ArrowLeft, Eye, Award
+  Share2, Heart, CheckCircle2, ChevronRight, ArrowLeft, Loader2
 } from 'lucide-react';
 import EnquiryModal from '../components/EnquiryModal';
 import { useSettings } from '../context/SettingsContext';
-
 import { FALLBACK_PROPERTIES } from '../data/fallbackData';
 
 export default function PropertyDetailPage() {
@@ -16,7 +15,6 @@ export default function PropertyDetailPage() {
   const [property, setProperty] = useState(() => {
     return FALLBACK_PROPERTIES.find(p => p.slug === slugOrId || String(p.id) === String(slugOrId)) || FALLBACK_PROPERTIES[0];
   });
-  const [loading, setLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -41,184 +39,162 @@ export default function PropertyDetailPage() {
     fetchProperty();
   }, [slugOrId]);
 
-
   const handleSidebarLeadSubmit = async (e) => {
     e.preventDefault();
     if (!leadForm.name || !leadForm.phone) return;
 
     setLeadSubmitting(true);
     try {
-      const res = await fetch('/api/leads', {
+      await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: leadForm.name,
-          phone: leadForm.phone,
-          email: leadForm.email,
-          property_title: property.title,
+          ...leadForm,
           property_id: property.id,
-          message: leadForm.message,
+          property_title: property.title,
           source: `Property Detail Sidebar - ${property.title}`
         })
       });
-      if (res.ok) {
-        setLeadSuccess(true);
-      }
+      setLeadSuccess(true);
     } catch (err) {
-      console.error('Lead error:', err);
+      console.error(err);
     } finally {
       setLeadSubmitting(false);
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen pt-32 pb-20 max-w-7xl mx-auto px-4 animate-pulse">
-        <div className="h-96 rounded-2xl bg-charcoal-900 mb-8" />
-        <div className="h-40 rounded-2xl bg-charcoal-900" />
-      </div>
-    );
-  }
+  const images = typeof property.images === 'string' ? JSON.parse(property.images) : property.images || [];
+  const amenities = typeof property.amenities === 'string' ? JSON.parse(property.amenities) : property.amenities || [];
 
-  if (!property) {
-    return (
-      <div className="min-h-screen pt-32 pb-20 text-center space-y-4">
-        <h2 className="font-serif text-2xl font-bold">Property Not Found</h2>
-        <Link to="/properties" className="gold-button px-6 py-2 rounded-xl text-xs">
-          Return to Properties
-        </Link>
-      </div>
-    );
-  }
-
-  const images = Array.isArray(property.images) ? property.images : [];
-  const amenities = Array.isArray(property.amenities) ? property.amenities : [];
-  const mainImage = images[selectedImage] || 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80';
+  const handleWhatsApp = () => {
+    const text = encodeURIComponent(`Hi Vedik Reality, I am viewing "${property.title}" (${property.price}) at ${property.location}. Please send complete brochure and floor plans.`);
+    window.open(`https://wa.me/${settings.whatsapp}?text=${text}`, '_blank');
+  };
 
   return (
-    <div className="min-h-screen pt-28 pb-24 bg-charcoal-950 text-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Back Link */}
         <Link
           to="/properties"
-          className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-gold-400 mb-6 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-gold-700 uppercase tracking-wider transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Portfolio Listing</span>
+          <span>Back to All Listings</span>
         </Link>
 
-        {/* Property Main Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 pb-6 border-b border-slate-800 gap-4">
+        {/* Title Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-borderlight">
           <div>
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-charcoal-950">
-                {property.status}
-              </span>
-              <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-charcoal-900 border border-slate-700 text-slate-300">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-charcoal-950">
                 {property.type}
               </span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cream text-charcoal-800 border border-borderlight">
+                {property.status || 'Available'}
+              </span>
               {property.rera_number && (
-                <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-950 text-emerald-400 border border-emerald-500/40 flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> RERA Registered
+                <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1">
+                  <ShieldCheck className="w-3 h-3 text-emerald-700" /> RERA Approved
                 </span>
               )}
             </div>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100">
+
+            <h1 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-800">
               {property.title}
             </h1>
-            <p className="mt-2 text-sm text-slate-400 flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-gold-500 shrink-0" />
-              <span>{property.address || property.location}</span>
+            <p className="mt-1 text-sm text-slate-600 font-medium flex items-center gap-1.5">
+              <MapPin className="w-4 h-4 text-gold-600 shrink-0" />
+              <span>{property.location}</span>
             </p>
           </div>
 
-          {/* Price & Views */}
-          <div className="text-left lg:text-right">
-            <span className="text-xs text-slate-400 block uppercase tracking-wider">Offered At</span>
-            <span className="font-serif text-3xl sm:text-4xl font-bold text-gold-400 block">
+          <div className="text-left md:text-right">
+            <span className="text-xs text-slate-500 font-semibold uppercase block">Offered At</span>
+            <span className="font-serif text-3xl font-bold text-gold-700 block">
               {property.price}
-            </span>
-            <span className="text-[11px] text-slate-500 flex items-center lg:justify-end gap-1 mt-1">
-              <Eye className="w-3.5 h-3.5" /> {property.views || 1} Views
             </span>
           </div>
         </div>
 
-        {/* Image Gallery Lightbox */}
-        <div className="space-y-4 mb-12">
-          <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-charcoal-900">
+        {/* Image Gallery */}
+        <div className="space-y-4">
+          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden border border-borderlight shadow-md bg-cream">
             <img
-              src={mainImage}
+              src={images[selectedImage] || mainImage}
               alt={property.title}
-              className="w-full h-full object-cover transition-all duration-300"
+              className="w-full h-full object-cover"
             />
           </div>
 
-          {/* Thumbnail Bar */}
           {images.length > 1 && (
             <div className="flex items-center gap-3 overflow-x-auto pb-2">
               {images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
-                  className={`relative w-24 h-16 rounded-xl overflow-hidden shrink-0 border-2 transition-all ${
-                    idx === selectedImage ? 'border-gold-500 scale-105' : 'border-transparent opacity-60 hover:opacity-100'
+                  className={`relative w-24 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
+                    selectedImage === idx ? 'border-gold-500 scale-105 shadow-md' : 'border-borderlight opacity-70'
                   }`}
                 >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
+                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
           )}
         </div>
 
-        {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 pt-4">
           
-          {/* Main Property Overview */}
-          <div className="lg:col-span-8 space-y-10">
+          {/* Left 2 Cols: Overview, Specs, Amenities */}
+          <div className="lg:col-span-2 space-y-8">
             
             {/* Specs Summary Grid */}
-            <div className="glass-card p-6 rounded-2xl border border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-borderlight shadow-sm">
               <div>
-                <span className="text-xs text-slate-400 uppercase tracking-wider block mb-1">Configuration</span>
-                <span className="font-serif text-lg font-bold text-slate-100">{property.bhk || 'N/A'}</span>
+                <span className="text-[11px] text-slate-500 font-semibold uppercase block">Bedrooms</span>
+                <span className="text-sm font-bold text-charcoal-800 flex items-center gap-1.5 mt-1">
+                  <BedDouble className="w-4 h-4 text-gold-700" /> {property.bhk || 'N/A'}
+                </span>
               </div>
               <div>
-                <span className="text-xs text-slate-400 uppercase tracking-wider block mb-1">Super Area</span>
-                <span className="font-serif text-lg font-bold text-slate-100">{property.area}</span>
+                <span className="text-[11px] text-slate-500 font-semibold uppercase block">Super Area</span>
+                <span className="text-sm font-bold text-charcoal-800 flex items-center gap-1.5 mt-1">
+                  <Maximize2 className="w-4 h-4 text-gold-700" /> {property.area}
+                </span>
               </div>
               <div>
-                <span className="text-xs text-slate-400 uppercase tracking-wider block mb-1">Developer</span>
-                <span className="font-serif text-sm font-bold text-gold-400">{property.builder_name || 'Vedik Partner'}</span>
+                <span className="text-[11px] text-slate-500 font-semibold uppercase block">Property Type</span>
+                <span className="text-sm font-bold text-charcoal-800 mt-1 block">{property.type}</span>
               </div>
               <div>
-                <span className="text-xs text-slate-400 uppercase tracking-wider block mb-1">Status</span>
-                <span className="font-serif text-sm font-bold text-emerald-400">{property.status}</span>
+                <span className="text-[11px] text-slate-500 font-semibold uppercase block">RERA Number</span>
+                <span className="text-xs font-bold text-emerald-700 mt-1 block line-clamp-1">{property.rera_number || 'Verified'}</span>
               </div>
             </div>
 
             {/* Description */}
-            <div className="glass-card p-6 md:p-8 rounded-2xl border border-slate-800 space-y-4">
-              <h3 className="font-serif text-xl font-bold text-slate-100 border-l-2 border-gold-500 pl-3">
-                Property Overview & Architecture
+            <div className="glass-card p-6 rounded-2xl border border-borderlight bg-white shadow-sm space-y-4">
+              <h3 className="font-serif text-xl font-bold text-charcoal-800 border-b border-borderlight pb-3">
+                Property Overview & Highlights
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-line">
+              <div className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium whitespace-pre-line space-y-3">
                 {property.description}
-              </p>
+              </div>
             </div>
 
             {/* Amenities Grid */}
             {amenities.length > 0 && (
-              <div className="glass-card p-6 md:p-8 rounded-2xl border border-slate-800 space-y-6">
-                <h3 className="font-serif text-xl font-bold text-slate-100 border-l-2 border-gold-500 pl-3">
+              <div className="glass-card p-6 rounded-2xl border border-borderlight bg-white shadow-sm space-y-4">
+                <h3 className="font-serif text-xl font-bold text-charcoal-800 border-b border-borderlight pb-3">
                   World-Class Amenities
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {amenities.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl bg-charcoal-900/80 border border-slate-800 text-xs text-slate-200">
-                      <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0" />
+                    <div key={i} className="flex items-center gap-2 text-xs font-bold text-charcoal-800 bg-cream p-3 rounded-xl border border-borderlight">
+                      <CheckCircle2 className="w-4 h-4 text-gold-700 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -226,125 +202,69 @@ export default function PropertyDetailPage() {
               </div>
             )}
 
-            {/* RERA Verification Details */}
-            {property.rera_number && (
-              <div className="glass-card p-6 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 flex items-start gap-4">
-                <ShieldCheck className="w-8 h-8 text-emerald-400 shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-serif text-base font-bold text-slate-100">RERA Registration Status</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    This project is registered under the Real Estate Regulatory Authority.
-                  </p>
-                  <p className="text-xs font-mono font-bold text-emerald-400 mt-2">
-                    RERA ID: {property.rera_number}
-                  </p>
-                </div>
-              </div>
-            )}
-
           </div>
 
-          {/* Sticky Sidebar Lead Capture Form */}
-          <div className="lg:col-span-4">
-            <div className="glass-panel p-6 rounded-3xl border border-gold-500/40 sticky top-28 space-y-6 shadow-2xl">
+          {/* Right Col: Sticky Lead Capture Sidebar */}
+          <div className="space-y-6">
+            <div className="sticky top-28 glass-card p-6 rounded-3xl border border-borderlight bg-white shadow-lg space-y-6">
               
-              <div className="text-center pb-4 border-b border-slate-800">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-gold-400 block mb-1">
-                  Direct Developer Access
-                </span>
-                <h3 className="font-serif text-xl font-bold text-slate-100">
-                  Enquire About Property
-                </h3>
-                <p className="text-xs text-slate-400 mt-1">
-                  Request floor plans, price breakup, or schedule a private site visit.
-                </p>
+              <div className="border-b border-borderlight pb-4">
+                <span className="text-xs text-gold-700 font-bold uppercase tracking-wider block mb-1">Direct Advisory</span>
+                <h3 className="font-serif text-xl font-bold text-charcoal-800">Schedule Private Visit</h3>
+                <p className="text-xs text-slate-500 font-medium mt-1">Get floor plans, price breakdown & brochure.</p>
               </div>
 
               {leadSuccess ? (
-                <div className="text-center py-6 space-y-3 bg-emerald-950/50 rounded-2xl p-4 border border-emerald-500/40">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-400 mx-auto" />
-                  <h4 className="font-serif text-base font-bold text-slate-100">Request Sent</h4>
-                  <p className="text-xs text-slate-300">
-                    Our luxury estate advisor will contact you within 30 minutes.
-                  </p>
+                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-center space-y-2 text-emerald-800">
+                  <CheckCircle2 className="w-8 h-8 mx-auto text-emerald-600" />
+                  <p className="text-xs font-bold">Request Submitted!</p>
+                  <p className="text-[11px] font-medium">Our advisor will call you within 30 minutes.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSidebarLeadSubmit} className="space-y-4">
+                <form onSubmit={handleSidebarLeadSubmit} className="space-y-3">
                   <div>
-                    <label className="block text-[11px] text-slate-300 font-semibold mb-1">Your Name *</label>
+                    <label className="block text-[11px] font-bold text-charcoal-800 uppercase mb-1">Full Name</label>
                     <input
                       type="text"
                       required
-                      placeholder="Full Name"
+                      placeholder="Ananya Roy"
                       value={leadForm.name}
                       onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                      className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
+                      className="w-full bg-white border border-borderlight rounded-xl px-3.5 py-2 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] text-slate-300 font-semibold mb-1">Phone Number *</label>
+                    <label className="block text-[11px] font-bold text-charcoal-800 uppercase mb-1">Phone / WhatsApp</label>
                     <input
                       type="tel"
                       required
                       placeholder="+91 98765 43210"
                       value={leadForm.phone}
                       onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                      className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] text-slate-300 font-semibold mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      placeholder="name@example.com"
-                      value={leadForm.email}
-                      onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
-                      className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] text-slate-300 font-semibold mb-1">Notes / Date Preferred</label>
-                    <textarea
-                      rows="2"
-                      placeholder="Interested in site visit on..."
-                      value={leadForm.message}
-                      onChange={(e) => setLeadForm({ ...leadForm, message: e.target.value })}
-                      className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:border-gold-500 focus:outline-none resize-none"
+                      className="w-full bg-white border border-borderlight rounded-xl px-3.5 py-2 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={leadSubmitting}
-                    className="w-full gold-button py-3 rounded-xl text-xs font-bold uppercase tracking-wider shadow-xl"
+                    className="w-full gold-button py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md mt-2"
                   >
-                    {leadSubmitting ? 'Submitting...' : 'Instant Callback Request'}
+                    {leadSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <PhoneCall className="w-4 h-4" />}
+                    <span>Request Callback</span>
                   </button>
                 </form>
               )}
 
-              {/* Direct Instant Action Buttons */}
-              <div className="pt-4 border-t border-slate-800 space-y-2">
-                <a
-                  href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-colors"
-                >
-                  <PhoneCall className="w-4 h-4 text-gold-500" />
-                  <span>Call {settings.phone}</span>
-                </a>
-
-                <a
-                  href={`https://wa.me/${settings.whatsapp}?text=Hi%20Vedik%20Reality,%20I%20am%20inquiring%20about%20${encodeURIComponent(property.title)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-colors"
+              <div className="pt-4 border-t border-borderlight space-y-2">
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white text-xs font-bold border border-emerald-600 flex items-center justify-center gap-2 transition-colors shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp Inquiry</span>
-                </a>
+                  <span>Instant WhatsApp Connect</span>
+                </button>
               </div>
 
             </div>
@@ -353,6 +273,16 @@ export default function PropertyDetailPage() {
         </div>
 
       </div>
+
+      {modalOpen && (
+        <EnquiryModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          propertyTitle={property.title}
+          propertyId={property.id}
+          source={`Property Detail Page - ${property.title}`}
+        />
+      )}
     </div>
   );
 }

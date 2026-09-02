@@ -24,12 +24,26 @@ router.get('/', async (req, res) => {
 
     query += ` ORDER BY id DESC`;
 
-    const projects = await db.all(query, params);
-    const formatted = projects.map(pr => ({
-      ...pr,
-      amenities: pr.amenities ? JSON.parse(pr.amenities) : [],
-      images: pr.images ? JSON.parse(pr.images) : [],
-    }));
+    const formatted = projects.map(pr => {
+      let parsedAmenities = [];
+      let parsedImages = [];
+      try {
+        parsedAmenities = typeof pr.amenities === 'string' ? JSON.parse(pr.amenities) : (pr.amenities || []);
+      } catch (e) {
+        parsedAmenities = pr.amenities ? [pr.amenities] : [];
+      }
+      try {
+        parsedImages = typeof pr.images === 'string' ? JSON.parse(pr.images) : (pr.images || []);
+      } catch (e) {
+        parsedImages = pr.images ? [pr.images] : [];
+      }
+
+      return {
+        ...pr,
+        amenities: parsedAmenities,
+        images: parsedImages,
+      };
+    });
 
     res.json({ projects: formatted });
   } catch (error) {
@@ -37,6 +51,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch projects' });
   }
 });
+
 
 // Admin CREATE Project
 router.post('/', authenticateAdmin, async (req, res) => {
