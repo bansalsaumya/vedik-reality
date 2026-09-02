@@ -59,7 +59,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Right Navigation & Action CTAs */}
+          {/* Right Navigation & Phone CTA */}
           <div className="hidden lg:flex items-center space-x-8">
             <nav className="flex items-center space-x-7">
               {navLinks.map((link) => {
@@ -81,27 +81,17 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="h-5 w-[1px] bg-slate-800" />
-
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center">
               <a
                 href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                className="flex items-center space-x-2 text-xs font-semibold text-slate-200 bg-charcoal-800/90 hover:bg-charcoal-700 border border-gold-500/30 hover:border-gold-400 px-4 py-2 rounded-full transition-all shadow-md"
+                className="flex items-center space-x-2 text-xs font-semibold text-slate-200 bg-charcoal-800/90 hover:bg-charcoal-700 border border-gold-500/40 hover:border-gold-400 px-4 py-2.5 rounded-full transition-all shadow-md whitespace-nowrap shrink-0"
               >
-                <Phone className="w-3.5 h-3.5 text-gold-500" />
-                <span>{settings.phone}</span>
+                <Phone className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+                <span className="whitespace-nowrap">{settings.phone}</span>
               </a>
-
-              <Link
-                to={admin ? "/admin/dashboard" : "/admin/login"}
-                className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-gold-400 transition-colors px-2 py-1"
-                title="Admin Portal"
-              >
-                <ShieldCheck className="w-4 h-4 text-gold-500/80" />
-                <span>{admin ? "Dashboard" : "Admin"}</span>
-              </Link>
             </div>
           </div>
+
 
 
           {/* Mobile Menu Button */}
@@ -150,14 +140,8 @@ export default function Navbar() {
             >
               Call {settings.phone}
             </a>
-            <Link
-              to={admin ? "/admin/dashboard" : "/admin/login"}
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2 border border-slate-700 text-slate-300 rounded-lg text-xs font-medium"
-            >
-              Admin Management Portal
-            </Link>
           </div>
+
         </div>
       )}
     </header>

@@ -33,12 +33,15 @@ export default function AdminDashboardPage() {
   const [settingsForm, setSettingsForm] = useState({});
 
   useEffect(() => {
-    if (!token) {
-      navigate('/admin/login');
+    if (!loading && (!token || !admin)) {
+      navigate('/admin/login', { replace: true });
       return;
     }
-    loadDashboardData();
-  }, [token]);
+    if (token) {
+      loadDashboardData();
+    }
+  }, [token, admin, loading]);
+
 
   const loadDashboardData = async () => {
     setLoading(true);
