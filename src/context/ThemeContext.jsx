@@ -4,11 +4,8 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Check URL query param ?theme=light or ?theme=dark
-    const params = new URLSearchParams(window.location.search);
-    const urlTheme = params.get('theme');
-    if (urlTheme === 'light' || urlTheme === 'dark') {
-      return urlTheme;
+    if (typeof window !== 'undefined' && window.location.search.includes('theme=light')) {
+      return 'light';
     }
     return localStorage.getItem('vedik_theme') || 'dark';
   });

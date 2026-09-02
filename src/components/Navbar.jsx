@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MessageSquare, Menu, X, ShieldCheck, User, Sun, Moon } from 'lucide-react';
+import { Phone, Menu, X, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
-
 
 export default function Navbar() {
   const { settings } = useSettings();
@@ -13,7 +12,6 @@ export default function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,8 +39,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-charcoal-950/90 backdrop-blur-md py-3 border-b border-gold-500/20 shadow-2xl'
-          : 'bg-gradient-to-b from-charcoal-950/80 to-transparent py-5'
+          ? 'bg-charcoal-900/95 backdrop-blur-md py-3.5 border-b border-gold-500/20 shadow-2xl'
+          : 'bg-gradient-to-b from-charcoal-950 via-charcoal-950/90 to-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,20 +48,20 @@ export default function Navbar() {
           
           {/* Brand Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-charcoal-900 group-hover:border-gold-400 transition-colors shadow-lg">
+            <div className="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-charcoal-800 group-hover:border-gold-500 transition-colors shadow-md">
               <span className="font-serif text-xl font-bold gold-gradient-text">V</span>
             </div>
             <div>
               <span className="font-serif text-2xl font-bold tracking-wider text-slate-100 group-hover:text-gold-400 transition-colors">
                 VEDIK <span className="gold-gradient-text font-normal">REALITY</span>
               </span>
-              <p className="text-[10px] tracking-widest text-slate-400 uppercase -mt-1 font-medium">
+              <p className="text-[10px] tracking-widest text-slate-400 uppercase -mt-1 font-semibold">
                 LUXURY ESTATES
               </p>
             </div>
           </Link>
 
-          {/* Right Navigation & Phone CTA */}
+          {/* Right Navigation & Theme Switcher & Phone CTA */}
           <div className="hidden lg:flex items-center space-x-8">
             <nav className="flex items-center space-x-7">
               {navLinks.map((link) => {
@@ -72,13 +70,13 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className={`text-xs uppercase tracking-widest font-medium transition-all relative py-1 ${
-                      isActive ? 'text-gold-400 font-bold' : 'text-slate-300 hover:text-gold-400'
+                    className={`text-xs uppercase tracking-widest font-semibold transition-all relative py-1 ${
+                      isActive ? 'text-gold-400 font-bold' : 'text-slate-200 hover:text-gold-400'
                     }`}
                   >
                     {link.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-gold-500 to-amber-300 rounded-full" />
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-gold-500 to-amber-600 rounded-full" />
                     )}
                   </Link>
                 );
@@ -86,10 +84,10 @@ export default function Navbar() {
             </nav>
 
             <div className="flex items-center space-x-3">
-              {/* Theme Switcher Button */}
+              {/* Sun/Moon Live Theme Switcher Button */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-charcoal-800 hover:bg-gold-500/20 text-gold-500 border border-gold-500/40 transition-colors shadow-md flex items-center justify-center"
+                className="p-2.5 rounded-full bg-charcoal-800 hover:bg-gold-500/20 text-gold-400 border border-gold-500/40 transition-colors shadow-md flex items-center justify-center cursor-pointer"
                 title={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
               >
                 {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -104,24 +102,28 @@ export default function Navbar() {
               </a>
             </div>
 
-
-
           </div>
 
+          {/* Mobile Menu & Theme Switcher */}
+          <div className="lg:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-charcoal-800 border border-gold-500/40 text-gold-400"
+              title="Toggle Theme"
+            >
+              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </button>
 
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-3">
             <a
               href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-              className="p-2 rounded-full bg-charcoal-800 border border-gold-500/40 text-gold-400"
+              className="p-2 rounded-full bg-charcoal-800 border border-gold-500/40 text-gold-500"
             >
               <Phone className="w-4 h-4" />
             </a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-gold-400 focus:outline-none"
+              className="p-2 text-slate-200 hover:text-gold-400 focus:outline-none"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,15 +135,15 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-charcoal-900/95 backdrop-blur-xl border-b border-gold-500/20 px-6 pt-4 pb-6 space-y-4 shadow-2xl animate-fadeIn">
+        <div className="lg:hidden bg-charcoal-900/98 backdrop-blur-xl border-b border-gold-500/20 px-6 pt-4 pb-6 space-y-4 shadow-2xl animate-fadeIn">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 border-b border-slate-800 ${
-                  location.pathname === link.path ? 'text-gold-500 font-semibold' : 'text-slate-300'
+                className={`text-base font-semibold py-2 border-b border-slate-800 ${
+                  location.pathname === link.path ? 'text-gold-400 font-bold' : 'text-slate-200'
                 }`}
               >
                 {link.name}
@@ -152,12 +154,11 @@ export default function Navbar() {
           <div className="pt-2 flex flex-col space-y-2">
             <a
               href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-              className="w-full text-center py-2.5 rounded-lg gold-button font-medium text-sm"
+              className="w-full text-center py-2.5 rounded-lg gold-button font-bold text-sm"
             >
               Call {settings.phone}
             </a>
           </div>
-
         </div>
       )}
     </header>
