@@ -55,6 +55,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal Server Error', details: err.message });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Vedik Reality Backend API running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Vedik Reality Backend API running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
+

@@ -12,10 +12,15 @@ let dbInstance = null;
 export async function getDb() {
   if (dbInstance) return dbInstance;
 
+  const dbPath = process.env.VERCEL
+    ? path.join('/tmp', 'vedik_reality.db')
+    : path.join(__dirname, '../vedik_reality.db');
+
   dbInstance = await open({
-    filename: path.join(__dirname, '../vedik_reality.db'),
+    filename: dbPath,
     driver: sqlite3.Database
   });
+
 
   await initDb(dbInstance);
   return dbInstance;
