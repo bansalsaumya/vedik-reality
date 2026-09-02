@@ -71,32 +71,32 @@ export default function HeroSlider() {
       })}
 
       {/* Hero Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 my-auto text-center md:text-left">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 my-auto text-left w-full">
         
         {/* Subtle Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal-900/80 border border-gold-500/30 backdrop-blur-md mb-6 animate-fadeIn">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal-900/90 border border-gold-500/40 backdrop-blur-md mb-6 shadow-xl">
           <ShieldCheck className="w-4 h-4 text-gold-500" />
-          <span className="text-xs font-medium tracking-widest text-slate-200 uppercase">
+          <span className="text-xs font-semibold tracking-widest text-gold-400 uppercase">
             {HERO_SLIDES[currentSlide].location}
           </span>
         </div>
 
         {/* Main Hero Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-100 tracking-tight leading-[1.1] max-w-4xl">
-          Find a Property That <br className="hidden md:block" />
-          <span className="gold-gradient-text">Fits Your Future</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-100 tracking-tight leading-[1.15] max-w-3xl">
+          Find a Property That <br />
+          <span className="text-gold-400 font-serif">Fits Your Future</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-300 font-normal max-w-2xl leading-relaxed">
+        <p className="mt-6 text-base sm:text-lg text-slate-300 font-normal max-w-xl leading-relaxed">
           Discover thoughtfully selected residential and commercial properties with <strong className="text-gold-400 font-semibold">Vedik Reality</strong>. Verified luxury listings and personalized advisory.
         </p>
 
         {/* Primary & Secondary CTAs */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-start">
           <Link
             to="/properties"
-            className="w-full sm:w-auto gold-button px-8 py-3.5 rounded-xl text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl hover:scale-105 transition-all"
+            className="w-full sm:w-auto gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-2xl hover:scale-105 transition-all"
           >
             <span>Explore Properties</span>
             <ArrowRight className="w-4 h-4" />
@@ -104,7 +104,7 @@ export default function HeroSlider() {
 
           <button
             onClick={() => setEnquiryModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-semibold tracking-wider text-slate-200 bg-charcoal-900/80 hover:bg-charcoal-800 border border-gold-500/40 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-slate-200 bg-charcoal-900/90 hover:bg-charcoal-800 border border-gold-500/40 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg"
           >
             <PhoneCall className="w-4 h-4 text-gold-500" />
             <span>Talk to Us</span>
@@ -112,7 +112,7 @@ export default function HeroSlider() {
         </div>
 
         {/* Slide Indicator Dots */}
-        <div className="mt-10 flex items-center gap-2 justify-center md:justify-start">
+        <div className="mt-8 flex items-center gap-2 justify-start">
           {HERO_SLIDES.map((_, idx) => (
             <button
               key={idx}
@@ -126,6 +126,7 @@ export default function HeroSlider() {
         </div>
 
       </div>
+
 
       {/* Floating Property Search Filter Bar */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8">
