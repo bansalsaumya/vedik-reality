@@ -114,17 +114,16 @@ export default function HeroSlider() {
             <span>Talk to Us</span>
           </button>
         </div>
-      </div>
 
-      {/* Slide Indicator Dots */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 flex items-center justify-between w-full">
-        <div className="flex items-center gap-2">
+        {/* Slide Indicator Dots - Positioned safely below CTAs with proper top margin */}
+        <div className="mt-10 sm:mt-12 flex items-center gap-2.5">
           {HERO_SLIDES.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                currentSlide === idx ? 'w-8 bg-gold-400' : 'w-2 bg-white/40 hover:bg-white/70'
+              aria-label={`Go to slide ${idx + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentSlide === idx ? 'w-8 bg-gold-400 shadow-md' : 'w-2.5 bg-white/40 hover:bg-white/70'
               }`}
             />
           ))}
