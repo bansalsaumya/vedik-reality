@@ -6,28 +6,33 @@ import EnquiryModal from './EnquiryModal';
 const HERO_SLIDES = [
   {
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=85',
-    title: 'Luxury Residential Estates',
-    location: 'Golf Course Road, Gurgaon',
+    title: 'Real Estate Agent & Property Dealer in Dharuhera',
+    location: 'Sector 19, Dharuhera',
+    alt: 'Real Estate Agent in Dharuhera Haryana Sector 19'
   },
   {
     image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85',
-    title: 'Bespoke Private Villas & Sanctuaries',
-    location: 'Golf Course Extension, Gurgaon',
+    title: 'Plots & Land for Sale in Dharuhera',
+    location: 'Anandam Awaas, Dharuhera',
+    alt: 'Plots for Sale in Dharuhera near Anandam Awaas'
   },
   {
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=85',
-    title: 'High-Rise Sky Residences',
-    location: 'Dwarka Expressway Corridor',
+    title: 'Ready to Move 2 BHK & 3 BHK Flats',
+    location: 'Dharuhera, Haryana',
+    alt: 'Flats for Sale in Dharuhera 2 BHK 3 BHK'
   },
   {
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=85',
-    title: 'Grade-A Commercial Office Suites',
-    location: 'Southern Peripheral Road (SPR)',
+    title: 'Commercial Property & SCO Shops',
+    location: 'NH-48 Corridor Dharuhera',
+    alt: 'Commercial Property in Dharuhera Haryana'
   },
   {
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85',
-    title: 'Gated Luxury Townships',
-    location: 'Delhi NCR Prime Growth Hubs',
+    title: 'Independent Houses & Villas',
+    location: 'Sector 19 & Rewari District',
+    alt: 'House for Sale in Dharuhera'
   },
 ];
 
@@ -58,7 +63,7 @@ export default function HeroSlider() {
           >
             <img
               src={slide.image}
-              alt={slide.title}
+              alt={slide.alt || slide.title}
               className={`w-full h-full object-cover filter brightness-[0.7] contrast-[1.05] ${
                 isActive ? 'animate-kenburns' : ''
               }`}
@@ -82,13 +87,13 @@ export default function HeroSlider() {
 
         {/* Main Hero Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-3xl drop-shadow-lg">
-          Find a Property That <br />
-          <span className="gold-gradient-text font-serif">Fits Your Future</span>
+          Find the Right Property in <br />
+          <span className="gold-gradient-text font-serif">Dharuhera, Haryana</span>
         </h1>
 
         {/* Subheading */}
         <p className="mt-6 text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed drop-shadow">
-          Discover thoughtfully selected residential and commercial properties with <strong className="text-gold-400 font-semibold">Vedik Reality</strong>. Verified luxury listings and personalized advisory.
+          Your trusted <strong className="text-gold-400 font-semibold">Property Dealer & Real Estate Agent in Dharuhera</strong>. Discover plots, flats, commercial property and verified investment opportunities near Sector 19 & NH-48.
         </p>
 
         {/* Primary & Secondary CTAs */}

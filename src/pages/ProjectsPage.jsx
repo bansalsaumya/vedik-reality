@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Building, ShieldCheck, PhoneCall, Sparkles } from 'lucide-react';
 import EnquiryModal from '../components/EnquiryModal';
 import { FALLBACK_PROJECTS } from '../data/fallbackData';
+import SEO from '../components/SEO';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState(FALLBACK_PROJECTS);
@@ -18,6 +19,11 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title="Flagship Projects & Townships in Dharuhera | Vedik Reality"
+        description="Explore upcoming flagship residential projects, townships, plots & commercial developments in Dharuhera Haryana with Vedik Reality."
+        keywords="Projects in Dharuhera, Townships in Dharuhera, Plots in Dharuhera, Commercial Projects Dharuhera, Real Estate Agent in Dharuhera"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

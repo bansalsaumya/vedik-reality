@@ -8,6 +8,7 @@ import HeroSlider from '../components/HeroSlider';
 import SearchFilterBar from '../components/SearchFilterBar';
 import PropertyCard from '../components/PropertyCard';
 import EnquiryModal from '../components/EnquiryModal';
+import SEO from '../components/SEO';
 import { useSettings } from '../context/SettingsContext';
 
 import {
@@ -61,29 +62,29 @@ export default function HomePage() {
 
   const whyChooseUsPillars = [
     {
-      title: 'Professional Advisory',
-      desc: 'Transparent valuation, legal title verification, and structured wealth management.',
+      title: 'Real Estate Agent in Dharuhera',
+      desc: 'Transparent valuation, legal title verification, and structured guidance near Anandam Awaas & Sector 19.',
       icon: ShieldCheck
     },
     {
-      title: 'Prime Corridors',
-      desc: 'Curated residences across Golf Course Road, SPR, Dwarka Expressway & Noida.',
+      title: 'Prime Dharuhera Locations',
+      desc: 'Verified residential plots, 2 BHK/3 BHK flats, and SCO commercial property near NH-48 Dharuhera.',
       icon: MapPin
     },
     {
-      title: 'Hassle-Free Closing',
-      desc: 'Complete documentation support, developer negotiation, and home loan assistance.',
-      icon: CheckCircle2
-    },
-    {
-      title: 'NRI Investment Desk',
-      desc: 'Bespoke virtual property tours, legal compliance, and dedicated portfolio advisory.',
+      title: 'Hassle-Free Closing & Registry',
+      desc: 'Complete documentation support, developer negotiation, and home loan assistance in Rewari District.',
       icon: TrendingUp
     }
   ];
 
   return (
     <div className="space-y-0 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title="Vedik Reality | Property Dealer & Real Estate Agent in Dharuhera"
+        description="Vedik Reality is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance."
+        keywords="Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Properties for Sale in Dharuhera, Real Estate Company in Dharuhera, Property Consultant in Dharuhera, Buy Property in Dharuhera, Sell Property in Dharuhera, Best Property Dealer in Dharuhera, Real Estate Consultant Dharuhera, Sector 19 Dharuhera, Anandam Awaas Dharuhera, Plots for Sale in Dharuhera, Flats for Sale in Dharuhera"
+      />
       
       {/* 1. HERO SLIDER */}
       <HeroSlider />

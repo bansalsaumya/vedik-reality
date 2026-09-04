@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { FALLBACK_LOCATIONS } from '../data/fallbackData';
+import SEO from '../components/SEO';
 
 export default function LocationsPage() {
   const [locations, setLocations] = useState(FALLBACK_LOCATIONS);
@@ -17,17 +18,22 @@ export default function LocationsPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title="Property Locations in Dharuhera & Sector 19 | Vedik Reality"
+        description="Explore top property locations in Dharuhera Haryana including Sector 19, Anandam Awaas, and NH-48 corridor properties."
+        keywords="Property in Sector 19 Dharuhera, Anandam Awaas Dharuhera, Properties Near NH-48 Dharuhera, Real Estate Agent in Sector 19 Dharuhera, Dharuhera Haryana"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-12 text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3">
-            <MapPin className="w-3.5 h-3.5" /> High Capital Appreciation Zones
+            <MapPin className="w-3.5 h-3.5" /> Growth Corridors in Dharuhera
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Prime Micro-Market <span className="gold-gradient-text font-serif">Corridors</span>
+            Prime Property Locations in <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
           <p className="mt-2 text-sm text-slate-600 font-medium max-w-2xl">
-            In-depth analysis and property portfolio across Gurgaon, SPR, Dwarka Expressway, Golf Course Road & Delhi NCR.
+            In-depth property analysis across Sector 19 Dharuhera, Anandam Awaas, NH-48 corridor, and Rewari District.
           </p>
         </div>
 

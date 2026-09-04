@@ -7,6 +7,7 @@ import {
 import EnquiryModal from '../components/EnquiryModal';
 import { useSettings } from '../context/SettingsContext';
 import { FALLBACK_PROPERTIES } from '../data/fallbackData';
+import SEO from '../components/SEO';
 
 export default function PropertyDetailPage() {
   const { slugOrId } = useParams();
@@ -52,7 +53,7 @@ export default function PropertyDetailPage() {
           ...leadForm,
           property_id: property.id,
           property_title: property.title,
-          source: `Property Detail Sidebar - ${property.title}`
+          source: 'Property Detail Sidebar Form'
         })
       });
       setLeadSuccess(true);
@@ -63,8 +64,15 @@ export default function PropertyDetailPage() {
     }
   };
 
-  const images = typeof property.images === 'string' ? JSON.parse(property.images) : property.images || [];
-  const amenities = typeof property.amenities === 'string' ? JSON.parse(property.amenities) : property.amenities || [];
+  const imagesList = Array.isArray(property.images)
+    ? property.images
+    : (typeof property.images === 'string' ? JSON.parse(property.images || '[]') : []);
+
+  const amenitiesList = Array.isArray(property.amenities)
+    ? property.amenities
+    : (typeof property.amenities === 'string' ? JSON.parse(property.amenities || '[]') : []);
+
+  const propImages = imagesList.length > 0 ? imagesList : ['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80'];
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(`Hi Vedik Reality, I am viewing "${property.title}" (${property.price}) at ${property.location}. Please send complete brochure and floor plans.`);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ShieldCheck, Loader2 } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
   const { settings } = useSettings();
@@ -27,17 +28,22 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title="Contact Vedik Reality | Property Dealer in Sector 19 Dharuhera"
+        description="Contact Vedik Reality at First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106. Expert property consultation for plots, flats & commercial properties."
+        keywords="Contact Property Dealer Dharuhera, Real Estate Agent Near Anandam Awaas, Sector 19 Dharuhera, Property Consultant Near Sector 19 Dharuhera, Dharuhera Haryana"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-12 text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3">
-            <Phone className="w-3.5 h-3.5" /> Confidential Real Estate Desk
+            <Phone className="w-3.5 h-3.5" /> Real Estate Desk Dharuhera
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Get in Touch with <span className="gold-gradient-text font-serif">Vedik Advisory</span>
+            Contact Real Estate Consultant in <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
           <p className="mt-2 text-sm text-slate-600 font-medium max-w-xl">
-            Schedule a private consultation, site visit, or discuss bespoke property acquisitions with our senior luxury advisors.
+            Schedule a site visit, inquire about residential plots, 2 BHK / 3 BHK flats, or commercial property investment with Vedik Reality.
           </p>
         </div>
 

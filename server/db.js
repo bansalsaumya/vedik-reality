@@ -155,14 +155,14 @@ async function initDb(db) {
       ['phone', '+91 98765 43210'],
       ['whatsapp', '919876543210'],
       ['email', 'contact@vedikreality.com'],
-      ['address', 'Level 14, Vedik Horizon Tower, Golf Course Road, Sector 54, Gurgaon, HR - 122002'],
+      ['address', 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106'],
       ['working_hours', 'Mon - Sat: 9:30 AM - 7:00 PM'],
-      ['google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14030.730303698014!2d77.0945!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18d450000001%3A0x10b7eeec932e6005!2sGolf%20Course%20Rd%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1700000000000'],
+      ['google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14068.329810577785!2d76.7972!3d28.2045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d359670000001%3A0x10b7eeec932e6005!2sSector%2019%2C%20Dharuhera%2C%20Haryana%20123106!5e0!3m2!1sen!2sin!4v1700000000000'],
       ['facebook', 'https://facebook.com/vedikreality'],
       ['instagram', 'https://instagram.com/vedikreality'],
       ['youtube', 'https://youtube.com/@vedikreality'],
-      ['meta_default_title', 'Vedik Reality | Luxury Real Estate & Prime Properties'],
-      ['meta_default_description', 'Discover luxury residential apartments, villas, commercial spaces, and premium land with Vedik Reality. Gurgaon & Delhi NCR real estate leaders.']
+      ['meta_default_title', 'Vedik Reality | Property Dealer & Real Estate Agent in Dharuhera'],
+      ['meta_default_description', 'Vedik Reality is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.']
     ];
 
     for (const [key, val] of defaultSettings) {

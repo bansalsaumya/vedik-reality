@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Home, Building, TrendingUp, ShieldCheck, Key, Globe, ArrowRight } from 'lucide-react';
 import EnquiryModal from '../components/EnquiryModal';
 import { FALLBACK_SERVICES } from '../data/fallbackData';
+import SEO from '../components/SEO';
 
 export default function ServicesPage() {
   const [services, setServices] = useState(FALLBACK_SERVICES);
@@ -28,6 +29,11 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title="Real Estate Services in Dharuhera | Vedik Reality"
+        description="Explore real estate advisory, property valuation, legal documentation & plot/flat assistance in Dharuhera Haryana with Vedik Reality."
+        keywords="Property Consultant in Dharuhera, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Legal Verification Dharuhera"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

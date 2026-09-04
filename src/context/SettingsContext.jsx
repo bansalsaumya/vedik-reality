@@ -9,7 +9,7 @@ export const SettingsProvider = ({ children }) => {
     phone: '+91 98765 43210',
     whatsapp: '919876543210',
     email: 'contact@vedikreality.com',
-    address: 'Level 14, Vedik Horizon Tower, Golf Course Road, Sector 54, Gurgaon, HR - 122002',
+    address: 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
     facebook: 'https://facebook.com/vedikreality',
     instagram: 'https://instagram.com/vedikreality',

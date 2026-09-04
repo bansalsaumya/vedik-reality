@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Search, Filter, SlidersHorizontal, MapPin, Building, Home, DollarSign, X } from 'lucide-react';
 import PropertyCard from '../components/PropertyCard';
 import { FALLBACK_PROPERTIES } from '../data/fallbackData';
+import SEO from '../components/SEO';
 
 export default function PropertiesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,6 +20,21 @@ export default function PropertiesPage() {
   const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '');
   const [status, setStatus] = useState(searchParams.get('status') || '');
   const [sort, setSort] = useState('newest');
+
+  // Dynamic SEO Computation
+  let seoTitle = "Properties for Sale in Dharuhera | Vedik Reality";
+  let seoDesc = "Explore properties for sale in Dharuhera with Vedik Reality. Browse residential and commercial properties, flats, plots and investment opportunities in Dharuhera, Haryana.";
+  
+  if (type === 'Plot') {
+    seoTitle = "Plots for Sale in Dharuhera | Residential Plots & Land";
+    seoDesc = "Find residential and commercial plots for sale in Dharuhera Haryana. Verified land plots near NH-48 and Sector 19 Dharuhera with Vedik Reality.";
+  } else if (type === 'Apartment') {
+    seoTitle = "Flats for Sale in Dharuhera | 2 BHK & 3 BHK Flats";
+    seoDesc = "Discover ready to move 2 BHK & 3 BHK flats for sale in Dharuhera, Haryana. Verified apartment properties with Vedik Reality.";
+  } else if (type === 'Commercial') {
+    seoTitle = "Commercial Property in Dharuhera | Shops, Offices & Investment";
+    seoDesc = "Commercial shops, office spaces, and commercial property for sale in Dharuhera, Haryana. Invest in prime commercial property with Vedik Reality.";
+  }
 
   const fetchProperties = async () => {
     try {
@@ -67,7 +83,7 @@ export default function PropertiesPage() {
     setSearchParams(params);
   };
 
-  const clearFilters = () => {
+  const handleResetFilters = () => {
     setSearch('');
     setLocation('');
     setType('');
@@ -79,18 +95,23 @@ export default function PropertiesPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title={seoTitle}
+        description={seoDesc}
+        keywords="Properties for Sale in Dharuhera, Plots for Sale in Dharuhera, Flats for Sale in Dharuhera, Commercial Property in Dharuhera, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Sector 19 Dharuhera, Anandam Awaas Dharuhera"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Page Header */}
+        {/* Header */}
         <div className="mb-10 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3">
-            <Building className="w-3.5 h-3.5" /> Luxury Real Estate Portfolio
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800 tracking-tight">
-            Discover <span className="gold-gradient-text font-serif">Exclusive Residences</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-gold-700 block mb-1">
+            Real Estate Portfolio
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
+            Explore Properties in <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
           <p className="mt-2 text-sm text-slate-600 font-medium max-w-2xl">
-            Explore verified luxury apartments, independent villas, commercial spaces, and high-yield real estate investments.
+            Explore verified residential plots, 2 BHK & 3 BHK flats, independent houses, and commercial property for sale in Dharuhera, Haryana.
           </p>
         </div>
 
@@ -105,7 +126,7 @@ export default function PropertiesPage() {
                 <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
                 <input
                   type="text"
-                  placeholder="Property name, builder, sector..."
+                  placeholder="Property name, sector, plot..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full bg-white border border-borderlight rounded-xl pl-10 pr-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
@@ -121,12 +142,12 @@ export default function PropertiesPage() {
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none custom-select"
               >
-                <option value="">All Locations</option>
-                <option value="Golf Course Road">Golf Course Road</option>
-                <option value="Golf Course Extension">Golf Course Extension</option>
-                <option value="SPR">Southern Peripheral Road (SPR)</option>
-                <option value="Dwarka Expressway">Dwarka Expressway</option>
-                <option value="Noida Expressway">Noida Expressway</option>
+                <option value="">All Locations in Dharuhera</option>
+                <option value="Sector 19">Sector 19, Dharuhera</option>
+                <option value="Anandam Awaas">Anandam Awaas, Dharuhera</option>
+                <option value="NH-48">NH-48 Corridor, Dharuhera</option>
+                <option value="Rewari">Rewari District</option>
+                <option value="Golf Course Road">Golf Course Road, Gurgaon</option>
               </select>
             </div>
 

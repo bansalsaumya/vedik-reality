@@ -1,142 +1,114 @@
 export const FALLBACK_PROPERTIES = [
   {
     id: 1,
-    slug: 'the-vedik-pinnacle-residences',
-    title: 'The Vedik Pinnacle Residences',
-    type: 'Apartment',
-    category: 'Sale',
-    price: '₹ 4.85 Cr',
-    price_numeric: 48500000,
-    location: 'Golf Course Road, Gurgaon',
-    address: 'Sector 54, Golf Course Road, Gurugram',
-    bhk: '4 BHK + Servant',
-    area: '3,850 Sq.Ft.',
-    status: 'Available',
-    is_featured: 1,
-    description: 'An architectural masterpiece overlooking the lush green golf courses. Features private elevator access, 11-ft ceiling heights, wraparound balconies, and automated smart home controls.',
-    amenities: ['Private Elevator', 'Golf View Balcony', 'Olympic Size Pool', 'Concierge Desk', 'Clubhouse & Spa', 'Smart Automation', '3 Tier Security', 'EV Charging'],
-    images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=80'
-    ],
-    video_url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    rera_number: 'HRERA-GGM-2024-891',
-    builder_name: 'Vedik Infrastructure Developers',
-    meta_title: 'The Vedik Pinnacle Residences | 4 BHK Luxury Apartment Golf Course Road',
-    meta_description: 'Buy 4 BHK luxury apartment on Golf Course Road Gurgaon.',
-    views: 124
-  },
-  {
-    id: 2,
-    slug: 'aurum-palace-villas',
-    title: 'Aurum Palace Luxury Estate Villa',
-    type: 'Villa',
-    category: 'Sale',
-    price: '₹ 9.50 Cr',
-    price_numeric: 95000000,
-    location: 'Golf Course Extension, Gurgaon',
-    address: 'Sector 66, Golf Course Extension, Gurugram',
-    bhk: '5 BHK Villa',
-    area: '6,200 Sq.Ft.',
-    status: 'Available',
-    is_featured: 1,
-    description: 'Exquisite independent villa situated in an ultra-exclusive gated estate. Comes with private swimming pool, landscaped manicured lawn, rooftop sundeck, and custom Italian marble interiors.',
-    amenities: ['Private Heated Pool', 'Private Garden', 'Terrace Lounge', 'Italian Marble Flooring', 'Modular German Kitchen', '4 Car Covered Parking', 'Solar Energy Backed'],
-    images: [
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80'
-    ],
-    video_url: '',
-    rera_number: 'HRERA-GGM-2023-412',
-    builder_name: 'Aurum Luxury Living',
-    meta_title: 'Aurum Palace Luxury Villa Gurgaon | 5 BHK Private Pool Estate',
-    meta_description: 'Explore 5 BHK Independent luxury villa on Golf Course Extension Road.',
-    views: 98
-  },
-  {
-    id: 3,
-    slug: 'cyber-horizon-commercial-suites',
-    title: 'Cyber Horizon Grade-A Commercial Tower',
-    type: 'Commercial',
-    category: 'Sale',
-    price: '₹ 2.10 Cr',
-    price_numeric: 21000000,
-    location: 'Southern Peripheral Road (SPR)',
-    address: 'Sector 70, SPR Corridor, Gurugram',
-    bhk: 'Commercial Office Space',
-    area: '1,450 Sq.Ft.',
-    status: 'Available',
-    is_featured: 1,
-    description: 'Grade-A LEED Gold Certified commercial office suite offering high rental yields and guaranteed corporate tenancy.',
-    amenities: ['LEED Gold Certified', '100% Power Backup', 'High Speed Elevators', 'Food Court & Rooftop Cafe', 'Valet Parking', 'Cisco Fiber Internet Ready'],
-    images: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80'
-    ],
-    video_url: '',
-    rera_number: 'HRERA-GGM-2024-102',
-    builder_name: 'Horizon Commercials',
-    meta_title: 'Grade A Commercial Office Space SPR Gurgaon',
-    meta_description: 'Invest in Grade-A commercial office spaces on SPR Road.',
-    views: 75
-  },
-  {
-    id: 4,
-    slug: 'skyline-heights-penthouse',
-    title: 'Skyline Heights Duplex Penthouse',
-    type: 'Apartment',
-    category: 'Sale',
-    price: '₹ 7.20 Cr',
-    price_numeric: 72000000,
-    location: 'Dwarka Expressway',
-    address: 'Sector 109, Dwarka Expressway, Gurugram',
-    bhk: '5 BHK Penthouse',
-    area: '5,100 Sq.Ft.',
-    status: 'Available',
-    is_featured: 1,
-    description: 'Breathtaking duplex penthouse on the 32nd floor offering 360-degree panoramic city skylines. Features private jacuzzi terrace.',
-    amenities: ['Terrace Jacuzzi', '360 Skylines View', 'Double Height Living Room', 'Private Elevator Bar', 'All En-Suite Bedrooms'],
-    images: [
-      'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80'
-    ],
-    video_url: '',
-    rera_number: 'HRERA-GGM-2023-771',
-    builder_name: 'Skyline Landmark Developers',
-    meta_title: 'Duplex Penthouse Dwarka Expressway | Skyline Heights',
-    meta_description: '5 BHK Duplex Penthouse on Dwarka Expressway.',
-    views: 110
-  },
-  {
-    id: 5,
-    slug: 'greenwood-botanica-plots',
-    title: 'Greenwood Botanica Luxury Villa Plots',
+    slug: 'plots-for-sale-dharuhera-sector-19',
+    title: 'Residential Plots for Sale in Sector 19 Dharuhera',
     type: 'Plot',
     category: 'Sale',
-    price: '₹ 3.40 Cr',
-    price_numeric: 34000000,
-    location: 'Golf Course Extension, Gurgaon',
-    address: 'Sector 63, Golf Course Ext, Gurugram',
-    bhk: 'Freehold Land Plot',
-    area: '250 Sq.Yards',
+    price: '₹ 45.0 Lakhs',
+    price_numeric: 4500000,
+    location: 'Sector 19 Dharuhera, Haryana',
+    address: 'Near Anandam Awaas, Sector 19, Dharuhera, Haryana – 123106',
+    bhk: 'Freehold Plot',
+    area: '150 Sq.Yards',
     status: 'Available',
-    is_featured: 0,
-    description: 'Gated plot township surrounded by 50 acres of dense green foliage. Complete underground utilities and paved roads.',
-    amenities: ['Gated Township', 'Underground Utilities', '50 Acre Green Cover', 'Clubhouse Membership', 'Basketball & Tennis Courts'],
+    is_featured: 1,
+    description: 'Prime residential plot for sale in Dharuhera near Anandam Awaas, Sector 19. Clear title, registry ready, wide 30ft road, underground water and electricity lines. Best property investment in Dharuhera near NH-48.',
+    amenities: ['Gated Security', '30ft Wide Internal Roads', 'Underground Sewerage & Water', 'Immediate Registry & Demarcation', 'Street Lighting', 'Parks & Play Area'],
     images: [
       'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80'
     ],
     video_url: '',
-    rera_number: 'HRERA-GGM-2024-550',
-    builder_name: 'Botanica Developers',
-    meta_title: 'Luxury Villa Plots Golf Course Extension Gurgaon',
-    meta_description: 'Buy premium freehold residential villa plots.',
-    views: 64
+    rera_number: 'HRERA-RWR-2024-101',
+    builder_name: 'Vedik Property Consultants Dharuhera',
+    meta_title: 'Plots for Sale in Dharuhera | Residential Plots in Sector 19',
+    meta_description: 'Buy freehold residential plot for sale in Sector 19 Dharuhera near Anandam Awaas. Verified property plot in Dharuhera Haryana.',
+    views: 245
+  },
+  {
+    id: 2,
+    slug: '2-bhk-3-bhk-flats-dharuhera',
+    title: 'Ready to Move 2 BHK & 3 BHK Luxury Flats in Dharuhera',
+    type: 'Apartment',
+    category: 'Sale',
+    price: '₹ 38.5 Lakhs',
+    price_numeric: 3850000,
+    location: 'Sector 19 Dharuhera, Haryana',
+    address: 'Sector 19, Main Highway Road, Dharuhera, Rewari District, Haryana',
+    bhk: '2 & 3 BHK Flats',
+    area: '1,250 Sq.Ft.',
+    status: 'Available',
+    is_featured: 1,
+    description: 'Affordable 2 BHK & 3 BHK flats for sale in Dharuhera. Features modular kitchen, wooden wardrobes, spacious balcony, 24x7 power backup, lift, and dedicated covered car parking.',
+    amenities: ['Modular Kitchen', 'Power Backup', 'Gated Security', 'High Speed Lifts', 'Covered Parking', 'Children Play Zone', 'Gymnasium'],
+    images: [
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80'
+    ],
+    video_url: '',
+    rera_number: 'HRERA-RWR-2024-204',
+    builder_name: 'Vedik Residency Dharuhera',
+    meta_title: 'Flats for Sale in Dharuhera | 2 BHK & 3 BHK Ready to Move',
+    meta_description: 'Explore ready to move 2 BHK and 3 BHK flats for sale in Dharuhera Haryana with Vedik Reality property dealer.',
+    views: 189
+  },
+  {
+    id: 3,
+    slug: 'commercial-property-shops-dharuhera',
+    title: 'Commercial Property & SCO Shops for Sale in Dharuhera',
+    type: 'Commercial',
+    category: 'Sale',
+    price: '₹ 65.0 Lakhs',
+    price_numeric: 6500000,
+    location: 'Sector 19 Dharuhera, Haryana',
+    address: 'First Floor, SCO-02, Anandam Awaas Market, Sector 19, Dharuhera',
+    bhk: 'Commercial Shop / Office Space',
+    area: '650 Sq.Ft.',
+    status: 'Available',
+    is_featured: 1,
+    description: 'High visibility commercial property and SCO retail shop space for sale in Sector 19 Dharuhera. Ideal for office space, retail store, or real estate agency setup with guaranteed footfall.',
+    amenities: ['Main Road Facing', 'Double Height Frontage', '24x7 Security Guard', 'Ample Customer Parking', 'Power Backup'],
+    images: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80'
+    ],
+    video_url: '',
+    rera_number: 'HRERA-RWR-2024-305',
+    builder_name: 'Anandam SCO Market',
+    meta_title: 'Commercial Property in Dharuhera | Shops & Office Space',
+    meta_description: 'Buy commercial shop & office space in Sector 19 Dharuhera. Best commercial property investment in Dharuhera Haryana.',
+    views: 142
+  },
+  {
+    id: 4,
+    slug: 'independent-house-villa-dharuhera',
+    title: 'Independent House / Builder Floor for Sale in Dharuhera',
+    type: 'Villa',
+    category: 'Sale',
+    price: '₹ 75.0 Lakhs',
+    price_numeric: 7500000,
+    location: 'Sector 19 Dharuhera, Haryana',
+    address: 'Sector 19, Near NH-48 Corridor, Dharuhera',
+    bhk: '3 BHK Independent Villa',
+    area: '2,100 Sq.Ft.',
+    status: 'Available',
+    is_featured: 1,
+    description: 'Independent house for sale in Dharuhera with private roof garden, covered car porch, stylish interior finishes, and close proximity to top schools and markets.',
+    amenities: ['Private Roof Garden', 'Car Porch', 'Granite Flooring', 'Near Schools & Hospitals', '24h Water Supply'],
+    images: [
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80'
+    ],
+    video_url: '',
+    rera_number: 'HRERA-RWR-2024-408',
+    builder_name: 'Vedik Homes',
+    meta_title: 'House for Sale in Dharuhera | 3 BHK Villa / Builder Floor',
+    meta_description: 'Independent house for sale in Dharuhera Haryana near NH-48. Verified residential property by Vedik Reality.',
+    views: 167
   }
 ];
+
 
 export const FALLBACK_PROJECTS = [
   {
@@ -213,43 +185,43 @@ export const FALLBACK_PROJECTS = [
 export const FALLBACK_LOCATIONS = [
   {
     id: 1,
-    name: 'Golf Course Road, Gurgaon',
-    slug: 'golf-course-road-gurgaon',
-    property_count: 12,
+    name: 'Sector 19 Dharuhera',
+    slug: 'sector-19-dharuhera',
+    property_count: 24,
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-    description: 'India’s most sought-after ultra-luxury residential corridor.'
+    description: 'Prime residential and commercial hub in Dharuhera with SCO markets and plots.'
   },
   {
     id: 2,
-    name: 'Southern Peripheral Road (SPR)',
-    slug: 'spr-gurgaon',
-    property_count: 8,
+    name: 'Anandam Awaas, Dharuhera',
+    slug: 'anandam-awaas-dharuhera',
+    property_count: 18,
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-    description: 'High growth investment zone with modern high-rises and townships.'
+    description: 'Top residential township & SCO market location in Sector 19 Dharuhera.'
   },
   {
     id: 3,
-    name: 'Dwarka Expressway',
-    slug: 'dwarka-expressway',
+    name: 'NH-48 Dharuhera Corridor',
+    slug: 'nh48-dharuhera-corridor',
     property_count: 15,
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-    description: 'Seamless connectivity to Delhi Airport and IGI corridor.'
+    description: 'Strategic highway location with direct access to Delhi, Gurgaon & Rewari.'
   },
   {
     id: 4,
-    name: 'Noida Expressway',
-    slug: 'noida-expressway',
-    property_count: 9,
+    name: 'Rewari District Industrial & Residential',
+    slug: 'rewari-district-dharuhera',
+    property_count: 12,
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-    description: 'Prime commercial hubs, IT parks, and luxury townships.'
+    description: 'Rapidly growing industrial hub with high rental demand and growth.'
   },
   {
     id: 5,
-    name: 'Golf Course Extension Road',
-    slug: 'golf-course-extension',
-    property_count: 11,
+    name: 'Golf Course Road, Gurgaon',
+    slug: 'golf-course-road-gurgaon',
+    property_count: 10,
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-    description: 'Cosmopolitan living with world-class golf amenities and schools.'
+    description: 'Ultra-luxury regional corridor connected via Delhi-Jaipur highway.'
   }
 ];
 

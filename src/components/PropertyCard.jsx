@@ -25,7 +25,7 @@ export default function PropertyCard({ property }) {
         <div className="relative aspect-[16/10] overflow-hidden bg-cream">
           <img
             src={mainImage}
-            alt={property.title}
+            alt={`${property.title} - ${property.type || 'Property'} for sale in Dharuhera Haryana`}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
