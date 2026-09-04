@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import StickyMobileBar from './components/StickyMobileBar';
 import EnquiryModal from './components/EnquiryModal';
+import FloatingContactWidget from './components/FloatingContactWidget';
 
 import HomePage from './pages/HomePage';
 import PropertiesPage from './pages/PropertiesPage';
@@ -21,8 +22,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-ivory text-charcoal-800 font-sans selection:bg-gold-500 selection:text-white">
-
-
 
       <Navbar />
 
@@ -46,12 +45,15 @@ export default function App() {
       {/* Mobile Sticky CTA Bar */}
       <StickyMobileBar onEnquireClick={() => setGlobalModalOpen(true)} />
 
+      {/* Floating Quick WhatsApp & Call Widget */}
+      <FloatingContactWidget onEnquireClick={() => setGlobalModalOpen(true)} />
+
       {/* Global Quick Enquiry Modal */}
       {globalModalOpen && (
         <EnquiryModal
           isOpen={globalModalOpen}
           onClose={() => setGlobalModalOpen(false)}
-          source="Mobile Sticky Action Bar"
+          source="Global Action Bar / Floating Contact Widget"
         />
       )}
     </div>
