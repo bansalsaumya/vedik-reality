@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { FALLBACK_LOCATIONS } from '../data/fallbackData';
 import SEO from '../components/SEO';
 
@@ -38,10 +39,15 @@ export default function LocationsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {locations.map((loc) => (
-            <div
+          {locations.map((loc, idx) => (
+            <motion.div
               key={loc.id}
-              className="glass-card rounded-2xl overflow-hidden border border-borderlight bg-white hover:border-gold-500 transition-all duration-300 shadow-md hover:shadow-xl grid grid-cols-1 sm:grid-cols-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="group glass-card rounded-2xl overflow-hidden border border-borderlight bg-white hover:border-gold-500/80 transition-all duration-300 shadow-md hover:shadow-[0_15px_35px_rgba(197,155,39,0.18)] grid grid-cols-1 sm:grid-cols-2"
             >
               <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden bg-cream">
                 <img
@@ -72,7 +78,7 @@ export default function LocationsPage() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

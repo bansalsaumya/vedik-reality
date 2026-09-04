@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Building, ShieldCheck, PhoneCall, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 import EnquiryModal from '../components/EnquiryModal';
 import { FALLBACK_PROJECTS } from '../data/fallbackData';
 import SEO from '../components/SEO';
@@ -41,16 +42,21 @@ export default function ProjectsPage() {
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
+          {projects.map((project, idx) => {
             const projectImg = project.image || (Array.isArray(project.images) ? project.images[0] : (typeof project.images === 'string' ? JSON.parse(project.images)[0] : null)) || 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80';
             const projectTitle = project.title || project.name || 'Luxury Flagship Project';
             const projectPrice = project.price_starting || project.price_range || 'Price on Request';
             const projectDeveloper = project.developer || project.builder_name || 'Flagship Developer';
 
             return (
-              <div
+              <motion.div
                 key={project.id}
-                className="glass-card rounded-2xl overflow-hidden border border-borderlight bg-white hover:border-gold-500 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className="group glass-card rounded-2xl overflow-hidden border border-borderlight bg-white hover:border-gold-500/80 transition-all duration-300 shadow-md hover:shadow-[0_15px_35px_rgba(197,155,39,0.18)] flex flex-col justify-between"
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-cream">
@@ -97,7 +103,7 @@ export default function ProjectsPage() {
                     <span>Download Masterplan & Brochure</span>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

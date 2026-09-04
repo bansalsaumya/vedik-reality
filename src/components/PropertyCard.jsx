@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, BedDouble, Maximize2, ShieldCheck, PhoneCall, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import EnquiryModal from './EnquiryModal';
 import { useSettings } from '../context/SettingsContext';
 
@@ -19,17 +20,24 @@ export default function PropertyCard({ property }) {
 
   return (
     <>
-      <div className="group glass-card rounded-2xl overflow-hidden border border-borderlight hover:border-gold-500 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-md hover:shadow-xl bg-white">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+        whileHover={{ y: -8, scale: 1.01 }}
+        className="group glass-card rounded-2xl overflow-hidden border border-borderlight hover:border-gold-500/80 transition-all duration-300 flex flex-col justify-between shadow-md hover:shadow-[0_15px_35px_rgba(197,155,39,0.18)] bg-white relative"
+      >
         
         {/* Image Container with Zoom & Badges */}
         <div className="relative aspect-[16/10] overflow-hidden bg-cream">
           <img
             src={mainImage}
             alt={`${property.title} - ${property.type || 'Property'} for sale in Dharuhera Haryana`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
           {/* Status Badges */}
           <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
@@ -102,31 +110,35 @@ export default function PropertyCard({ property }) {
           <div className="mt-5 pt-4 border-t border-borderlight flex items-center gap-2">
             <Link
               to={`/properties/${property.slug || property.id}`}
-              className="flex-1 text-center py-2 rounded-xl bg-cream hover:bg-sand text-charcoal-800 text-xs font-bold border border-borderlight transition-all flex items-center justify-center gap-1"
+              className="flex-1 text-center py-2 rounded-xl bg-cream hover:bg-gold-500 hover:text-white text-charcoal-800 text-xs font-bold border border-borderlight transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
             >
               <span>Details</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-gold-700" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-gold-700 group-hover/btn:text-white" />
             </Link>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               onClick={() => setModalOpen(true)}
-              className="flex-1 py-2 rounded-xl gold-button text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-md"
+              className="flex-1 py-2 rounded-xl gold-button text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-md hover:shadow-lg"
             >
               <PhoneCall className="w-3.5 h-3.5" />
               <span>Enquire</span>
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={handleWhatsApp}
-              className="p-2 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-white border border-emerald-600 transition-colors"
+              className="p-2 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-white border border-emerald-600 transition-colors shadow-sm"
               title="Chat on WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
-            </button>
+            </motion.button>
           </div>
 
         </div>
-      </div>
+      </motion.div>
 
       {/* Property Specific Enquiry Modal */}
       {modalOpen && (
