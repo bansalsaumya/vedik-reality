@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@vedikreality.com"
+              placeholder="Vedikrealty@gmail.com"
               className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
             />
           </div>

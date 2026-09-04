@@ -137,13 +137,16 @@ async function initDb(db) {
   `);
 
   // Seed Admin if not exists
-  const existingAdmin = await db.get(`SELECT * FROM admin_users WHERE email = ?`, ['admin@vedikreality.com']);
-  if (!existingAdmin) {
-    const hashedPassword = await bcrypt.hash('admin123', 10);
-    await db.run(
-      `INSERT INTO admin_users (email, password, name) VALUES (?, ?, ?)`,
-      ['admin@vedikreality.com', hashedPassword, 'Vedik Reality Administrator']
-    );
+  const defaultAdmins = ['Vedikrealty@gmail.com', 'admin@vedikreality.com'];
+  for (const adminEmail of defaultAdmins) {
+    const existingAdmin = await db.get(`SELECT * FROM admin_users WHERE LOWER(email) = LOWER(?)`, [adminEmail]);
+    if (!existingAdmin) {
+      const hashedPassword = await bcrypt.hash('admin123', 10);
+      await db.run(
+        `INSERT INTO admin_users (email, password, name) VALUES (?, ?, ?)`,
+        [adminEmail.toLowerCase(), hashedPassword, 'Vedik Reality Administrator']
+      );
+    }
   }
 
   // Seed Default Settings if empty
