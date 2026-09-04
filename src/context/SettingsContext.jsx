@@ -5,10 +5,12 @@ const SettingsContext = createContext();
 export const SettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState({
     business_name: 'Vedik Reality',
+    owners: 'Deepak Lamba, Manish',
     tagline: 'Luxury Estates & Thoughtfully Selected Properties',
-    phone: '+91 98765 43210',
-    whatsapp: '919876543210',
-    email: 'contact@vedikreality.com',
+    phone: '+91 90538 48222',
+    alt_phone: '+91 97282 95353',
+    whatsapp: '919053848222',
+    email: 'Vedikrealty@gmail.com',
     address: 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
     facebook: 'https://facebook.com/vedikreality',

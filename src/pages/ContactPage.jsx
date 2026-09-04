@@ -52,17 +52,27 @@ export default function ContactPage() {
           {/* Contact Details Card */}
           <div className="glass-card p-8 rounded-3xl border border-borderlight bg-white shadow-md space-y-8">
             <div>
-              <h3 className="font-serif text-2xl font-bold text-charcoal-800 mb-2">Corporate Office</h3>
-              <p className="text-xs text-slate-600 font-medium">Visit our luxury experience center in Gurgaon.</p>
+              <h3 className="font-serif text-2xl font-bold text-charcoal-800 mb-2">Vedik Reality Office</h3>
+              <p className="text-xs text-slate-600 font-medium">Visit our real estate advisory office in Sector 19 Dharuhera.</p>
             </div>
 
             <div className="space-y-6 text-sm font-medium">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-cream border border-borderlight text-gold-700">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Leadership & Owners</h4>
+                  <p className="text-slate-800 text-xs font-bold mt-0.5">{settings.owners || 'Deepak Lamba, Manish'}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-xl bg-cream border border-borderlight text-gold-700">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Address</h4>
+                  <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Office Address</h4>
                   <p className="text-slate-600 text-xs leading-relaxed mt-0.5">{settings.address}</p>
                 </div>
               </div>
@@ -72,8 +82,16 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Phone / WhatsApp</h4>
-                  <p className="text-slate-700 text-xs font-bold mt-0.5">{settings.phone}</p>
+                  <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Direct Calls & WhatsApp</h4>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-1">
+                    <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="text-gold-700 text-xs font-bold hover:underline">
+                      {settings.phone}
+                    </a>
+                    <span className="hidden sm:inline text-slate-300">|</span>
+                    <a href={`tel:${(settings.alt_phone || '+91 97282 95353').replace(/\s+/g, '')}`} className="text-gold-700 text-xs font-bold hover:underline">
+                      {settings.alt_phone || '+91 97282 95353'}
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -83,7 +101,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Email Inquiry</h4>
-                  <p className="text-slate-600 text-xs mt-0.5">{settings.email}</p>
+                  <a href={`mailto:${settings.email}`} className="text-slate-700 text-xs font-semibold hover:text-gold-700 transition-colors mt-0.5 block">
+                    {settings.email}
+                  </a>
                 </div>
               </div>
 

@@ -151,10 +151,12 @@ async function initDb(db) {
   if (settingsCount.count === 0) {
     const defaultSettings = [
       ['business_name', 'Vedik Reality'],
-      ['tagline', 'Luxury Estates & Thoughtfully Selected Properties'],
-      ['phone', '+91 98765 43210'],
-      ['whatsapp', '919876543210'],
-      ['email', 'contact@vedikreality.com'],
+      ['owners', 'Deepak Lamba, Manish'],
+      ['tagline', 'Property Dealer & Real Estate Agent in Dharuhera'],
+      ['phone', '+91 90538 48222'],
+      ['alt_phone', '+91 97282 95353'],
+      ['whatsapp', '919053848222'],
+      ['email', 'Vedikrealty@gmail.com'],
       ['address', 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106'],
       ['working_hours', 'Mon - Sat: 9:30 AM - 7:00 PM'],
       ['google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14068.329810577785!2d76.7972!3d28.2045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d359670000001%3A0x10b7eeec932e6005!2sSector%2019%2C%20Dharuhera%2C%20Haryana%20123106!5e0!3m2!1sen!2sin!4v1700000000000'],

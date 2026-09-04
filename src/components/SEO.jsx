@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 
 const DEFAULT_NAP = {
   name: "Vedik Reality",
+  owners: "Deepak Lamba, Manish",
   address: "First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106",
   addressLocality: "Dharuhera",
   addressRegion: "Haryana",
   postalCode: "123106",
   addressCountry: "IN",
-  phone: "+91 98765 43210",
-  email: "contact@vedikreality.com"
+  phone: "+91 90538 48222",
+  altPhone: "+91 97282 95353",
+  email: "Vedikrealty@gmail.com"
 };
 
 export default function SEO({

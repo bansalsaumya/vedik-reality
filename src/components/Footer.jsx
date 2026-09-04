@@ -134,19 +134,34 @@ export default function Footer() {
           {/* Contact Details */}
           <div className="space-y-3 text-xs font-medium">
             <h4 className="font-serif text-sm font-bold text-charcoal-800 uppercase tracking-wider mb-4 border-l-2 border-gold-500 pl-3">
-              Corporate Headquarters
+              Corporate Office & Advisory
             </h4>
+            {settings.owners && (
+              <p className="flex items-center gap-2 text-slate-800 font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
+                <span>Owners: <strong className="text-gold-700 font-bold">{settings.owners}</strong></span>
+              </p>
+            )}
             <p className="flex items-start gap-2 text-slate-700 leading-relaxed">
               <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
               <span>{settings.address}</span>
             </p>
-            <p className="flex items-center gap-2 text-slate-700 font-bold">
-              <Phone className="w-4 h-4 text-gold-600 shrink-0" />
-              <span>{settings.phone}</span>
+            <p className="flex items-start gap-2 text-slate-700 font-bold">
+              <Phone className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
+              <span className="flex flex-col">
+                <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="hover:text-gold-700 transition-colors">
+                  {settings.phone}
+                </a>
+                <a href={`tel:${(settings.alt_phone || '+91 97282 95353').replace(/\s+/g, '')}`} className="hover:text-gold-700 transition-colors">
+                  {settings.alt_phone || '+91 97282 95353'}
+                </a>
+              </span>
             </p>
             <p className="flex items-center gap-2 text-slate-700">
               <Mail className="w-4 h-4 text-gold-600 shrink-0" />
-              <span>{settings.email}</span>
+              <a href={`mailto:${settings.email}`} className="hover:text-gold-700 transition-colors">
+                {settings.email}
+              </a>
             </p>
             <p className="flex items-center gap-2 text-slate-600 pt-1">
               <Clock className="w-4 h-4 text-gold-600 shrink-0" />

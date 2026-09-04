@@ -35,7 +35,7 @@ export default function AboutPage() {
               Trusted Property Consultancy in <span className="gold-gradient-text font-serif">Dharuhera & Sector 19</span>
             </h2>
             <p>
-              Located at First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106, we specialize in residential plots, ready-to-move 2/3 BHK flats, independent houses, and high-yield commercial property investments near NH-48.
+              Helmed by founders <strong className="text-gold-700 font-bold">Deepak Lamba & Manish</strong> and located at First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106, we specialize in residential plots, ready-to-move 2/3 BHK flats, independent houses, and high-yield commercial property investments near NH-48.
             </p>
             <p>
               Every property listed under Vedik Reality undergoes strict legal title scrutiny, registry verification, and fair-market valuation checks to ensure complete peace of mind for buyers and investors.
