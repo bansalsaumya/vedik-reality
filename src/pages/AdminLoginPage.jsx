@@ -16,13 +16,25 @@ export default function AdminLoginPage() {
     setError('');
     setLoading(true);
 
-    const success = await login(email, password);
-    setLoading(false);
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
 
-    if (success) {
-      navigate('/admin/dashboard');
-    } else {
-      setError('Invalid admin credentials. Access Restricted.');
+      const data = await res.json();
+      if (res.ok && data.token) {
+        login(data.token, data.admin);
+        navigate('/admin/dashboard');
+      } else {
+        setError(data.error || 'Invalid admin credentials. Access Restricted.');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Connection error. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
