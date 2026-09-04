@@ -19,17 +19,17 @@ export default function PropertyCard({ property }) {
 
   return (
     <>
-      <div className="group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+      <div className="group glass-card rounded-2xl overflow-hidden border border-borderlight hover:border-gold-500 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-md hover:shadow-xl bg-white">
         
         {/* Image Container with Zoom & Badges */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-charcoal-900">
+        <div className="relative aspect-[16/10] overflow-hidden bg-cream">
           <img
             src={mainImage}
             alt={property.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
 
           {/* Status Badges */}
           <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
@@ -38,22 +38,22 @@ export default function PropertyCard({ property }) {
                 FEATURED
               </span>
             )}
-            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-charcoal-900/90 text-slate-200 border border-slate-700 backdrop-blur-md">
+            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-charcoal-800 text-white border border-slate-700 backdrop-blur-md">
               {property.status || 'Available'}
             </span>
           </div>
 
           {/* Price Tag Overlay */}
           <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between z-10">
-            <div className="bg-charcoal-950/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-gold-500/30">
-              <span className="text-xs text-slate-400 font-medium block leading-none mb-0.5">Price</span>
+            <div className="bg-charcoal-800/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-gold-500/40">
+              <span className="text-[10px] text-slate-300 font-medium block leading-none mb-0.5 uppercase tracking-wider">Offered At</span>
               <span className="text-base sm:text-lg font-serif font-bold text-gold-400">
                 {property.price}
               </span>
             </div>
 
             {property.rera_number && (
-              <div className="flex items-center gap-1 text-[10px] text-emerald-400 bg-charcoal-950/80 px-2 py-1 rounded-lg border border-emerald-500/30 backdrop-blur-md">
+              <div className="flex items-center gap-1 text-[10px] text-emerald-400 bg-black/80 px-2 py-1 rounded-lg border border-emerald-500/40 backdrop-blur-md font-semibold">
                 <ShieldCheck className="w-3 h-3 text-emerald-400" />
                 <span>RERA Verified</span>
               </div>
@@ -65,47 +65,47 @@ export default function PropertyCard({ property }) {
         <div className="p-5 flex-1 flex flex-col justify-between">
           <div>
             {/* Category & Type */}
-            <div className="flex items-center justify-between text-xs text-slate-400 font-medium mb-1.5">
-              <span className="text-gold-400/90 uppercase tracking-wider text-[11px] font-semibold">
+            <div className="flex items-center justify-between text-xs text-slate-500 font-medium mb-1.5">
+              <span className="text-gold-700 uppercase tracking-wider text-[11px] font-bold">
                 {property.type}
               </span>
-              <span>{property.category || 'For Sale'}</span>
+              <span className="text-slate-500 font-semibold">{property.category || 'For Sale'}</span>
             </div>
 
             {/* Title */}
-            <h3 className="font-serif text-lg font-bold text-slate-100 group-hover:text-gold-400 transition-colors line-clamp-1">
+            <h3 className="font-serif text-lg font-bold text-charcoal-800 group-hover:text-gold-600 transition-colors line-clamp-1">
               <Link to={`/properties/${property.slug || property.id}`}>
                 {property.title}
               </Link>
             </h3>
 
             {/* Location */}
-            <p className="mt-2 text-xs text-slate-400 flex items-center gap-1 line-clamp-1">
-              <MapPin className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+            <p className="mt-2 text-xs text-slate-600 flex items-center gap-1 line-clamp-1 font-medium">
+              <MapPin className="w-3.5 h-3.5 text-gold-600 shrink-0" />
               <span>{property.location}</span>
             </p>
 
             {/* Specs Grid */}
-            <div className="mt-4 pt-3 border-t border-slate-800/80 grid grid-cols-2 gap-2 text-xs text-slate-300">
+            <div className="mt-4 pt-3 border-t border-borderlight grid grid-cols-2 gap-2 text-xs text-slate-700 font-semibold">
               <div className="flex items-center gap-1.5">
-                <BedDouble className="w-4 h-4 text-slate-400" />
+                <BedDouble className="w-4 h-4 text-gold-700" />
                 <span>{property.bhk || 'N/A'}</span>
               </div>
               <div className="flex items-center gap-1.5 justify-end">
-                <Maximize2 className="w-3.5 h-3.5 text-slate-400" />
+                <Maximize2 className="w-3.5 h-3.5 text-gold-700" />
                 <span>{property.area}</span>
               </div>
             </div>
           </div>
 
           {/* Action CTAs */}
-          <div className="mt-5 pt-4 border-t border-slate-800 flex items-center gap-2">
+          <div className="mt-5 pt-4 border-t border-borderlight flex items-center gap-2">
             <Link
               to={`/properties/${property.slug || property.id}`}
-              className="flex-1 text-center py-2 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-slate-200 text-xs font-semibold border border-slate-700 hover:border-gold-500/50 transition-all flex items-center justify-center gap-1"
+              className="flex-1 text-center py-2 rounded-xl bg-cream hover:bg-sand text-charcoal-800 text-xs font-bold border border-borderlight transition-all flex items-center justify-center gap-1"
             >
               <span>Details</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-gold-500" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-gold-700" />
             </Link>
 
             <button
@@ -118,7 +118,7 @@ export default function PropertyCard({ property }) {
 
             <button
               onClick={handleWhatsApp}
-              className="p-2 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-400 border border-emerald-500/40 transition-colors"
+              className="p-2 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-white border border-emerald-600 transition-colors"
               title="Chat on WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />

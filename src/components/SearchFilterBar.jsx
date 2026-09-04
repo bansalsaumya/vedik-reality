@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, MapPin, Building, DollarSign, Home, SlidersHorizontal } from 'lucide-react';
+import { Search, MapPin, Building, DollarSign, Home } from 'lucide-react';
 
 export default function SearchFilterBar({ className = "" }) {
   const navigate = useNavigate();
@@ -25,19 +25,19 @@ export default function SearchFilterBar({ className = "" }) {
   return (
     <form
       onSubmit={handleSearch}
-      className={`glass-panel p-4 md:p-6 rounded-2xl border border-gold-500/30 shadow-2xl ${className}`}
+      className={`glass-panel p-4 md:p-6 rounded-2xl border border-borderlight shadow-xl bg-white/95 ${className}`}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 items-end">
         
         {/* Location Filter */}
         <div>
-          <label className="block text-[11px] font-semibold text-gold-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
-            <MapPin className="w-3.5 h-3.5 text-gold-500" /> Location
+          <label className="block text-[11px] font-bold text-gold-700 uppercase tracking-widest mb-1.5 flex items-center gap-1">
+            <MapPin className="w-3.5 h-3.5 text-gold-600" /> Location
           </label>
           <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
+            className="w-full bg-white border border-borderlight rounded-xl px-4 py-3 text-xs text-charcoal-800 font-medium focus:border-gold-500 focus:outline-none transition-all custom-select shadow-sm"
           >
             <option value="">All Prime Locations</option>
             <option value="Golf Course Road">Golf Course Road, Gurgaon</option>
@@ -50,13 +50,13 @@ export default function SearchFilterBar({ className = "" }) {
 
         {/* Property Type */}
         <div>
-          <label className="block text-[11px] font-semibold text-gold-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
-            <Building className="w-3.5 h-3.5 text-gold-500" /> Property Type
+          <label className="block text-[11px] font-bold text-gold-700 uppercase tracking-widest mb-1.5 flex items-center gap-1">
+            <Building className="w-3.5 h-3.5 text-gold-600" /> Property Type
           </label>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
+            className="w-full bg-white border border-borderlight rounded-xl px-4 py-3 text-xs text-charcoal-800 font-medium focus:border-gold-500 focus:outline-none transition-all custom-select shadow-sm"
           >
             <option value="">All Categories</option>
             <option value="Apartment">Luxury Apartment</option>
@@ -68,13 +68,13 @@ export default function SearchFilterBar({ className = "" }) {
 
         {/* BHK Filter */}
         <div>
-          <label className="block text-[11px] font-semibold text-gold-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
-            <Home className="w-3.5 h-3.5 text-gold-500" /> Bedrooms / BHK
+          <label className="block text-[11px] font-bold text-gold-700 uppercase tracking-widest mb-1.5 flex items-center gap-1">
+            <Home className="w-3.5 h-3.5 text-gold-600" /> Bedrooms / BHK
           </label>
           <select
             value={bhk}
             onChange={(e) => setBhk(e.target.value)}
-            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
+            className="w-full bg-white border border-borderlight rounded-xl px-4 py-3 text-xs text-charcoal-800 font-medium focus:border-gold-500 focus:outline-none transition-all custom-select shadow-sm"
           >
             <option value="">Any Configuration</option>
             <option value="3 BHK">3 BHK</option>
@@ -85,13 +85,13 @@ export default function SearchFilterBar({ className = "" }) {
 
         {/* Budget Filter */}
         <div>
-          <label className="block text-[11px] font-semibold text-gold-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
-            <DollarSign className="w-3.5 h-3.5 text-gold-500" /> Max Budget
+          <label className="block text-[11px] font-bold text-gold-700 uppercase tracking-widest mb-1.5 flex items-center gap-1">
+            <DollarSign className="w-3.5 h-3.5 text-gold-600" /> Max Budget
           </label>
           <select
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
-            className="w-full bg-charcoal-900 border border-slate-700/80 rounded-xl px-4 py-3 text-xs text-slate-200 focus:border-gold-500 focus:outline-none transition-all custom-select shadow-inner"
+            className="w-full bg-white border border-borderlight rounded-xl px-4 py-3 text-xs text-charcoal-800 font-medium focus:border-gold-500 focus:outline-none transition-all custom-select shadow-sm"
           >
             <option value="">Any Budget</option>
             <option value="30000000">Up to ₹ 3.0 Cr</option>
@@ -105,7 +105,7 @@ export default function SearchFilterBar({ className = "" }) {
         <div>
           <button
             type="submit"
-            className="w-full gold-button py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
+            className="w-full gold-button py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-transform active:scale-[0.98]"
           >
             <Search className="w-4 h-4" />
             <span>Search Properties</span>

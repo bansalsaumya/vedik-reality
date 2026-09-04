@@ -56,30 +56,30 @@ export default function EnquiryModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-950/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-lg glass-panel p-6 md:p-8 rounded-3xl border border-gold-500/40 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-white p-6 md:p-8 rounded-3xl border border-borderlight shadow-2xl overflow-hidden text-charcoal-800">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-slate-400 hover:text-gold-400 p-1.5 rounded-full hover:bg-charcoal-800 transition-colors"
+          className="absolute top-5 right-5 text-slate-400 hover:text-charcoal-800 p-1.5 rounded-full hover:bg-cream transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {submitted ? (
           <div className="text-center py-8 px-4 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-500/50 flex items-center justify-center mx-auto text-emerald-400">
+            <div className="w-16 h-16 rounded-full bg-emerald-100 border border-emerald-500/50 flex items-center justify-center mx-auto text-emerald-600">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-slate-100">Enquiry Received</h3>
-            <p className="text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-              Thank you, <strong className="text-gold-400">{formData.name}</strong>. Our senior luxury real estate advisor will contact you within 30 minutes.
+            <h3 className="font-serif text-2xl font-bold text-charcoal-800">Enquiry Received</h3>
+            <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed font-medium">
+              Thank you, <strong className="text-gold-700">{formData.name}</strong>. Our senior luxury real estate advisor will contact you within 30 minutes.
             </p>
             <div className="pt-4">
               <button
                 onClick={onClose}
-                className="gold-button px-8 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider"
+                className="gold-button px-8 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider shadow-md"
               >
                 Close Window
               </button>
@@ -88,19 +88,19 @@ export default function EnquiryModal({
         ) : (
           <div>
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-charcoal-900 border border-gold-500/30 text-[11px] text-gold-400 font-semibold tracking-wider uppercase mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold-500/40 text-[11px] text-gold-700 font-bold tracking-wider uppercase mb-2">
                 <ShieldCheck className="w-3.5 h-3.5" /> Verified Advisory
               </div>
-              <h3 className="font-serif text-2xl font-bold text-slate-100">
+              <h3 className="font-serif text-2xl font-bold text-charcoal-800">
                 {propertyTitle ? `Enquire: ${propertyTitle}` : 'Schedule Luxury Consultation'}
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-500 mt-1 font-medium">
                 Fill in your details below for private floor plans, pricing sheets, and site visits.
               </p>
             </div>
 
             {error && (
-              <div className="mb-4 p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-red-300 text-xs">
+              <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
                 {error}
               </div>
             )}
@@ -108,8 +108,8 @@ export default function EnquiryModal({
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Field */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1">
-                  <User className="w-3.5 h-3.5 text-gold-500" /> Full Name *
+                <label className="block text-xs font-semibold text-charcoal-800 mb-1 flex items-center gap-1">
+                  <User className="w-3.5 h-3.5 text-gold-600" /> Full Name *
                 </label>
                 <input
                   type="text"
@@ -117,14 +117,14 @@ export default function EnquiryModal({
                   placeholder="e.g. Ananya Roy"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                 />
               </div>
 
               {/* Phone Field */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-gold-500" /> Phone / WhatsApp *
+                <label className="block text-xs font-semibold text-charcoal-800 mb-1 flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5 text-gold-600" /> Phone / WhatsApp *
                 </label>
                 <input
                   type="tel"
@@ -132,49 +132,49 @@ export default function EnquiryModal({
                   placeholder="+91 98765 43210"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                 />
               </div>
 
               {/* Email Field */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1">
-                  <Mail className="w-3.5 h-3.5 text-gold-500" /> Email Address
+                <label className="block text-xs font-semibold text-charcoal-800 mb-1 flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5 text-gold-600" /> Email Address
                 </label>
                 <input
                   type="email"
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                 />
               </div>
 
               {/* Interested Property */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1">
-                  <Building className="w-3.5 h-3.5 text-gold-500" /> Interested Property / Requirement
+                <label className="block text-xs font-semibold text-charcoal-800 mb-1 flex items-center gap-1">
+                  <Building className="w-3.5 h-3.5 text-gold-600" /> Interested Property / Requirement
                 </label>
                 <input
                   type="text"
                   placeholder="e.g. 4 BHK Golf Course Road / Villa"
                   value={formData.property_title}
                   onChange={(e) => setFormData({ ...formData, property_title: e.target.value })}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-100 focus:border-gold-500 focus:outline-none"
+                  className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1">
-                  <MessageSquare className="w-3.5 h-3.5 text-gold-500" /> Additional Requirements / Notes
+                <label className="block text-xs font-semibold text-charcoal-800 mb-1 flex items-center gap-1">
+                  <MessageSquare className="w-3.5 h-3.5 text-gold-600" /> Additional Requirements / Notes
                 </label>
                 <textarea
                   rows="3"
                   placeholder="Specify budget, preferred site visit date, or financing inquiries..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-charcoal-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-100 focus:border-gold-500 focus:outline-none resize-none"
+                  className="w-full bg-white border border-borderlight rounded-xl px-4 py-2.5 text-xs text-charcoal-800 focus:border-gold-500 focus:outline-none resize-none"
                 />
               </div>
 
