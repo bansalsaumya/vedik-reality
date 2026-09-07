@@ -155,70 +155,66 @@ export default function Footer() {
             <h4 className="font-serif text-sm font-bold text-charcoal-800 uppercase tracking-wider mb-4 border-l-2 border-gold-500 pl-3">
               Corporate Office & Advisory
             </h4>
+            
             {settings.owners && (
-              <p className="flex items-center gap-2 text-slate-800 font-bold">
+              <p className="flex items-center gap-2 text-charcoal-800 font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
                 <span>Owners: <strong className="text-gold-700 font-bold">{settings.owners}</strong></span>
               </p>
             )}
             
             {/* Clickable Address Link to Google Maps */}
-            <p className="flex items-start gap-2 text-slate-700 leading-relaxed group">
-              <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 text-slate-700 leading-relaxed pt-1">
+              <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
               <a
                 href={mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Click to open Google Maps"
-                className="hover:text-amber-700 font-semibold underline decoration-amber-400/50 hover:decoration-amber-600 transition-all flex flex-col"
+                className="hover:text-gold-700 font-medium transition-colors"
               >
-                <span>{settings.address}</span>
-                <span className="text-[10px] text-amber-600 font-bold mt-0.5 flex items-center gap-0.5">
-                  📍 Click for Map Directions &rarr;
-                </span>
+                {settings.address}
               </a>
-            </p>
+            </div>
 
             {/* Clickable Phone & WhatsApp Links */}
-            <div className="flex items-start gap-2 text-slate-700 font-bold pt-1">
-              <Phone className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span className="flex flex-col gap-1">
+            <div className="flex items-start gap-2.5 text-slate-700 pt-1">
+              <Phone className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-1 font-semibold">
                 <a 
                   href="https://wa.me/919053848222?text=Hello%20Vedik%20Reality,%20I%20want%20property%20details%20in%20Dharuhera." 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-700 text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 transition-colors flex items-center justify-between gap-2"
+                  className="hover:text-gold-700 transition-colors"
                 >
-                  <span>Call / WhatsApp: +91 90538 48222</span>
-                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded font-sans">Chat</span>
+                  +91 90538 48222
                 </a>
                 <a 
                   href="https://wa.me/919728295353?text=Hello%20Vedik%20Reality,%20I%20want%20property%20details%20in%20Dharuhera." 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-700 text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 transition-colors flex items-center justify-between gap-2"
+                  className="hover:text-gold-700 transition-colors"
                 >
-                  <span>Call / WhatsApp: +91 97282 95353</span>
-                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded font-sans">Chat</span>
+                  +91 97282 95353
                 </a>
-              </span>
+              </div>
             </div>
 
             {/* Clickable Mailto Link */}
-            <p className="flex items-center gap-2 text-slate-700 pt-1">
+            <div className="flex items-center gap-2.5 text-slate-700 pt-1">
               <Mail className="w-4 h-4 text-gold-600 shrink-0" />
               <a 
                 href={`mailto:${settings.email}`} 
-                className="hover:text-gold-700 font-semibold underline decoration-gold-400/50 transition-colors"
+                className="hover:text-gold-700 font-semibold transition-colors"
               >
                 {settings.email}
               </a>
-            </p>
+            </div>
 
-            <p className="flex items-center gap-2 text-slate-600 pt-1">
+            <div className="flex items-center gap-2.5 text-slate-600 pt-1">
               <Clock className="w-4 h-4 text-gold-600 shrink-0" />
               <span>{settings.working_hours}</span>
-            </p>
+            </div>
           </div>
 
         </div>
