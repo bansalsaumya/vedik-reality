@@ -42,7 +42,7 @@ export default function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href={settings.facebook || "https://facebook.com/vedikreality"}
+                href={settings.facebook || "https://www.facebook.com/VedikRealty/"}
                 target="_blank"
                 rel="noreferrer"
                 title="Facebook Page"
