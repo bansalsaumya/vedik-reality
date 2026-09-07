@@ -16,8 +16,12 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-charcoal-800 group-hover:border-gold-500 transition-colors shadow-md">
-                <span className="font-serif text-xl font-bold gold-gradient-text">V</span>
+              <div className="w-11 h-11 rounded-full border border-gold-500/50 overflow-hidden bg-white group-hover:border-gold-500 transition-all shadow-md shrink-0 flex items-center justify-center p-0.5">
+                <img 
+                  src="/logo.jpg" 
+                  alt="Vedik Reality Logo" 
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold tracking-wider text-charcoal-800">
