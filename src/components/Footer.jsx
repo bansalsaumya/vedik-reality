@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <a
-                href={settings.instagram || "https://instagram.com/vedikreality"}
+                href={settings.instagram || "https://www.instagram.com/vedikrealty/"}
                 target="_blank"
                 rel="noreferrer"
                 title="Instagram Page"

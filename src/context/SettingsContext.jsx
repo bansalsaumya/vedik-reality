@@ -14,7 +14,7 @@ export const SettingsProvider = ({ children }) => {
     address: 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
     facebook: 'https://facebook.com/vedikreality',
-    instagram: 'https://instagram.com/vedikreality',
+    instagram: 'https://www.instagram.com/vedikrealty/',
     youtube: 'https://youtube.com/@vedikreality',
     google_map_link: 'https://maps.app.goo.gl/bpCUi761odoyA34B7'
   });
