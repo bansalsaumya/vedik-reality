@@ -73,7 +73,17 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-bold text-charcoal-800 text-xs uppercase tracking-wider">Office Address</h4>
-                  <p className="text-slate-600 text-xs leading-relaxed mt-0.5">{settings.address}</p>
+                  <a 
+                    href={settings.google_map_link || "https://maps.app.goo.gl/bpCUi761odoyA34B7"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-gold-700 text-xs leading-relaxed mt-0.5 block font-semibold transition-colors group"
+                  >
+                    {settings.address}
+                    <span className="block text-[11px] text-gold-700 font-bold mt-1 group-hover:underline flex items-center gap-1">
+                      📍 Open Location in Google Maps &rarr;
+                    </span>
+                  </a>
                 </div>
               </div>
 

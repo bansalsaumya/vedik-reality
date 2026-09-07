@@ -144,7 +144,14 @@ export default function Footer() {
             )}
             <p className="flex items-start gap-2 text-slate-700 leading-relaxed">
               <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
-              <span>{settings.address}</span>
+              <a
+                href={settings.google_map_link || "https://maps.app.goo.gl/bpCUi761odoyA34B7"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold-700 transition-colors"
+              >
+                {settings.address}
+              </a>
             </p>
             <p className="flex items-start gap-2 text-slate-700 font-bold">
               <Phone className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />

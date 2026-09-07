@@ -16,7 +16,7 @@ export const SettingsProvider = ({ children }) => {
     facebook: 'https://facebook.com/vedikreality',
     instagram: 'https://instagram.com/vedikreality',
     youtube: 'https://youtube.com/@vedikreality',
-    google_map_embed: ''
+    google_map_link: 'https://maps.app.goo.gl/bpCUi761odoyA34B7'
   });
 
   const fetchSettings = async () => {
