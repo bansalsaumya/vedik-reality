@@ -32,7 +32,7 @@ export default function BrochureDownloadModal({ isOpen, onClose, propertyOrProje
 
       // Trigger automatic sample PDF download after 1 second
       setTimeout(() => {
-        const dummyPdfContent = `VEDIK REALITY - OFFICIAL BROCHURE & PRICE LIST\n\nProject: ${formData.project}\nLocation: Sector 19, Dharuhera, Haryana - 123106\nOwners: Deepak Lamba & Manish\nContact: +91 90538 48222 / +91 97282 95353\nEmail: Vedikrealty@gmail.com\n\nThank you ${formData.name} for downloading! Our luxury plot specialists will contact you shortly with custom investment plans.`;
+        const dummyPdfContent = `VEDIK REALITY - OFFICIAL BROCHURE & PRICE LIST\n\nProject: ${formData.project}\nLocation: Sector 19, Dharuhera, Haryana - 123106\nOwners: Deepak Lamba & Manish\nContact: +91 90538 48222 / +91 97282 95353\nEmail: info.vedikrealty@gmail.com\n\nThank you ${formData.name} for downloading! Our luxury plot specialists will contact you shortly with custom investment plans.`;
         
         const blob = new Blob([dummyPdfContent], { type: 'text/plain;charset=utf-8' });
         const url = URL.createObjectURL(blob);

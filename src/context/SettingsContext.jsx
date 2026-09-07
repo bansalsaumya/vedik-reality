@@ -10,7 +10,7 @@ export const SettingsProvider = ({ children }) => {
     phone: '+91 90538 48222',
     alt_phone: '+91 97282 95353',
     whatsapp: '919053848222',
-    email: 'Vedikrealty@gmail.com',
+    email: 'info.vedikrealty@gmail.com',
     address: 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
     facebook: 'https://www.facebook.com/VedikRealty/',

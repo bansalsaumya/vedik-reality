@@ -10,7 +10,7 @@ const DEFAULT_NAP = {
   addressCountry: "IN",
   phone: "+91 90538 48222",
   altPhone: "+91 97282 95353",
-  email: "Vedikrealty@gmail.com"
+  email: "info.vedikrealty@gmail.com"
 };
 
 export default function SEO({
