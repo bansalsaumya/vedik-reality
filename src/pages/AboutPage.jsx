@@ -55,9 +55,9 @@ export default function AboutPage() {
 
           <div className="relative rounded-3xl overflow-hidden border border-borderlight shadow-xl aspect-[4/3] bg-cream">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
-              alt="Vedik Reality real estate office in Sector 19 Dharuhera"
-              className="w-full h-full object-cover"
+              src="/vedik-office.jpg"
+              alt="Vedik Reality real estate office building in Sector 19 Dharuhera"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
