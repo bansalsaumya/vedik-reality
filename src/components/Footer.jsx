@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube, ShieldCheck, ExternalLink } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 
 export default function Footer() {
   const { settings } = useSettings();
+
+  const mapUrl = settings.google_map_link || "https://maps.app.goo.gl/bpCUi761odoyA34B7";
 
   return (
     <footer className="bg-cream border-t border-borderlight text-slate-600 pt-16 pb-24 lg:pb-12">
@@ -27,39 +29,45 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              India's premier luxury real estate advisory. Providing verified luxury apartments, bespoke villas, commercial investments, and flagship developer projects.
+              Real estate advisory in Dharuhera & Sector 19. Providing verified residential plots, 2 BHK / 3 BHK flats, commercial SCO investments, and Anandam Awaas properties.
             </p>
             <div className="flex items-center space-x-3 pt-2">
-              {settings.instagram && (
-                <a
-                  href={settings.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-colors shadow-sm"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-              )}
-              {settings.facebook && (
-                <a
-                  href={settings.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-colors shadow-sm"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-              )}
-              {settings.youtube && (
-                <a
-                  href={settings.youtube}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-colors shadow-sm"
-                >
-                  <Youtube className="w-4 h-4" />
-                </a>
-              )}
+              <a
+                href={settings.instagram || "https://instagram.com/vedikreality"}
+                target="_blank"
+                rel="noreferrer"
+                title="Instagram Page"
+                className="p-2.5 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-all shadow-sm"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={settings.facebook || "https://facebook.com/vedikreality"}
+                target="_blank"
+                rel="noreferrer"
+                title="Facebook Page"
+                className="p-2.5 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-all shadow-sm"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href={settings.youtube || "https://youtube.com/@vedikreality"}
+                target="_blank"
+                rel="noreferrer"
+                title="YouTube Channel"
+                className="p-2.5 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-all shadow-sm"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="Google Maps Location"
+                className="p-2.5 rounded-full bg-white hover:bg-amber-600 hover:text-white text-amber-700 border border-borderlight transition-all shadow-sm flex items-center gap-1 text-xs font-bold"
+              >
+                <MapPin className="w-4 h-4 text-amber-600 hover:text-white" />
+              </a>
             </div>
           </div>
 
@@ -70,33 +78,33 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs font-semibold">
               <li>
-                <Link to="/properties" className="hover:text-gold-600 transition-colors">
-                  All Properties Listing
+                <Link to="/properties" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>All Properties Listing</span>
                 </Link>
               </li>
               <li>
-                <Link to="/properties?type=Apartment" className="hover:text-gold-600 transition-colors">
-                  Luxury High-Rise Apartments
+                <Link to="/properties?type=Residential%20Plot" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>Residential Plots in Dharuhera</span>
                 </Link>
               </li>
               <li>
-                <Link to="/properties?type=Villa" className="hover:text-gold-600 transition-colors">
-                  Bespoke Independent Villas
+                <Link to="/properties?type=Flats" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>2 BHK & 3 BHK Luxury Flats</span>
                 </Link>
               </li>
               <li>
-                <Link to="/properties?type=Commercial" className="hover:text-gold-600 transition-colors">
-                  Grade-A Commercial Offices
+                <Link to="/properties?type=Commercial" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>SCO Commercial Plots</span>
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-gold-600 transition-colors">
-                  Flagship Townships & Projects
+                <Link to="/projects" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>Flagship Projects & Anandam Awaas</span>
                 </Link>
               </li>
               <li>
-                <Link to="/locations" className="hover:text-gold-600 transition-colors">
-                  Prime Locations & Corridors
+                <Link to="/locations" className="hover:text-gold-600 transition-colors flex items-center gap-1">
+                  <span>Sector 19 & Prime Locations</span>
                 </Link>
               </li>
             </ul>
@@ -115,18 +123,29 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/services" className="hover:text-gold-600 transition-colors">
-                  NRI Luxury Property Desk
+                  NRI & Investor Property Advisory
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="hover:text-gold-600 transition-colors">
-                  Legal & RERA Advisory
+                  Legal Title & Registry Documentation
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-gold-600 transition-colors">
-                  Contact Advisory Team
+                  Contact Advisory Desk
                 </Link>
+              </li>
+              <li>
+                <a 
+                  href={mapUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-700 hover:underline flex items-center gap-1 pt-1 font-bold"
+                >
+                  <span>Google Maps Directions</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </li>
             </ul>
           </div>
@@ -142,34 +161,60 @@ export default function Footer() {
                 <span>Owners: <strong className="text-gold-700 font-bold">{settings.owners}</strong></span>
               </p>
             )}
-            <p className="flex items-start gap-2 text-slate-700 leading-relaxed">
-              <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
+            
+            {/* Clickable Address Link to Google Maps */}
+            <p className="flex items-start gap-2 text-slate-700 leading-relaxed group">
+              <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
               <a
-                href={settings.google_map_link || "https://maps.app.goo.gl/bpCUi761odoyA34B7"}
+                href={mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gold-700 transition-colors"
+                title="Click to open Google Maps"
+                className="hover:text-amber-700 font-semibold underline decoration-amber-400/50 hover:decoration-amber-600 transition-all flex flex-col"
               >
-                {settings.address}
+                <span>{settings.address}</span>
+                <span className="text-[10px] text-amber-600 font-bold mt-0.5 flex items-center gap-0.5">
+                  📍 Click for Map Directions &rarr;
+                </span>
               </a>
             </p>
-            <p className="flex items-start gap-2 text-slate-700 font-bold">
-              <Phone className="w-4 h-4 text-gold-600 shrink-0 mt-0.5" />
-              <span className="flex flex-col">
-                <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="hover:text-gold-700 transition-colors">
-                  {settings.phone}
+
+            {/* Clickable Phone & WhatsApp Links */}
+            <div className="flex items-start gap-2 text-slate-700 font-bold pt-1">
+              <Phone className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <span className="flex flex-col gap-1">
+                <a 
+                  href="https://wa.me/919053848222?text=Hello%20Vedik%20Reality,%20I%20want%20property%20details%20in%20Dharuhera." 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-700 text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 transition-colors flex items-center justify-between gap-2"
+                >
+                  <span>Call / WhatsApp: +91 90538 48222</span>
+                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded font-sans">Chat</span>
                 </a>
-                <a href={`tel:${(settings.alt_phone || '+91 97282 95353').replace(/\s+/g, '')}`} className="hover:text-gold-700 transition-colors">
-                  {settings.alt_phone || '+91 97282 95353'}
+                <a 
+                  href="https://wa.me/919728295353?text=Hello%20Vedik%20Reality,%20I%20want%20property%20details%20in%20Dharuhera." 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-700 text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 transition-colors flex items-center justify-between gap-2"
+                >
+                  <span>Call / WhatsApp: +91 97282 95353</span>
+                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded font-sans">Chat</span>
                 </a>
               </span>
-            </p>
-            <p className="flex items-center gap-2 text-slate-700">
+            </div>
+
+            {/* Clickable Mailto Link */}
+            <p className="flex items-center gap-2 text-slate-700 pt-1">
               <Mail className="w-4 h-4 text-gold-600 shrink-0" />
-              <a href={`mailto:${settings.email}`} className="hover:text-gold-700 transition-colors">
+              <a 
+                href={`mailto:${settings.email}`} 
+                className="hover:text-gold-700 font-semibold underline decoration-gold-400/50 transition-colors"
+              >
                 {settings.email}
               </a>
             </p>
+
             <p className="flex items-center gap-2 text-slate-600 pt-1">
               <Clock className="w-4 h-4 text-gold-600 shrink-0" />
               <span>{settings.working_hours}</span>
@@ -182,8 +227,8 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-medium gap-4">
           <p>© {new Date().getFullYear()} Vedik Reality. All Rights Reserved. Luxury Real Estate Digital Growth Platform.</p>
           <div className="flex items-center space-x-6">
-            <span className="hover:text-gold-600 transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-gold-600 transition-colors cursor-pointer">Terms & Conditions</span>
+            <Link to="/contact" className="hover:text-gold-600 transition-colors">Contact Us</Link>
+            <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">Site Map Location</a>
             <span className="text-emerald-700 flex items-center gap-1 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" /> RERA Compliance Ready
             </span>
