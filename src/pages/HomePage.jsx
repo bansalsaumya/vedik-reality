@@ -12,6 +12,8 @@ import SEO from '../components/SEO';
 import EmiCalculator from '../components/EmiCalculator';
 import DharuheraConnectivity from '../components/DharuheraConnectivity';
 import ReviewSubmissionModal from '../components/ReviewSubmissionModal';
+import BrochureDownloadModal from '../components/BrochureDownloadModal';
+import VirtualTourModal from '../components/VirtualTourModal';
 import { useSettings } from '../context/SettingsContext';
 
 import {
@@ -29,6 +31,8 @@ export default function HomePage() {
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [brochureModalOpen, setBrochureModalOpen] = useState(false);
+  const [virtualTourModalOpen, setVirtualTourModalOpen] = useState(false);
 
   useEffect(() => {
     const loadHomeData = async () => {
@@ -352,16 +356,44 @@ export default function HomePage() {
               <PhoneCall className="w-4 h-4" />
               <span>Request Private Consultation</span>
             </button>
+            <button
+              onClick={() => setBrochureModalOpen(true)}
+              className="w-full sm:w-auto px-8 py-3.5 bg-charcoal-900 text-amber-400 hover:bg-charcoal-800 border border-amber-500/30 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all"
+            >
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              <span>Download Rate & E-Brochure</span>
+            </button>
+            <button
+              onClick={() => setVirtualTourModalOpen(true)}
+              className="w-full sm:w-auto px-8 py-3.5 bg-white text-charcoal-900 hover:bg-cream border border-charcoal-200 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md transition-all"
+            >
+              <span>360° Virtual Site Tour</span>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Global Enquiry Modal */}
+      {/* Global Modals */}
       {enquiryModalOpen && (
         <EnquiryModal
           isOpen={enquiryModalOpen}
           onClose={() => setEnquiryModalOpen(false)}
           source="Homepage Hero & CTA"
+        />
+      )}
+
+      {brochureModalOpen && (
+        <BrochureDownloadModal
+          isOpen={brochureModalOpen}
+          onClose={() => setBrochureModalOpen(false)}
+          propertyOrProjectTitle="Anandam Awaas Sector 19 Master Brochure"
+        />
+      )}
+
+      {virtualTourModalOpen && (
+        <VirtualTourModal
+          isOpen={virtualTourModalOpen}
+          onClose={() => setVirtualTourModalOpen(false)}
         />
       )}
 
