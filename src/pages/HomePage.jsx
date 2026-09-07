@@ -2,18 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Building, MapPin, Sparkles, ShieldCheck, ArrowRight, PhoneCall,
-  TrendingUp, Award, Users, CheckCircle2, ChevronRight, Star
+  TrendingUp, Award, ChevronRight, Star
 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import SearchFilterBar from '../components/SearchFilterBar';
 import PropertyCard from '../components/PropertyCard';
 import EnquiryModal from '../components/EnquiryModal';
 import SEO from '../components/SEO';
-import EmiCalculator from '../components/EmiCalculator';
-import DharuheraConnectivity from '../components/DharuheraConnectivity';
-import ReviewSubmissionModal from '../components/ReviewSubmissionModal';
-import BrochureDownloadModal from '../components/BrochureDownloadModal';
-import VirtualTourModal from '../components/VirtualTourModal';
 import { useSettings } from '../context/SettingsContext';
 
 import {
@@ -27,28 +22,22 @@ export default function HomePage() {
   const [latestProperties, setLatestProperties] = useState(FALLBACK_PROPERTIES);
   const [projects, setProjects] = useState(FALLBACK_PROJECTS);
   const [locations, setLocations] = useState(FALLBACK_LOCATIONS);
-  const [services, setServices] = useState(FALLBACK_SERVICES);
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
-  const [reviewModalOpen, setReviewModalOpen] = useState(false);
-  const [brochureModalOpen, setBrochureModalOpen] = useState(false);
-  const [virtualTourModalOpen, setVirtualTourModalOpen] = useState(false);
 
   useEffect(() => {
     const loadHomeData = async () => {
       try {
-        const [propsRes, projRes, locRes, servRes, testRes] = await Promise.all([
+        const [propsRes, projRes, locRes, testRes] = await Promise.all([
           fetch('/api/properties?limit=10'),
           fetch('/api/projects?is_featured=1'),
           fetch('/api/locations'),
-          fetch('/api/services'),
           fetch('/api/testimonials')
         ]);
 
         const propsData = await propsRes.json();
         const projData = await projRes.json();
         const locData = await locRes.json();
-        const servData = await servRes.json();
         const testData = await testRes.json();
 
         if (propsData.properties && propsData.properties.length > 0) {
@@ -58,7 +47,6 @@ export default function HomePage() {
         }
         if (projData.projects && projData.projects.length > 0) setProjects(projData.projects);
         if (locData.locations && locData.locations.length > 0) setLocations(locData.locations);
-        if (servData.services && servData.services.length > 0) setServices(servData.services);
         if (testData.testimonials && testData.testimonials.length > 0) setTestimonials(testData.testimonials);
       } catch (err) {
         console.error('API load error, using fallbacks:', err);
@@ -137,17 +125,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. DHARUHERA CONNECTIVITY & DISTANCE GUIDE */}
-      <DharuheraConnectivity />
-
-      {/* 5. HOME LOAN EMI CALCULATOR */}
-      <section className="py-20 bg-ivory">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EmiCalculator defaultAmount={4500000} />
-        </div>
-      </section>
-
-      {/* 6. WHY CHOOSE VEDIK REALITY */}
+      {/* 4. WHY CHOOSE VEDIK REALITY */}
       <section className="py-20 bg-cream border-y border-borderlight relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -232,7 +210,7 @@ export default function HomePage() {
 
                 <div className="p-5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                    <MapPin className="w-3.5 h-3.5" />
                     <span>{proj.location}</span>
                   </div>
 
@@ -240,7 +218,7 @@ export default function HomePage() {
                     onClick={() => setEnquiryModalOpen(true)}
                     className="text-xs font-bold text-gold-700 hover:text-charcoal-800 uppercase tracking-wider flex items-center gap-1"
                   >
-                    <span>Brochure</span>
+                    <span>Enquire</span>
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -348,52 +326,24 @@ export default function HomePage() {
           <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-medium">
             Connect with senior real estate advisors for confidential guidance, private listings, and personalized site visits.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex justify-center">
             <button
               onClick={() => setEnquiryModalOpen(true)}
-              className="w-full sm:w-auto gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl"
+              className="gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl"
             >
               <PhoneCall className="w-4 h-4" />
               <span>Request Private Consultation</span>
-            </button>
-            <button
-              onClick={() => setBrochureModalOpen(true)}
-              className="w-full sm:w-auto px-8 py-3.5 bg-charcoal-900 text-amber-400 hover:bg-charcoal-800 border border-amber-500/30 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all"
-            >
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>Download Rate & E-Brochure</span>
-            </button>
-            <button
-              onClick={() => setVirtualTourModalOpen(true)}
-              className="w-full sm:w-auto px-8 py-3.5 bg-white text-charcoal-900 hover:bg-cream border border-charcoal-200 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md transition-all"
-            >
-              <span>360° Virtual Site Tour</span>
             </button>
           </div>
         </div>
       </section>
 
-      {/* Global Modals */}
+      {/* Global Enquiry Modal */}
       {enquiryModalOpen && (
         <EnquiryModal
           isOpen={enquiryModalOpen}
           onClose={() => setEnquiryModalOpen(false)}
           source="Homepage Hero & CTA"
-        />
-      )}
-
-      {brochureModalOpen && (
-        <BrochureDownloadModal
-          isOpen={brochureModalOpen}
-          onClose={() => setBrochureModalOpen(false)}
-          propertyOrProjectTitle="Anandam Awaas Sector 19 Master Brochure"
-        />
-      )}
-
-      {virtualTourModalOpen && (
-        <VirtualTourModal
-          isOpen={virtualTourModalOpen}
-          onClose={() => setVirtualTourModalOpen(false)}
         />
       )}
 
