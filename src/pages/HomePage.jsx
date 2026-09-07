@@ -9,6 +9,9 @@ import SearchFilterBar from '../components/SearchFilterBar';
 import PropertyCard from '../components/PropertyCard';
 import EnquiryModal from '../components/EnquiryModal';
 import SEO from '../components/SEO';
+import EmiCalculator from '../components/EmiCalculator';
+import DharuheraConnectivity from '../components/DharuheraConnectivity';
+import ReviewSubmissionModal from '../components/ReviewSubmissionModal';
 import { useSettings } from '../context/SettingsContext';
 
 import {
@@ -25,6 +28,7 @@ export default function HomePage() {
   const [services, setServices] = useState(FALLBACK_SERVICES);
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
 
   useEffect(() => {
     const loadHomeData = async () => {
@@ -104,10 +108,10 @@ export default function HomePage() {
                 <Sparkles className="w-3.5 h-3.5" /> Curated Collection
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800 tracking-tight">
-                Featured <span className="gold-gradient-text font-serif">Luxury Properties</span>
+                Featured <span className="gold-gradient-text font-serif">Properties in Dharuhera</span>
               </h2>
               <p className="mt-3 text-sm text-slate-600 max-w-xl font-medium">
-                Handpicked premium residential residences and high-yield commercial assets.
+                Handpicked residential plots, 2 BHK / 3 BHK flats, independent houses, and SCO commercial property.
               </p>
             </div>
 
@@ -129,7 +133,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE VEDIK REALITY */}
+      {/* 4. DHARUHERA CONNECTIVITY & DISTANCE GUIDE */}
+      <DharuheraConnectivity />
+
+      {/* 5. HOME LOAN EMI CALCULATOR */}
+      <section className="py-20 bg-ivory">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <EmiCalculator defaultAmount={4500000} />
+        </div>
+      </section>
+
+      {/* 6. WHY CHOOSE VEDIK REALITY */}
       <section className="py-20 bg-cream border-y border-borderlight relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -138,26 +152,23 @@ export default function HomePage() {
               <Award className="w-3.5 h-3.5" /> The Vedik Advantage
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800 tracking-tight">
-              Why Discerning Buyers <br />
-              <span className="gold-gradient-text font-serif">Trust Vedik Reality</span>
+              Why Discerning Buyers Choose <br />
+              <span className="gold-gradient-text font-serif">Vedik Reality</span>
             </h2>
-            <p className="mt-4 text-sm text-slate-600 font-medium">
-              We combine deep micro-market insight with ethical advisory to elevate your luxury real estate journey.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyChooseUsPillars.map((pillar, idx) => {
-              const IconComp = pillar.icon;
+              const Icon = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className="glass-card p-6 rounded-2xl border border-borderlight bg-white hover:border-gold-500 transition-all duration-300 group"
+                  className="glass-card p-8 rounded-3xl border border-borderlight bg-white hover:border-gold-500 transition-all duration-300 shadow-md hover:shadow-xl space-y-4"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-cream border border-borderlight flex items-center justify-center text-gold-700 mb-6 group-hover:scale-110 transition-transform">
-                    <IconComp className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-cream border border-borderlight flex items-center justify-center text-gold-700">
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-charcoal-800 mb-2 group-hover:text-gold-700 transition-colors">
+                  <h3 className="font-serif text-xl font-bold text-charcoal-800">
                     {pillar.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed font-medium">
