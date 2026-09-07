@@ -53,16 +53,16 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden border border-borderlight shadow-xl aspect-[4/3] bg-cream">
+          <div className="relative rounded-3xl overflow-hidden border border-borderlight shadow-xl aspect-[3/4] max-h-[580px] w-full mx-auto bg-charcoal-900">
             <img
               src="/vedik-office.jpg"
               alt="Vedik Reality real estate office building in Sector 19 Dharuhera"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <span className="text-xs text-gold-400 font-bold uppercase tracking-widest block mb-1">Sector 19 Dharuhera</span>
-              <p className="font-serif text-lg font-bold">Vedik Reality Real Estate Office</p>
+              <span className="text-xs text-gold-400 font-bold uppercase tracking-widest block mb-1">SCO-02, Sector 19 Dharuhera</span>
+              <p className="font-serif text-lg font-bold">Vedik Reality Headquarters</p>
             </div>
           </div>
         </div>
