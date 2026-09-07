@@ -51,15 +51,6 @@ export default function Footer() {
                 <Facebook className="w-4 h-4" />
               </a>
               <a
-                href={settings.youtube || "https://youtube.com/@vedikreality"}
-                target="_blank"
-                rel="noreferrer"
-                title="YouTube Channel"
-                className="p-2.5 rounded-full bg-white hover:bg-gold-500 hover:text-white text-charcoal-800 border border-borderlight transition-all shadow-sm"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a
                 href={mapUrl}
                 target="_blank"
                 rel="noreferrer"

@@ -15,7 +15,6 @@ export const SettingsProvider = ({ children }) => {
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
     facebook: 'https://www.facebook.com/VedikRealty/',
     instagram: 'https://www.instagram.com/vedikrealty/',
-    youtube: 'https://youtube.com/@vedikreality',
     google_map_link: 'https://maps.app.goo.gl/bpCUi761odoyA34B7'
   });
 
