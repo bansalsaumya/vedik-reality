@@ -46,11 +46,12 @@ export default function Navbar() {
           
           {/* Brand Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 rounded-full border border-gold-500/50 overflow-hidden bg-white group-hover:border-gold-500 transition-all shadow-md shrink-0 flex items-center justify-center p-0.5">
+            <div className="w-12 h-12 rounded-full border-2 border-gold-500/60 overflow-hidden bg-white group-hover:border-gold-500 transition-all shadow-md shrink-0 flex items-center justify-center p-0.5">
               <img 
-                src="/logo.jpg" 
+                src="/logo.png" 
                 alt="Vedik Reality Logo" 
                 className="w-full h-full object-cover rounded-full"
+                onError={(e) => { e.target.src = '/logo.jpg'; }}
               />
             </div>
             <div>
