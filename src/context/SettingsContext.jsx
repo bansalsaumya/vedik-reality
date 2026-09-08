@@ -4,7 +4,7 @@ const SettingsContext = createContext();
 
 export const SettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState({
-    business_name: 'Vedik Reality',
+    business_name: 'Vedik Realty',
     owners: 'Deepak Lamba, Manish',
     tagline: 'Luxury Estates & Thoughtfully Selected Properties',
     phone: '+91 90538 48222',

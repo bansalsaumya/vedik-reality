@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold tracking-wider text-charcoal-800">
-                  VEDIK <span className="gold-gradient-text font-normal">REALITY</span>
+                  VEDIK <span className="gold-gradient-text font-normal">REALTY</span>
                 </span>
                 <p className="text-[10px] tracking-widest text-slate-500 uppercase -mt-1 font-semibold">
                   LUXURY ESTATES

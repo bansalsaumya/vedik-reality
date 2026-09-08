@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const DEFAULT_NAP = {
-  name: "Vedik Reality",
+  name: "Vedik Realty",
   owners: "Deepak Lamba, Manish",
   address: "First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106",
   addressLocality: "Dharuhera",
@@ -14,8 +14,8 @@ const DEFAULT_NAP = {
 };
 
 export default function SEO({
-  title = "Vedik Reality | Property Dealer & Real Estate Agent in Dharuhera",
-  description = "Vedik Reality is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.",
+  title = "Vedik Realty | Property Dealer & Real Estate Agent in Dharuhera",
+  description = "Vedik Realty is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.",
   keywords = "Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Properties for Sale in Dharuhera, Real Estate Company in Dharuhera, Property Consultant in Dharuhera, Flats for Sale in Dharuhera, Plots for Sale in Dharuhera, Commercial Property in Dharuhera, Sector 19 Dharuhera",
   url = typeof window !== 'undefined' ? window.location.href : 'https://vedik-reality.vercel.app',
   image = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
