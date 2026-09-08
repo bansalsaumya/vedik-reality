@@ -51,7 +51,7 @@ export default function FloatingContactWidget({ onEnquireClick }) {
             <div className="py-4 space-y-3 text-xs font-medium text-slate-600">
               <p className="flex items-center justify-between bg-cream/70 p-2.5 rounded-xl border border-borderlight text-slate-700">
                 <span className="font-semibold text-charcoal-800">Owners & Advisory:</span>
-                <strong className="text-gold-700 font-bold">{settings.owners || 'Deepak Lamba, Manish'}</strong>
+                <strong className="text-gold-700 font-bold">{settings.owners || 'Manish, Deepak Lamba'}</strong>
               </p>
 
               <div className="space-y-2 pt-1">
