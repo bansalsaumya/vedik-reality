@@ -19,6 +19,9 @@ export default function ContactPage() {
         body: JSON.stringify({ ...formData, source: 'Contact Us Page' })
       });
       setSubmitted(true);
+      // Safely open WhatsApp with pre-filled lead info to user's number (+91 90538 48222)
+      const msg = encodeURIComponent(`Hi Vedik Realty! New Contact Form Lead:\n\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n📧 Email: ${formData.email || 'N/A'}\n💬 Message: ${formData.message || 'I have a property query.'}`);
+      window.open(`https://wa.me/919053848222?text=${msg}`, '_blank');
     } catch (err) {
       console.error(err);
     } finally {
