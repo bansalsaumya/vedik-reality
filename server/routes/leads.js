@@ -70,8 +70,8 @@ router.post('/', async (req, res) => {
       ]
     );
 
-    // Send instant background email alert
-    sendEmailLeadNotification({ name, phone, email, property_title, message, source });
+    // Send instant email alert (awaited for serverless runtime completion)
+    await sendEmailLeadNotification({ name, phone, email, property_title, message, source });
 
     // Track analytics lead event
     await db.run(
