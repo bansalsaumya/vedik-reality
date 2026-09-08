@@ -45,9 +45,6 @@ export default function EnquiryModal({
       const data = await res.json();
       if (res.ok) {
         setSubmitted(true);
-        // Safely open WhatsApp with pre-filled lead info to user's number (+91 90538 48222)
-        const msg = encodeURIComponent(`Hi Vedik Realty! New Website Lead:\n\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n📧 Email: ${formData.email || 'N/A'}\n📍 Interest: ${formData.property_title || source}\n💬 Message: ${formData.message || 'I am interested in site visit / pricing.'}`);
-        window.open(`https://wa.me/919053848222?text=${msg}`, '_blank');
       } else {
         setError(data.error || 'Failed to submit enquiry. Please try again.');
       }
