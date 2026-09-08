@@ -1,8 +1,49 @@
 import express from 'express';
+import nodemailer from 'nodemailer';
 import { getDb } from '../db.js';
 import { authenticateAdmin } from '../middleware/auth.js';
 
 const router = express.Router();
+
+// Helper to send instant Email Alert to Owner
+const sendEmailLeadNotification = async (leadData) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com',
+        pass: process.env.NOTIFICATION_EMAIL_PASS || ''
+      }
+    });
+
+    const mailOptions = {
+      from: `"Vedik Realty Lead Alert" <${process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com'}>`,
+      to: 'info.vedikrealty@gmail.com',
+      subject: `🚨 NEW LEAD ALERT: ${leadData.name} - ${leadData.phone}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #FAF7F2; border: 1px solid #C59B27; border-radius: 12px;">
+          <h2 style="color: #1A1A1A; margin-top: 0;">🏡 New Lead Submitted on Vedik Realty Website</h2>
+          <hr style="border: 0; border-top: 1px solid #C59B27;" />
+          <p><strong>Customer Name:</strong> ${leadData.name}</p>
+          <p><strong>Mobile Number:</strong> <a href="tel:${leadData.phone}">${leadData.phone}</a></p>
+          <p><strong>Email Address:</strong> ${leadData.email || 'N/A'}</p>
+          <p><strong>Property Interest:</strong> ${leadData.property_title || 'General Property Inquiry'}</p>
+          <p><strong>Inquiry Source:</strong> ${leadData.source || 'Website'}</p>
+          <p><strong>Customer Message:</strong> ${leadData.message || 'No additional message.'}</p>
+          <hr style="border: 0; border-top: 1px solid #eee;" />
+          <p style="font-size: 11px; color: #666;">This is an automated instant alert from your Vedik Realty website system.</p>
+        </div>
+      `
+    };
+
+    if (process.env.NOTIFICATION_EMAIL_PASS) {
+      await transporter.sendMail(mailOptions);
+      console.log('Instant Lead Email Notification sent to info.vedikrealty@gmail.com');
+    }
+  } catch (err) {
+    console.error('Email alert error:', err.message);
+  }
+};
 
 // CREATE Lead (Public form submission)
 router.post('/', async (req, res) => {
@@ -29,6 +70,9 @@ router.post('/', async (req, res) => {
         'Lead submitted via website'
       ]
     );
+
+    // Send instant background email alert
+    sendEmailLeadNotification({ name, phone, email, property_title, message, source });
 
     // Track analytics lead event
     await db.run(
