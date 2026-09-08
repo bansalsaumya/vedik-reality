@@ -8,16 +8,17 @@ const router = express.Router();
 // Helper to send instant Email Alert to Owner
 const sendEmailLeadNotification = async (leadData) => {
   try {
+    const appPassword = process.env.NOTIFICATION_EMAIL_PASS || 'fwumrtvllaszldon';
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com',
-        pass: process.env.NOTIFICATION_EMAIL_PASS || ''
+        pass: appPassword
       }
     });
 
     const mailOptions = {
-      from: `"Vedik Realty Lead Alert" <${process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com'}>`,
+      from: `"Vedik Realty Lead Alert" <info.vedikrealty@gmail.com>`,
       to: 'info.vedikrealty@gmail.com',
       subject: `🚨 NEW LEAD ALERT: ${leadData.name} - ${leadData.phone}`,
       html: `
@@ -36,10 +37,8 @@ const sendEmailLeadNotification = async (leadData) => {
       `
     };
 
-    if (process.env.NOTIFICATION_EMAIL_PASS) {
-      await transporter.sendMail(mailOptions);
-      console.log('Instant Lead Email Notification sent to info.vedikrealty@gmail.com');
-    }
+    await transporter.sendMail(mailOptions);
+    console.log('Instant Lead Email Notification sent to info.vedikrealty@gmail.com');
   } catch (err) {
     console.error('Email alert error:', err.message);
   }
