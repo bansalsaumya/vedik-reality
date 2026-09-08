@@ -39,8 +39,31 @@ const sendEmailLeadNotification = async (leadData) => {
 
     await transporter.sendMail(mailOptions);
     console.log('Instant Lead Email Notification sent to info.vedikrealty@gmail.com');
+// Helper to send instant Text SMS Alert to Mobile Phone (+91 90538 48222)
+const sendSmsLeadNotification = async (leadData) => {
+  try {
+    const smsApiKey = process.env.FAST2SMS_API_KEY;
+    if (!smsApiKey) return;
+
+    const messageText = `Vedik Realty Lead: ${leadData.name} (${leadData.phone}) interested in ${leadData.property_title || 'Property'}. Source: ${leadData.source}`;
+    
+    await fetch('https://www.fast2sms.com/dev/bulkV2', {
+      method: 'POST',
+      headers: {
+        'authorization': smsApiKey,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        route: 'q',
+        message: messageText,
+        language: 'english',
+        flash: 0,
+        numbers: '9053848222'
+      })
+    });
+    console.log('Instant Lead SMS Alert sent to +91 90538 48222');
   } catch (err) {
-    console.error('Email alert error:', err.message);
+    console.error('SMS alert error:', err.message);
   }
 };
 
@@ -70,8 +93,11 @@ router.post('/', async (req, res) => {
       ]
     );
 
-    // Send instant email alert (awaited for serverless runtime completion)
-    await sendEmailLeadNotification({ name, phone, email, property_title, message, source });
+    // Send instant email & SMS alerts
+    await Promise.allSettled([
+      sendEmailLeadNotification({ name, phone, email, property_title, message, source }),
+      sendSmsLeadNotification({ name, phone, email, property_title, message, source })
+    ]);
 
     // Track analytics lead event
     await db.run(
