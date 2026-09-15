@@ -100,11 +100,11 @@ router.post('/', async (req, res) => {
       ]
     );
 
-    // Send instant email & SMS alerts
-    await Promise.allSettled([
+    // Send instant email & SMS alerts asynchronously in background
+    Promise.allSettled([
       sendEmailLeadNotification({ name, phone, email, property_title, message, source }),
       sendSmsLeadNotification({ name, phone, email, property_title, message, source })
-    ]);
+    ]).catch(err => console.error('Alert background error:', err));
 
     // Track analytics lead event
     await db.run(
