@@ -90,11 +90,15 @@ router.post('/', async (req, res) => {
       ]
     );
 
-    // Send instant email & SMS alerts asynchronously in background
-    Promise.allSettled([
-      sendEmailLeadNotification({ name, phone, email, property_title, message, source }),
-      sendSmsLeadNotification({ name, phone, email, property_title, message, source })
-    ]).catch(err => console.error('Alert background error:', err));
+    // Send instant email alert synchronously to ensure delivery before Vercel serverless terminates
+    try {
+      await sendEmailLeadNotification({ name, phone, email, property_title, message, source });
+    } catch (e) {
+      console.error('Email notification error:', e);
+    }
+
+    // Trigger SMS asynchronously
+    sendSmsLeadNotification({ name, phone, email, property_title, message, source }).catch(err => console.error('SMS error:', err));
 
     // Track analytics lead event
     await db.run(
