@@ -42,12 +42,11 @@ const sendEmailLeadNotification = async (leadData) => {
 // Helper to send instant Text SMS Alert to Mobile Phone (+91 90538 48222)
 const sendSmsLeadNotification = async (leadData) => {
   try {
-    const smsApiKey = process.env.FAST2SMS_API_KEY;
-    if (!smsApiKey) return;
+    const smsApiKey = process.env.FAST2SMS_API_KEY || 'Q6yxpVU3Jme8TNaj7vWsI1io5grbu9HLOD4KcG0zqFnXdCPkBRi8XkShRw7Gc1jKQVrgJyFo2esNxpD9';
 
     const messageText = `Vedik Realty Lead: ${leadData.name} (${leadData.phone}) interested in ${leadData.property_title || 'Property'}. Source: ${leadData.source}`;
     
-    await fetch('https://www.fast2sms.com/dev/bulkV2', {
+    const response = await fetch('https://www.fast2sms.com/dev/bulkV2', {
       method: 'POST',
       headers: {
         'authorization': smsApiKey,
@@ -61,7 +60,8 @@ const sendSmsLeadNotification = async (leadData) => {
         numbers: '9053848222'
       })
     });
-    console.log('Instant Lead SMS Alert sent to +91 90538 48222');
+    const resData = await response.json();
+    console.log('Instant Lead SMS Alert status:', resData);
   } catch (err) {
     console.error('SMS alert error:', err.message);
   }
