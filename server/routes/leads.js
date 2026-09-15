@@ -10,7 +10,9 @@ const sendEmailLeadNotification = async (leadData) => {
   try {
     const appPassword = process.env.NOTIFICATION_EMAIL_PASS || 'fwumrtvllaszldon';
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com',
         pass: appPassword
@@ -37,8 +39,13 @@ const sendEmailLeadNotification = async (leadData) => {
       `
     };
 
-    await transporter.sendMail(mailOptions);
-    console.log('Instant Lead Email Notification sent to info.vedikrealty@gmail.com');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Instant Lead Email Notification sent:', info.messageId);
+  } catch (err) {
+    console.error('Email alert error:', err);
+  }
+};
+
 // Helper to send instant Text SMS Alert to Mobile Phone (+91 90538 48222)
 const sendSmsLeadNotification = async (leadData) => {
   try {
