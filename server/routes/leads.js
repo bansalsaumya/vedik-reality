@@ -10,12 +10,13 @@ const sendEmailLeadNotification = async (leadData) => {
   try {
     const appPassword = process.env.NOTIFICATION_EMAIL_PASS || 'fwumrtvllaszldon';
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+      service: 'gmail',
       auth: {
         user: process.env.NOTIFICATION_EMAIL || 'info.vedikrealty@gmail.com',
         pass: appPassword
+      },
+      tls: {
+        rejectUnauthorized: false
       }
     });
 
