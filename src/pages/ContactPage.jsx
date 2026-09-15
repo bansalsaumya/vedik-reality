@@ -136,7 +136,7 @@ export default function ContactPage() {
                 <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto" />
                 <h3 className="font-serif text-2xl font-bold text-charcoal-800">Message Sent</h3>
                 <p className="text-xs text-slate-600 font-medium max-w-sm mx-auto">
-                  Thank you for reaching out to Vedik Reality. Our senior advisor will get back to you shortly.
+                  Thank you for reaching out to Vedik Realty. Our senior advisor will get back to you shortly.
                 </p>
               </div>
             ) : (
