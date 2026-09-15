@@ -51,9 +51,9 @@ const sendSmsLeadNotification = async (leadData) => {
   try {
     const smsApiKey = process.env.FAST2SMS_API_KEY || 'Q6yxpVU3Jme8TNaj7vWsI1io5grbu9HLOD4KcG0zqFnXdCPkBRi8XkShRw7Gc1jKQVrgJyFo2esNxpD9';
 
-    // Send via Fast2SMS Quick SMS API (supports GET & POST)
-    const cleanMsg = encodeURIComponent(`Vedik Realty Lead: ${leadData.name} (${leadData.phone}) interested in ${leadData.property_title || 'Property'}`);
-    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=${smsApiKey}&route=q&message=${cleanMsg}&flash=0&numbers=9053848222`;
+    // Send via Fast2SMS Transactional OTP Route (Overrides DND & guarantees instant delivery)
+    const otpMsg = `${leadData.name}-${leadData.phone}`;
+    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=${smsApiKey}&route=otp&variables_values=${encodeURIComponent(otpMsg)}&flash=0&numbers=9053848222`;
     
     const response = await fetch(url);
     const resData = await response.json();
