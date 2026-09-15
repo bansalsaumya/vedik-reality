@@ -90,15 +90,18 @@ router.post('/', async (req, res) => {
       ]
     );
 
-    // Send instant email alert synchronously to ensure delivery before Vercel serverless terminates
+    // Send instant email & SMS alerts synchronously before Vercel serverless terminates
     try {
       await sendEmailLeadNotification({ name, phone, email, property_title, message, source });
     } catch (e) {
       console.error('Email notification error:', e);
     }
 
-    // Trigger SMS asynchronously
-    sendSmsLeadNotification({ name, phone, email, property_title, message, source }).catch(err => console.error('SMS error:', err));
+    try {
+      await sendSmsLeadNotification({ name, phone, email, property_title, message, source });
+    } catch (e) {
+      console.error('SMS notification error:', e);
+    }
 
     // Track analytics lead event
     await db.run(
