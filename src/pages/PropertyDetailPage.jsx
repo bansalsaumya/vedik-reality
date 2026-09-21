@@ -81,6 +81,12 @@ export default function PropertyDetailPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
+      <SEO
+        title={`${property.title} in Dharuhera | Vedik Realty`}
+        description={`${property.title} located at ${property.location}. Price: ${property.price}. RERA & Title clear property investment near Delhi NCR & Gurugram.`}
+        keywords={`${property.title}, Plots for sale in Dharuhera, Property in ${property.location}, Buy property in Dharuhera`}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Back Link */}
