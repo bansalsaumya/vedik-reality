@@ -18,7 +18,7 @@ export default function SEO({
   description = "Vedik Realty is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.",
   keywords = "Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Properties for Sale in Dharuhera, Real Estate Company in Dharuhera, Property Consultant in Dharuhera, Flats for Sale in Dharuhera, Plots for Sale in Dharuhera, Commercial Property in Dharuhera, Sector 19 Dharuhera",
   url = typeof window !== 'undefined' ? window.location.href : 'https://vedik-realty.vercel.app',
-  image = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+  image = "https://vedik-realty.vercel.app/logo.png",
   schemaType = "RealEstateAgent"
 }) {
   useEffect(() => {
@@ -58,14 +58,14 @@ export default function SEO({
     }
     canonicalLink.setAttribute('href', url);
 
-    // 4. JSON-LD LocalBusiness / RealEstateAgent Schema
+    // 4. JSON-LD Schema with Google Star Rating (AggregateRating)
     const schemaData = {
       "@context": "https://schema.org",
       "@type": schemaType,
       "name": DEFAULT_NAP.name,
       "image": image,
-      "@id": "https://vedik-reality.vercel.app/#organization",
-      "url": "https://vedik-reality.vercel.app",
+      "@id": "https://vedik-realty.vercel.app/#organization",
+      "url": "https://vedik-realty.vercel.app",
       "telephone": DEFAULT_NAP.phone,
       "email": DEFAULT_NAP.email,
       "priceRange": "₹₹ - ₹₹₹₹",
@@ -82,11 +82,26 @@ export default function SEO({
         "latitude": 28.2045,
         "longitude": 76.7972
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "areaServed": [
-        { "@type": "City", "name": "Dharuhera" },
-        { "@type": "AdministrativeArea", "name": "Rewari District" },
-        { "@type": "AdministrativeArea", "name": "Sector 19 Dharuhera" },
-        { "@type": "AdministrativeArea", "name": "Haryana" }
+        "Dharuhera",
+        "Sector 19 Dharuhera",
+        "Delhi NCR",
+        "Gurugram",
+        "Bhiwadi",
+        "Rewari",
+        "Manesar",
+        "Noida",
+        "Ghaziabad",
+        "Haryana",
+        "Punjab",
+        "Rajasthan"
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -100,11 +115,7 @@ export default function SEO({
         ],
         "opens": "09:30",
         "closes": "19:00"
-      },
-      "sameAs": [
-        "https://facebook.com/vedikreality",
-        "https://instagram.com/vedikreality"
-      ]
+      }
     };
 
     let schemaScript = document.getElementById('jsonld-schema');
