@@ -25,6 +25,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Investor Guide', path: '/invest-in-dharuhera' },
     { name: 'Properties', path: '/properties' },
     { name: 'Projects', path: '/projects' },
     { name: 'Locations', path: '/locations' },

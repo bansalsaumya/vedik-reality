@@ -14,6 +14,7 @@ import LocationsPage from './pages/LocationsPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import InvestorGuidePage from './pages/InvestorGuidePage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 
@@ -28,6 +29,8 @@ export default function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/invest-in-dharuhera" element={<InvestorGuidePage />} />
+          <Route path="/investor-guide" element={<InvestorGuidePage />} />
           <Route path="/properties" element={<PropertiesPage />} />
           <Route path="/properties/:slugOrId" element={<PropertyDetailPage />} />
           <Route path="/projects" element={<ProjectsPage />} />

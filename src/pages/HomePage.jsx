@@ -77,9 +77,9 @@ export default function HomePage() {
   return (
     <div className="space-y-0 bg-ivory text-charcoal-800 font-sans">
       <SEO
-        title="Vedik Reality | Property Dealer & Real Estate Agent in Dharuhera"
-        description="Vedik Reality is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance."
-        keywords="Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Properties for Sale in Dharuhera, Real Estate Company in Dharuhera, Property Consultant in Dharuhera, Buy Property in Dharuhera, Sell Property in Dharuhera, Best Property Dealer in Dharuhera, Real Estate Consultant Dharuhera, Sector 19 Dharuhera, Anandam Awaas Dharuhera, Plots for Sale in Dharuhera, Flats for Sale in Dharuhera"
+        title="Vedik Realty | Property Investment in Dharuhera Near Delhi NCR & Gurugram"
+        description="Vedik Realty is the top real estate agent & property dealer in Dharuhera. Find plots for sale in Dharuhera for investors, residential plots, commercial SCO property & 2/3 BHK flats near Delhi NCR & Gurugram."
+        keywords="Plots for Sale in Dharuhera for Investors, Property Investment in Dharuhera, Residential Plots in Dharuhera, Plots Near Delhi NCR, Property Investment Near Gurugram, Dharuhera Property for Delhi Buyers, Dharuhera Property for NCR Investors, Investment Property in Haryana, Plots Near Bhiwadi, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera"
       />
       
       {/* 1. HERO SLIDER */}
@@ -88,6 +88,34 @@ export default function HomePage() {
       {/* 2. FLOATING SEARCH FILTER BAR */}
       <section className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 mb-20">
         <SearchFilterBar />
+      </section>
+
+      {/* OUT-OF-STATE & DELHI NCR INVESTOR HUB BANNER */}
+      <section className="py-12 bg-gradient-to-r from-charcoal-950 via-charcoal-900 to-charcoal-950 text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-3 max-w-2xl text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs font-bold uppercase tracking-wider">
+              <TrendingUp className="w-3.5 h-3.5 text-gold-400" />
+              <span>Out-of-State & Delhi NCR Investor Zone</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+              Looking for High ROI Plots in Dharuhera Near Gurugram & Delhi NCR?
+            </h2>
+            <p className="text-xs sm:text-sm text-charcoal-300 leading-relaxed font-light">
+              Get verified residential plots & SCO commercial land at 1/4th of Gurugram property rates. High capital appreciation & complete legal title assistance.
+            </p>
+          </div>
+
+          <div className="shrink-0">
+            <Link
+              to="/invest-in-dharuhera"
+              className="px-6 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-charcoal-950 font-bold rounded-xl shadow-lg transition duration-300 flex items-center space-x-2 text-xs uppercase tracking-wider"
+            >
+              <span>Explore Investor Guide</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* 3. FEATURED PROPERTIES SECTION */}

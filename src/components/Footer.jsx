@@ -74,6 +74,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs font-semibold">
               <li>
+                <Link to="/invest-in-dharuhera" className="text-gold-600 hover:text-gold-700 font-bold transition-colors flex items-center gap-1">
+                  <span>★ Investor Guide (Delhi NCR Buyers)</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/properties" className="hover:text-gold-600 transition-colors flex items-center gap-1">
                   <span>All Properties Listing</span>
                 </Link>
