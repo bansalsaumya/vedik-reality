@@ -6,6 +6,8 @@ import StickyMobileBar from './components/StickyMobileBar';
 import EnquiryModal from './components/EnquiryModal';
 import FloatingContactWidget from './components/FloatingContactWidget';
 
+import ScrollToTop from './components/ScrollToTop';
+
 // Route Code Splitting for 5x Faster Initial Page Load
 const HomePage = lazy(() => import('./pages/HomePage'));
 const PropertiesPage = lazy(() => import('./pages/PropertiesPage'));
@@ -31,6 +33,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-ivory text-charcoal-800 font-sans selection:bg-gold-500 selection:text-white">
+      <ScrollToTop />
 
       <Navbar />
 
