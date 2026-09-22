@@ -24,6 +24,8 @@ router.get('/', async (req, res) => {
 
     query += ` ORDER BY id DESC`;
 
+    const projects = await db.all(query, params);
+
     const formatted = projects.map(pr => {
       let parsedAmenities = [];
       let parsedImages = [];

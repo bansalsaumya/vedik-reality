@@ -177,13 +177,13 @@ async function initDb(db) {
 
   // Seed Locations if empty
   const locCount = await db.get(`SELECT COUNT(*) as count FROM locations`);
+  // Seed Locations if empty
+  const locCount = await db.get(`SELECT COUNT(*) as count FROM locations`);
   if (locCount.count === 0) {
     const seedLocations = [
-      ['Golf Course Road, Gurgaon', 'golf-course-road-gurgaon', 12, 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80', 'India’s most sought-after ultra-luxury residential corridor.'],
-      ['Southern Peripheral Road (SPR)', 'spr-gurgaon', 8, 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80', 'High growth investment zone with modern high-rises and townships.'],
-      ['Dwarka Expressway', 'dwarka-expressway', 15, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'Seamless connectivity to Delhi Airport and IGI corridor.'],
-      ['Noida Expressway', 'noida-expressway', 9, 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', 'Prime commercial hubs, IT parks, and luxury townships.'],
-      ['Golf Course Extension Road', 'golf-course-extension', 11, 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80', 'Cosmopolitan living with world-class golf amenities and schools.']
+      ['Sector 19 & 24 Dharuhera', 'sector-19-24-dharuhera', 35, '/anandam/gate.jpg', 'Home to Anandam Awaas & Anandam Estate 71-acre township.'],
+      ['Anandam Awaas Township', 'anandam-awaas-dharuhera', 28, '/anandam/housing.jpg', 'Premium gated residential township by MGH offering plots from 72 to 519 Sq.Yds.'],
+      ['NH-48 Dharuhera Corridor', 'nh48-dharuhera-corridor', 20, '/anandam/park.jpg', 'Strategic highway location with direct access to Delhi, Gurgaon & Rewari.']
     ];
     for (const loc of seedLocations) {
       await db.run(
@@ -198,131 +198,43 @@ async function initDb(db) {
   if (propCount.count === 0) {
     const seedProps = [
       {
-        slug: 'the-vedik-pinnacle-residences',
-        title: 'The Vedik Pinnacle Residences',
-        type: 'Apartment',
-        category: 'Sale',
-        price: '₹ 4.85 Cr',
-        price_numeric: 48500000,
-        location: 'Golf Course Road, Gurgaon',
-        address: 'Sector 54, Golf Course Road, Gurugram',
-        bhk: '4 BHK + Servant',
-        area: '3,850 Sq.Ft.',
-        status: 'Available',
-        is_featured: 1,
-        description: 'An architectural masterpiece overlooking the lush green golf courses. Features private elevator access, 11-ft ceiling heights, wraparound balconies, and automated smart home controls.',
-        amenities: JSON.stringify(['Private Elevator', 'Golf View Balcony', 'Olympic Size Pool', 'Concierge Desk', 'Clubhouse & Spa', 'Smart Automation', '3 Tier Security', 'EV Charging']),
-        images: JSON.stringify([
-          'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=80'
-        ]),
-        video_url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        rera_number: 'HRERA-GGM-2024-891',
-        builder_name: 'Vedik Infrastructure Developers',
-        meta_title: 'The Vedik Pinnacle Residences | 4 BHK Luxury Apartment Golf Course Road',
-        meta_description: 'Buy 4 BHK luxury apartment on Golf Course Road Gurgaon. Private elevator, golf course view, luxury clubhouse amenities.'
-      },
-      {
-        slug: 'aurum-palace-villas',
-        title: 'Aurum Palace Luxury Estate Villa',
-        type: 'Villa',
-        category: 'Sale',
-        price: '₹ 9.50 Cr',
-        price_numeric: 95000000,
-        location: 'Golf Course Extension, Gurgaon',
-        address: 'Sector 66, Golf Course Extension, Gurugram',
-        bhk: '5 BHK Villa',
-        area: '6,200 Sq.Ft.',
-        status: 'Available',
-        is_featured: 1,
-        description: 'Exquisite independent villa situated in an ultra-exclusive gated estate. Comes with private swimming pool, landscaped manicured lawn, rooftop sundeck, and custom Italian marble interiors.',
-        amenities: JSON.stringify(['Private Heated Pool', 'Private Garden', 'Terrace Lounge', 'Italian Marble Flooring', 'Modular German Kitchen', '4 Car Covered Parking', 'Solar Energy Backed']),
-        images: JSON.stringify([
-          'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80'
-        ]),
-        video_url: '',
-        rera_number: 'HRERA-GGM-2023-412',
-        builder_name: 'Aurum Luxury Living',
-        meta_title: 'Aurum Palace Luxury Villa Gurgaon | 5 BHK Private Pool Estate',
-        meta_description: 'Explore 5 BHK Independent luxury villa with private pool, private garden on Golf Course Extension Road Gurgaon.'
-      },
-      {
-        slug: 'cyber-horizon-commercial-suites',
-        title: 'Cyber Horizon Grade-A Commercial Tower',
-        type: 'Commercial',
-        category: 'Sale',
-        price: '₹ 2.10 Cr',
-        price_numeric: 21000000,
-        location: 'Southern Peripheral Road (SPR)',
-        address: 'Sector 70, SPR Corridor, Gurugram',
-        bhk: 'Commercial Office Space',
-        area: '1,450 Sq.Ft.',
-        status: 'Available',
-        is_featured: 1,
-        description: 'Grade-A LEED Gold Certified commercial office suite offering high rental yields and guaranteed corporate tenancy. Double height entrance lobby with high-speed elevators.',
-        amenities: JSON.stringify(['LEED Gold Certified', '100% Power Backup', 'High Speed Elevators', 'Food Court & Rooftop Cafe', 'Valet Parking', 'Cisco Fiber Internet Ready']),
-        images: JSON.stringify([
-          'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80'
-        ]),
-        video_url: '',
-        rera_number: 'HRERA-GGM-2024-102',
-        builder_name: 'Horizon Commercials',
-        meta_title: 'Grade A Commercial Office Space SPR Gurgaon | Cyber Horizon',
-        meta_description: 'Invest in Grade-A commercial office spaces with high rental return on Southern Peripheral Road, Gurgaon.'
-      },
-      {
-        slug: 'skyline-heights-penthouse',
-        title: 'Skyline Heights Duplex Penthouse',
-        type: 'Apartment',
-        category: 'Sale',
-        price: '₹ 7.20 Cr',
-        price_numeric: 72000000,
-        location: 'Dwarka Expressway',
-        address: 'Sector 109, Dwarka Expressway, Gurugram',
-        bhk: '5 BHK Penthouse',
-        area: '5,100 Sq.Ft.',
-        status: 'Available',
-        is_featured: 1,
-        description: 'Breathtaking duplex penthouse on the 32nd floor offering 360-degree panoramic city skylines. Features private jacuzzi terrace, double height living room, and private lounge.',
-        amenities: JSON.stringify(['Terrace Jacuzzi', '360 Skylines View', 'Double Height Living Room', 'Private Elevator Bar', 'All En-Suite Bedrooms', 'Infinity Pool']),
-        images: JSON.stringify([
-          'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80'
-        ]),
-        video_url: '',
-        rera_number: 'HRERA-GGM-2023-771',
-        builder_name: 'Skyline Landmark Developers',
-        meta_title: 'Duplex Penthouse Dwarka Expressway | Skyline Heights',
-        meta_description: '5 BHK Duplex Penthouse with private terrace jacuzzi on Dwarka Expressway Gurugram.'
-      },
-      {
-        slug: 'greenwood-botanica-plots',
-        title: 'Greenwood Botanica Luxury Villa Plots',
+        slug: 'anandam-awaas-anandam-estate-dharuhera',
+        title: 'Anandam Awaas & Anandam Estate Residential Plots',
         type: 'Plot',
         category: 'Sale',
-        price: '₹ 3.40 Cr',
-        price_numeric: 34000000,
-        location: 'Golf Course Extension, Gurgaon',
-        address: 'Sector 63, Golf Course Ext, Gurugram',
-        bhk: 'Freehold Land Plot',
-        area: '250 Sq.Yards',
+        price: '₹ 25.0 Lakhs Onwards',
+        price_numeric: 2500000,
+        location: 'Sector 19 & 24, Dharuhera, Haryana',
+        address: 'Anandam Awaas & Anandam Estate, Sector 19 & 24, Dharuhera, Haryana – 123106',
+        bhk: '72 to 519 Sq.Yards Plots',
+        area: '72 – 519 Sq.Yards',
         status: 'Available',
-        is_featured: 0,
-        description: 'Gated plot township surrounded by 50 acres of dense green foliage. Complete underground utilities, paved wide roads, street lamps, and boundary wall security.',
-        amenities: JSON.stringify(['Gated Township', 'Underground Utilities', '50 Acre Green Cover', 'Clubhouse Membership', 'Basketball & Tennis Courts', '24x7 Security Patrol']),
+        is_featured: 1,
+        description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.
+
+Plot Options:
+• Anandam Awaas — 72–177 sq. yards
+• Anandam Estate — 150–519 sq. yards
+
+Why Explore This Project?
+• Residential plot options in Dharuhera
+• Located in Sector 19 & 24
+• Multiple plot-size options
+• 71-acre total project area
+• Suitable for buyers exploring property opportunities in Dharuhera`,
+        amenities: JSON.stringify(['Gated Security', '71-Acre Township', 'In-House Temple', 'Kids Play Park', '30ft Wide Roads', 'Underground Utilities', 'Immediate Registry']),
         images: JSON.stringify([
-          'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80'
+          '/anandam/logo.png',
+          '/anandam/housing.jpg',
+          '/anandam/gate.jpg',
+          '/anandam/temple.jpg',
+          '/anandam/park.jpg'
         ]),
         video_url: '',
-        rera_number: 'HRERA-GGM-2024-550',
-        builder_name: 'Botanica Developers',
-        meta_title: 'Luxury Villa Plots Golf Course Extension Gurgaon',
-        meta_description: 'Buy premium freehold residential villa plots in gated township on Golf Course Extension Road Gurgaon.'
+        rera_number: 'HRERA Registered',
+        builder_name: 'MGH Group',
+        meta_title: 'Anandam Awaas & Anandam Estate | Residential Plots in Dharuhera',
+        meta_description: 'Explore Anandam Awaas and Anandam Estate by MGH in Sector 19 & 24, Dharuhera. Residential plots from 72–519 sq. yards across a 71-acre project.'
       }
     ];
 
@@ -345,36 +257,34 @@ async function initDb(db) {
   if (projCount.count === 0) {
     const seedProjects = [
       {
-        slug: 'vedik-grand-avenue',
-        name: 'Vedik Grand Avenue Township',
-        location: 'Golf Course Road, Gurgaon',
-        type: 'Ultra Luxury Residential',
-        price_range: '₹ 4.5 Cr - ₹ 12.0 Cr',
-        status: 'Under Construction',
+        slug: 'anandam-awaas-anandam-estate',
+        name: 'Anandam Awaas & Anandam Estate',
+        location: 'Sector 19 & 24, Dharuhera, Haryana',
+        type: '71-Acre Residential Plot Township',
+        price_range: '72 Sq.Yds to 519 Sq.Yds Plots',
+        status: 'Ready to Construct / Registry Ready',
         is_featured: 1,
-        description: 'A 25-acre integrated township designed by international architects featuring private skywalks, 75,000 sq.ft. clubhouse, and 5-star concierge.',
-        amenities: JSON.stringify(['75,000 Sq.Ft. Clubhouse', 'Sky Bridge Walkway', 'All Weather Heated Pool', 'Private Movie Theater', 'Tennis & Squash Courts']),
+        description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.
+
+Plot Options:
+• Anandam Awaas — 72–177 sq. yards
+• Anandam Estate — 150–519 sq. yards
+
+Why Explore This Project?
+• Residential plot options in Dharuhera
+• Located in Sector 19 & 24
+• Multiple plot-size options
+• 71-acre total project area
+• Suitable for buyers exploring property opportunities in Dharuhera`,
+        amenities: JSON.stringify(['71-Acre Integrated Township', 'Gated Security Entrance', 'In-House Temple', 'Children Play Area & Parks', 'Wide Demarcated Roads', 'Underground Utilities']),
         images: JSON.stringify([
-          'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80'
+          '/anandam/logo.png',
+          '/anandam/housing.jpg',
+          '/anandam/gate.jpg',
+          '/anandam/temple.jpg',
+          '/anandam/park.jpg'
         ]),
-        rera_number: 'HRERA-GGM-2024-900'
-      },
-      {
-        slug: 'the-sovereign-estates',
-        name: 'The Sovereign Estate Villas',
-        location: 'Golf Course Extension, Gurgaon',
-        type: 'Gated Villa Sanctuary',
-        price_range: '₹ 8.0 Cr - ₹ 16.5 Cr',
-        status: 'New Launch',
-        is_featured: 1,
-        description: 'Only 40 ultra-luxurious bespoke villas crafted for leaders and icons. Private lifts, private infinity pools, and personal butler services.',
-        amenities: JSON.stringify(['Private Infinity Pool', 'Bespoke Architecture', 'Gated Perimeter', 'Organic Kitchen Garden', 'Exclusive Heli-pad Access']),
-        images: JSON.stringify([
-          'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=80',
-          'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80'
-        ]),
-        rera_number: 'HRERA-GGM-2024-901'
+        rera_number: 'HRERA Approved'
       }
     ];
 
