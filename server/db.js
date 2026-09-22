@@ -177,8 +177,6 @@ async function initDb(db) {
 
   // Seed Locations if empty
   const locCount = await db.get(`SELECT COUNT(*) as count FROM locations`);
-  // Seed Locations if empty
-  const locCount = await db.get(`SELECT COUNT(*) as count FROM locations`);
   if (locCount.count === 0) {
     const seedLocations = [
       ['Sector 19 & 24 Dharuhera', 'sector-19-24-dharuhera', 35, '/anandam/gate.jpg', 'Home to Anandam Awaas & Anandam Estate 71-acre township.'],
@@ -224,6 +222,7 @@ Why Explore This Project?
 • Suitable for buyers exploring property opportunities in Dharuhera`,
         amenities: JSON.stringify(['Gated Security', '71-Acre Township', 'In-House Temple', 'Kids Play Park', '30ft Wide Roads', 'Underground Utilities', 'Immediate Registry']),
         images: JSON.stringify([
+          '/anandam/anandam-estate-logo.jpg',
           '/anandam/logo.png',
           '/anandam/housing.jpg',
           '/anandam/gate.jpg',
@@ -278,6 +277,7 @@ Why Explore This Project?
 • Suitable for buyers exploring property opportunities in Dharuhera`,
         amenities: JSON.stringify(['71-Acre Integrated Township', 'Gated Security Entrance', 'In-House Temple', 'Children Play Area & Parks', 'Wide Demarcated Roads', 'Underground Utilities']),
         images: JSON.stringify([
+          '/anandam/anandam-estate-logo.jpg',
           '/anandam/logo.png',
           '/anandam/housing.jpg',
           '/anandam/gate.jpg',

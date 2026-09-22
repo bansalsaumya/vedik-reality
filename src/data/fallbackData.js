@@ -31,6 +31,7 @@ About the Location:
 Sector 19 & 24 is part of the rapidly developing Dharuhera real-estate market near NH-48 and Delhi-Mumbai Industrial Corridor, making the location highly relevant for buyers exploring residential plots and high ROI property opportunities in the area.`,
     amenities: ['Gated Security', '71-Acre Township', 'In-House Temple', 'Kids Play Park & Greenery', '30ft Wide Internal Roads', 'Underground Sewerage & Water', 'Immediate Registry & Demarcation', 'Street Lighting'],
     images: [
+      '/anandam/anandam-estate-logo.jpg',
       '/anandam/logo.png',
       '/anandam/housing.jpg',
       '/anandam/gate.jpg',
@@ -89,7 +90,7 @@ Sector 19 & 24 is part of the rapidly developing Dharuhera real-estate market ne
     amenities: ['Main Road Facing', 'Double Height Frontage', '24x7 Security Guard', 'Ample Customer Parking', 'Power Backup'],
     images: [
       '/anandam/gate.jpg',
-      '/anandam/logo.png'
+      '/anandam/anandam-estate-logo.jpg'
     ],
     video_url: '',
     rera_number: 'HRERA-RWR-2024-305',
@@ -115,7 +116,7 @@ export const FALLBACK_PROJECTS = [
     is_featured: 1,
     developer: 'MGH',
     builder_name: 'MGH Group',
-    image: '/anandam/logo.png',
+    image: '/anandam/anandam-estate-logo.jpg',
     description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.
 
 Plot Options:
@@ -130,6 +131,7 @@ Why Explore This Project?
 • Suitable for buyers exploring property opportunities in Dharuhera`,
     amenities: ['71-Acre Integrated Township', 'Gated Security Entrance', 'In-House Temple', 'Children Play Area & Parks', 'Wide Demarcated Roads', 'Underground Utilities'],
     images: [
+      '/anandam/anandam-estate-logo.jpg',
       '/anandam/logo.png',
       '/anandam/housing.jpg',
       '/anandam/gate.jpg',

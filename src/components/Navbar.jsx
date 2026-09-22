@@ -87,15 +87,8 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="flex items-center">
-              <a
-                href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                className="flex items-center space-x-2 text-xs font-bold text-white bg-charcoal-800 hover:bg-gold-500 hover:text-charcoal-800 border border-gold-500/40 px-4 py-2.5 rounded-full transition-all shadow-md whitespace-nowrap shrink-0"
-              >
-                <Phone className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                <span className="whitespace-nowrap">{settings.phone}</span>
-              </a>
-            </div>
+
+
           </div>
 
           {/* Mobile Menu Button */}

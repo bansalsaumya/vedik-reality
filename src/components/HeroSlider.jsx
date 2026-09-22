@@ -5,40 +5,35 @@ import EnquiryModal from './EnquiryModal';
 
 const HERO_SLIDES = [
   {
-    image: '/anandam/logo.png',
-    title: 'Anandam Awaas & Anandam Estate by MGH',
-    subTitle: '71-Acre Gated Residential Plot Township',
-    location: 'Sector 19 & 24, Dharuhera',
-    alt: 'Anandam Estate Sector 19 & 24 Dharuhera MGH Logo'
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=85',
+    title: 'Real Estate Agent & Property Dealer in Dharuhera',
+    location: 'Sector 19, Dharuhera',
+    alt: 'Real Estate Agent in Dharuhera Haryana Sector 19'
   },
   {
-    image: '/anandam/housing.jpg',
-    title: 'Residential Plots in Sector 19 & 24 Dharuhera',
-    subTitle: 'Plot sizes from 72 Sq.Yds to 519 Sq.Yds',
-    location: 'Sector 19 & 24, Dharuhera',
-    alt: 'Anandam Awaas Housing & Row Houses Dharuhera'
+    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85',
+    title: 'Plots & Land for Sale in Dharuhera',
+    location: 'Anandam Awaas, Dharuhera',
+    alt: 'Plots for Sale in Dharuhera near Anandam Awaas'
   },
   {
-    image: '/anandam/gate.jpg',
-    title: 'Gated Society Entrance & Demarcated Roads',
-    subTitle: 'Ready for Immediate Registry & Construction',
-    location: 'Main Gate, Sector 19 Dharuhera',
-    alt: 'Anandam Awaas Main Entrance Gate Sector 19 Dharuhera'
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=85',
+    title: 'Ready to Move 2 BHK & 3 BHK Flats',
+    location: 'Dharuhera, Haryana',
+    alt: 'Flats for Sale in Dharuhera 2 BHK 3 BHK'
   },
   {
-    image: '/anandam/temple.jpg',
-    title: 'In-House Temple & Peaceful Living Environment',
-    subTitle: 'Developed Society with 24x7 Security',
-    location: 'Anandam Awaas Society Temple',
-    alt: 'Anandam Awaas Society Temple Dharuhera'
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=85',
+    title: 'Commercial Property & SCO Shops',
+    location: 'NH-48 Corridor Dharuhera',
+    alt: 'Commercial Property in Dharuhera Haryana'
   },
   {
-    image: '/anandam/park.jpg',
-    title: 'Kids Play Park & Lush Green Open Spaces',
-    subTitle: 'Ideal Real Estate Investment Near Delhi NCR & Gurugram',
-    location: 'Sector 19 & 24 Dharuhera',
-    alt: 'Anandam Awaas Children Play Area Park'
-  }
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85',
+    title: 'Independent Houses & Villas',
+    location: 'Sector 19 & Rewari District',
+    alt: 'House for Sale in Dharuhera'
+  },
 ];
 
 export default function HeroSlider() {
@@ -91,13 +86,14 @@ export default function HeroSlider() {
         </div>
 
         {/* Main Hero Heading */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-4xl drop-shadow-lg">
-          {HERO_SLIDES[currentSlide].title}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-3xl drop-shadow-lg">
+          Find the Right Property in <br />
+          <span className="gold-gradient-text font-serif">Dharuhera, Haryana</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mt-4 text-base sm:text-xl text-gold-300 font-medium max-w-2xl leading-relaxed drop-shadow">
-          {HERO_SLIDES[currentSlide].subTitle}
+        <p className="mt-6 text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed drop-shadow">
+          Your trusted <strong className="text-gold-400 font-semibold">Property Dealer & Real Estate Agent in Dharuhera</strong>. Discover plots, flats, commercial property and verified investment opportunities near Sector 19 & NH-48.
         </p>
 
         {/* Primary & Secondary CTAs */}
@@ -106,7 +102,7 @@ export default function HeroSlider() {
             to="/properties"
             className="w-full sm:w-auto gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-2xl hover:scale-105 transition-all"
           >
-            <span>Explore Anandam Plots</span>
+            <span>Explore Properties</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
@@ -115,7 +111,7 @@ export default function HeroSlider() {
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-white bg-black/60 hover:bg-black/80 border border-gold-500/50 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
           >
             <PhoneCall className="w-4 h-4 text-gold-500" />
-            <span>Enquire Project Details</span>
+            <span>Talk to Us</span>
           </button>
         </div>
 
@@ -139,7 +135,7 @@ export default function HeroSlider() {
         <EnquiryModal
           isOpen={enquiryModalOpen}
           onClose={() => setEnquiryModalOpen(false)}
-          source="Hero Section - Anandam Project"
+          source="Hero Section - Talk To Us CTA"
         />
       )}
     </div>

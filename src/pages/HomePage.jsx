@@ -222,9 +222,9 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-cream">
                   <img
-                    src={proj.image}
-                    alt={proj.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src={proj.image || (proj.images && (typeof proj.images === 'string' ? JSON.parse(proj.images)[0] : proj.images[0])) || '/anandam/anandam-estate-logo.jpg'}
+                    alt={proj.title || proj.name}
+                    className={`w-full h-full ${proj.image?.includes('logo') || (proj.images && proj.images.includes('logo')) ? 'object-contain bg-white p-2' : 'object-cover group-hover:scale-105'} transition-transform duration-500`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-charcoal-950 shadow-md">
