@@ -134,25 +134,25 @@ export default function PropertyDetailPage() {
 
         {/* Image Gallery */}
         <div className="space-y-4">
-          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden border border-borderlight shadow-md bg-cream">
+          <div className="relative aspect-[16/9] max-h-[500px] rounded-3xl overflow-hidden border border-borderlight shadow-md bg-cream">
             <img
-              src={images[selectedImage] || mainImage}
+              src={propImages[selectedImage] || propImages[0]}
               alt={property.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-charcoal-950/5"
             />
           </div>
 
-          {images.length > 1 && (
+          {propImages.length > 1 && (
             <div className="flex items-center gap-3 overflow-x-auto pb-2">
-              {images.map((img, idx) => (
+              {propImages.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
-                  className={`relative w-24 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
-                    selectedImage === idx ? 'border-gold-500 scale-105 shadow-md' : 'border-borderlight opacity-70'
+                  className={`relative w-28 h-20 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
+                    selectedImage === idx ? 'border-gold-500 scale-105 shadow-md ring-2 ring-gold-400' : 'border-borderlight opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                  <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
