@@ -200,13 +200,13 @@ export default function PropertyDetailPage() {
             </div>
 
             {/* Amenities Grid */}
-            {amenities.length > 0 && (
+            {amenitiesList.length > 0 && (
               <div className="glass-card p-6 rounded-2xl border border-borderlight bg-white shadow-sm space-y-4">
                 <h3 className="font-serif text-xl font-bold text-charcoal-800 border-b border-borderlight pb-3">
                   World-Class Amenities
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {amenities.map((item, i) => (
+                  {amenitiesList.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs font-bold text-charcoal-800 bg-cream p-3 rounded-xl border border-borderlight">
                       <CheckCircle2 className="w-4 h-4 text-gold-700 shrink-0" />
                       <span>{item}</span>
