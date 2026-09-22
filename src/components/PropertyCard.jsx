@@ -34,7 +34,7 @@ export default function PropertyCard({ property }) {
           <img
             src={mainImage}
             alt={`${property.title} - ${property.type || 'Property'} for sale in Dharuhera Haryana`}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            className={`w-full h-full ${mainImage.includes('logo') ? 'object-contain bg-white p-2' : 'object-cover group-hover:scale-110'} transition-transform duration-700 ease-out`}
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
