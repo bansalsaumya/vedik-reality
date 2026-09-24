@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vedik Realty - Premium Property Catalogue 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-500: #d4af37;
+      --gold-600: #b89628;
+      --gold-dark: #8c6d15;
+      --charcoal-900: #12151c;
+      --charcoal-800: #1a1e29;
+      --ivory: #fcfbfa;
+      --cream: #f7f4ee;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--ivory);
+      color: #334155;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    /* COVER SECTION */
+    .header-banner {
+      background: linear-gradient(135deg, #0b0e14 0%, #1a1e29 100%);
+      color: white;
+      padding: 40px 48px;
+      position: relative;
+      border-bottom: 4px solid var(--gold-500);
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-500);
+      object-fit: cover;
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: white;
+    }
+    .brand-title span {
+      color: var(--gold-500);
+    }
+    .badge-tag {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-500);
+      color: var(--gold-500);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .catalogue-hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: white;
+    }
+    .catalogue-hero-subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      max-width: 600px;
+    }
+
+    /* MAIN CONTENT */
+    .content-body {
+      padding: 40px 48px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--gold-500);
+      border-radius: 2px;
+    }
+
+    /* STATS STRIP */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .stat-card {
+      background: var(--cream);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #eae5db;
+    }
+    .stat-val {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      display: block;
+    }
+    .stat-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    /* PROJECT FEATURE CARD */
+    .project-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      background: #fafafa;
+    }
+    .project-header {
+      background: var(--charcoal-800);
+      color: white;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-name {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-500);
+    }
+    .project-dev {
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+    .project-body {
+      padding: 24px;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .spec-item {
+      background: white;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+    .spec-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #94a3b8;
+      display: block;
+    }
+    .spec-value {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* INVENTORY TABLE */
+    .table-container {
+      margin-bottom: 36px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      background: var(--charcoal-900);
+      color: white;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      font-weight: 500;
+    }
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+    .highlight-cell {
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    /* HIGHLIGHTS BULLETS */
+    .highlights-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: white;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .check-icon {
+      color: var(--gold-500);
+      font-weight: bold;
+    }
+
+    /* FOOTER / CONTACT CARD */
+    .contact-card {
+      background: linear-gradient(135deg, #1a1e29 0%, #0b0e14 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .contact-info h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      color: var(--gold-500);
+      margin-bottom: 6px;
+    }
+    .contact-info p {
+      font-size: 12px;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+    .phone-box {
+      background: var(--gold-500);
+      color: var(--charcoal-900);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .print-btn-bar {
+      max-width: 900px;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      font-size: 13px;
+    }
+    .btn-print {
+      background: var(--gold-500);
+      color: #12151c;
+    }
+
+    @media print {
+      .print-btn-bar { display: none; }
+      .page { box-shadow: none; margin: 0; border: none; border-radius: 0; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="btn btn-print" onclick="window.print()">📥 Print / Save as PDF</button>
+  </div>
+
+  <div class="page">
+    <!-- COVER HEADER -->
+    <div class="header-banner">
+      <div class="brand-row">
+        <div class="logo-box">
+          <img src="/logo.png" alt="Vedik Realty" class="logo-img" onerror="this.src='/logo.jpg'">
+          <div class="brand-title">VEDIK <span>REALTY</span></div>
+        </div>
+        <div class="badge-tag">Official Property Catalogue</div>
+      </div>
+      <h1 class="catalogue-hero-title">Exclusive Real Estate & Investment Portfolio</h1>
+      <p class="catalogue-hero-subtitle">Prime Residential Plots, SCO Commercial Land & Luxury Flats in Dharuhera (NH-48 Corridor, Near Gurugram & Delhi NCR)</p>
+    </div>
+
+    <!-- MAIN BODY -->
+    <div class="content-body">
+
+      <!-- STATS STRIP -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-val">71 Acres</span>
+          <span class="stat-lbl">Integrated Township</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">72 - 519</span>
+          <span class="stat-lbl">Plot Sizes (Sq.Yds)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">NH-48</span>
+          <span class="stat-lbl">Highway Location</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">100% Legal</span>
+          <span class="stat-lbl">RERA Approved</span>
+        </div>
+      </div>
+
+      <!-- FEATURED TOWNSHIP -->
+      <div class="section-title">Flagship Residential Township</div>
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-name">Anandam Awaas & Anandam Estate</div>
+            <div class="project-dev">Developer: MGH Group | Location: Sector 19 & 24, Dharuhera</div>
+          </div>
+          <div style="text-align: right;">
+            <span style="background: rgba(212,175,55,0.2); color: #d4af37; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">REGISTRY READY</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">Project Area</span>
+              <span class="spec-value">71 Acres Gated Society</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Available Types</span>
+              <span class="spec-value">Plots, SCO Shops & Flats</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Starting Price</span>
+              <span class="spec-value">₹ 25.0 Lakhs Onwards</span>
+            </div>
+          </div>
+          <p style="font-size: 12.5px; color: #475569; line-height: 1.5;">
+            Anandam Awaas & Anandam Estate is Dharuhera's premier 71-acre mega residential plot development located directly in Sector 19 & 24. Designed for high capital growth, it features wide 30ft demarcated roads, underground electricity cabling, in-house temple, children's park, and 24/7 security.
+          </p>
+        </div>
+      </div>
+
+      <!-- INVENTORY TABLE -->
+      <div class="section-title">Available Property Inventories</div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Property Type</th>
+              <th>Plot / Unit Size</th>
+              <th>Location</th>
+              <th>Key Highlights</th>
+              <th>Investment Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Anandam Awaas Plots</strong></td>
+              <td>72 Sq.Yds – 177 Sq.Yds</td>
+              <td>Sector 19, Dharuhera</td>
+              <td>Freehold, Registry Ready, Gated</td>
+              <td class="highlight-cell">₹ 25L – ₹ 55L</td>
+            </tr>
+            <tr>
+              <td><strong>Anandam Estate Plots</strong></td>
+              <td>150 Sq.Yds – 519 Sq.Yds</td>
+              <td>Sector 24, Dharuhera</td>
+              <td>Wide Road Facing, Luxury Villa Plots</td>
+              <td class="highlight-cell">₹ 50L – ₹ 1.5 Cr</td>
+            </tr>
+            <tr>
+              <td><strong>2 BHK / 3 BHK Luxury Flats</strong></td>
+              <td>950 Sq.Ft – 1450 Sq.Ft</td>
+              <td>Sector 19 / NH-48 Corridor</td>
+              <td>Ready to Move, Car Parking, Lift</td>
+              <td class="highlight-cell">₹ 35L – ₹ 75L</td>
+            </tr>
+            <tr>
+              <td><strong>SCO Commercial Plots</strong></td>
+              <td>80 Sq.Yds – 200 Sq.Yds</td>
+              <td>Main SCO Market Sector 19</td>
+              <td>High Rental Yield, Retail & Office</td>
+              <td class="highlight-cell">On Request</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- KEY LOCATION HIGHLIGHTS -->
+      <div class="section-title">Why Invest in Dharuhera (Vedik Realty Advantage)</div>
+      <div class="highlights-list">
+        <div class="highlight-item">
+          <span class="check-icon">✓</span>
+          <span><strong>1/4th of Gurugram Rates:</strong> High ROI potential compared to Cyber City & Golf Course Extn.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Direct NH-48 Connectivity:</strong> 35 mins from IGI Airport Delhi & 25 mins from Rajiv Chowk Gurgaon.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Rapid Infrastructure Growth:</strong> Near Delhi-Mumbai Expressway & Delhi-Alwar RRTS Station.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Complete Legal Security:</strong> 100% verified title deeds, bank loan assistance & registry guidance.</span>
+        </div>
+      </div>
+
+      <!-- CONTACT / FOOTER CARD -->
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>VEDIK REALTY</h4>
+          <p>📍 First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana 123106</p>
+          <p>✉️ Vedikrealty@gmail.com | 🌐 https://vedik-realty.vercel.app/</p>
+          <p style="font-size: 11px; color: #d4af37; margin-top: 6px;">Founders & Owners: Deepak Lamba & Manish</p>
+        </div>
+        <div>
+          <a href="tel:9053848222" class="phone-box">
+            📞 90538 48222
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
