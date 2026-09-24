@@ -56,14 +56,14 @@ Why Explore This Project?
     area: '88 – 141 Sq.Yards',
     status: 'Available',
     is_featured: 1,
-    description: `Tulip City is a premium residential plot development project located in Sector 3, Dharuhera, Haryana. Offering plots ranging from 88 to 141 square yards with modern infrastructure, wide paved internal roads, green parks, and excellent connectivity.
+    description: `Tulip City is a residential plot project located in Sector 3, Dharuhera, Haryana. The project offers plot options ranging from 88 to 141 square yards for buyers exploring residential property opportunities in Dharuhera.
 
 Key Highlights of Tulip City:
 • Prime Location in Sector 3 Dharuhera
 • Plot Sizes: 88 Sq.Yds to 141 Sq.Yds
-• Wide Interlocking Paved Roads & Street Lighting
+• Interlocking Paved Roads & Street Lighting
 • Underground Electrical & Sewerage Infrastructure
-• Beautifully Landscaped Green Parks & Mahogany Avenues
+• Beautifully Landscaped Green Parks & Silver Oak Avenues
 • High Return on Investment (ROI) Corridor`,
     amenities: ['Interlocking Paved Roads', 'Street Lighting', 'Underground Electrical Lines', 'Gated Entrance', 'Landscape Parks', 'Immediate Demarcation & Registry'],
     images: [
@@ -76,8 +76,8 @@ Key Highlights of Tulip City:
     video_url: '',
     rera_number: 'HRERA Approved',
     builder_name: 'Tulip City Developers',
-    meta_title: 'Tulip City Sector 3 Dharuhera | Plots for Sale 88-141 Sq.Yds',
-    meta_description: 'Explore Tulip City in Sector 3 Dharuhera. Residential plots from 88 to 141 Sq.Yds with wide roads and underground utilities.',
+    meta_title: 'Tulip City | Residential Plots in Sector 3, Dharuhera',
+    meta_description: 'Explore Tulip City in Sector 3, Dharuhera, offering residential plot options from 88 to 141 Sq. Yds. Contact Vedik Realty for project details.',
     views: 320
   }
 ];
@@ -124,7 +124,7 @@ export const FALLBACK_PROJECTS = [
     developer: 'Tulip Developers',
     builder_name: 'Tulip Developers',
     image: '/tulip-1.jpg',
-    description: `Tulip City is a premium residential plot development project located in Sector 3, Dharuhera, Haryana. Offering plot sizes ranging from 88 to 141 square yards with wide paved internal roads, underground utilities, and lush green parks.`,
+    description: `Tulip City is a residential plot project located in Sector 3, Dharuhera, Haryana. The project offers plot options ranging from 88 to 141 square yards for buyers exploring residential property opportunities in Dharuhera.`,
     amenities: ['Interlocking Paved Roads', 'Street Lighting', 'Underground Electrical Lines', 'Gated Entrance', 'Landscape Parks', 'Demarcated Plots'],
     images: [
       '/tulip-1.jpg',
