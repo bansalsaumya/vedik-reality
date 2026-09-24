@@ -5,8 +5,8 @@ export const FALLBACK_PROPERTIES = [
     title: 'Anandam Awaas & Anandam Estate Residential Plots',
     type: 'Plot',
     category: 'Sale',
-    price: '₹ 25.0 Lakhs Onwards',
-    price_numeric: 2500000,
+    price: '₹ 65,000 - 70,000 / Sq.Yd',
+    price_numeric: 65000,
     location: 'Sector 19 & 24, Dharuhera, Haryana',
     address: 'Anandam Awaas & Anandam Estate, Sector 19 & 24, Dharuhera, Haryana – 123106',
     bhk: '72 to 519 Sq.Yards Plots',
@@ -25,10 +25,7 @@ Why Explore This Project?
 • Multiple plot-size options
 • 71-acre total project area
 • Developed Gated Township with Temple, Kids Play Parks, Wide Roads & 24x7 Security
-• Suitable for buyers exploring property opportunities in Dharuhera
-
-About the Location:
-Sector 19 & 24 is part of the rapidly developing Dharuhera real-estate market near NH-48 and Delhi-Mumbai Industrial Corridor, making the location highly relevant for buyers exploring residential plots and high ROI property opportunities in the area.`,
+• Suitable for buyers exploring property opportunities in Dharuhera`,
     amenities: ['Gated Security', '71-Acre Township', 'In-House Temple', 'Kids Play Park & Greenery', '30ft Wide Internal Roads', 'Underground Sewerage & Water', 'Immediate Registry & Demarcation', 'Street Lighting'],
     images: [
       '/anandam/anandam-estate-logo.jpg',
@@ -47,60 +44,43 @@ Sector 19 & 24 is part of the rapidly developing Dharuhera real-estate market ne
   },
   {
     id: 2,
-    slug: 'residential-plots-sector-19-dharuhera',
-    title: 'Freehold Residential Plots in Sector 19 Dharuhera',
+    slug: 'tulip-city-sector-3-dharuhera',
+    title: 'Tulip City Residential Plots in Sector 3 Dharuhera',
     type: 'Plot',
     category: 'Sale',
-    price: '₹ 35.0 Lakhs',
-    price_numeric: 3500000,
-    location: 'Sector 19 Dharuhera, Haryana',
-    address: 'Near Anandam Awaas, Sector 19, Dharuhera, Haryana – 123106',
-    bhk: 'Freehold Plot',
-    area: '150 Sq.Yards',
+    price: 'Price On Request',
+    price_numeric: 0,
+    location: 'Sector 3, Dharuhera, Haryana',
+    address: 'Tulip City, Sector 3, Dharuhera, Haryana – 123106',
+    bhk: '88 to 141 Sq.Yards Plots',
+    area: '88 – 141 Sq.Yards',
     status: 'Available',
     is_featured: 1,
-    description: 'Prime residential plot for sale in Dharuhera near Anandam Awaas, Sector 19. Clear title, registry ready, wide 30ft road, underground water and electricity lines. Best property investment in Dharuhera near NH-48.',
-    amenities: ['Gated Security', '30ft Wide Internal Roads', 'Underground Sewerage & Water', 'Immediate Registry & Demarcation', 'Street Lighting', 'Parks & Play Area'],
+    description: `Tulip City is a premium residential plot development project located in Sector 3, Dharuhera, Haryana. Offering plots ranging from 88 to 141 square yards with modern infrastructure, wide paved internal roads, green parks, and excellent connectivity.
+
+Key Highlights of Tulip City:
+• Prime Location in Sector 3 Dharuhera
+• Plot Sizes: 88 Sq.Yds to 141 Sq.Yds
+• Wide Interlocking Paved Roads & Street Lighting
+• Underground Electrical & Sewerage Infrastructure
+• Beautifully Landscaped Green Parks & Mahogany Avenues
+• High Return on Investment (ROI) Corridor`,
+    amenities: ['Interlocking Paved Roads', 'Street Lighting', 'Underground Electrical Lines', 'Gated Entrance', 'Landscape Parks', 'Immediate Demarcation & Registry'],
     images: [
-      '/anandam/housing.jpg',
-      '/anandam/gate.jpg'
+      '/tulip-1.jpg',
+      '/tulip-2.jpg',
+      '/tulip-3.jpg',
+      '/tulip-4.jpg',
+      '/tulip-5.jpg'
     ],
     video_url: '',
-    rera_number: 'HRERA-RWR-2024-101',
-    builder_name: 'Vedik Property Advisory',
-    meta_title: 'Plots for Sale in Dharuhera | Residential Plots in Sector 19',
-    meta_description: 'Buy freehold residential plot for sale in Sector 19 Dharuhera near Anandam Awaas. Verified property plot in Dharuhera Haryana.',
-    views: 245
-  },
-  {
-    id: 3,
-    slug: 'commercial-sco-plots-anandam-awaas',
-    title: 'Commercial SCO Plots & Shops in Anandam Awaas Market',
-    type: 'Commercial',
-    category: 'Sale',
-    price: '₹ 65.0 Lakhs',
-    price_numeric: 6500000,
-    location: 'Sector 19 Dharuhera, Haryana',
-    address: 'First Floor, SCO-02, Anandam Awaas Market, Sector 19, Dharuhera',
-    bhk: 'Commercial SCO Shop',
-    area: '650 Sq.Ft.',
-    status: 'Available',
-    is_featured: 1,
-    description: 'High visibility commercial property and SCO retail shop space for sale in Sector 19 Dharuhera Anandam Market. Ideal for office space, retail store, or real estate agency setup with guaranteed footfall.',
-    amenities: ['Main Road Facing', 'Double Height Frontage', '24x7 Security Guard', 'Ample Customer Parking', 'Power Backup'],
-    images: [
-      '/anandam/gate.jpg',
-      '/anandam/anandam-estate-logo.jpg'
-    ],
-    video_url: '',
-    rera_number: 'HRERA-RWR-2024-305',
-    builder_name: 'Anandam SCO Market',
-    meta_title: 'Commercial Property in Dharuhera | Shops & Office Space',
-    meta_description: 'Buy commercial shop & office space in Sector 19 Dharuhera Anandam Awaas.',
-    views: 142
+    rera_number: 'HRERA Approved',
+    builder_name: 'Tulip City Developers',
+    meta_title: 'Tulip City Sector 3 Dharuhera | Plots for Sale 88-141 Sq.Yds',
+    meta_description: 'Explore Tulip City in Sector 3 Dharuhera. Residential plots from 88 to 141 Sq.Yds with wide roads and underground utilities.',
+    views: 320
   }
 ];
-
 
 export const FALLBACK_PROJECTS = [
   {
@@ -110,25 +90,14 @@ export const FALLBACK_PROJECTS = [
     name: 'Anandam Awaas & Anandam Estate',
     location: 'Sector 19 & 24, Dharuhera, Haryana',
     type: '71-Acre Residential Plot Township',
-    price_starting: '₹ 25.0 Lakhs Onwards',
+    price_starting: '₹ 65,000 – ₹ 70,000 / Sq.Yd',
     price_range: '72 Sq.Yds to 519 Sq.Yds Plots',
     status: 'Ready to Construct / Registry Ready',
     is_featured: 1,
-    developer: 'MGH',
+    developer: 'MGH Group',
     builder_name: 'MGH Group',
     image: '/anandam/anandam-estate-logo.jpg',
-    description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.
-
-Plot Options:
-• Anandam Awaas — 72–177 sq. yards
-• Anandam Estate — 150–519 sq. yards
-
-Why Explore This Project?
-• Residential plot options in Dharuhera
-• Located in Sector 19 & 24
-• Multiple plot-size options
-• 71-acre total project area
-• Suitable for buyers exploring property opportunities in Dharuhera`,
+    description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.`,
     amenities: ['71-Acre Integrated Township', 'Gated Security Entrance', 'In-House Temple', 'Children Play Area & Parks', 'Wide Demarcated Roads', 'Underground Utilities'],
     images: [
       '/anandam/anandam-estate-logo.jpg',
@@ -140,9 +109,34 @@ Why Explore This Project?
     ],
     rera_number: 'HRERA Approved',
     possession_date: 'Immediate Registry'
+  },
+  {
+    id: 2,
+    slug: 'tulip-city-sector-3-dharuhera',
+    title: 'Tulip City',
+    name: 'Tulip City',
+    location: 'Sector 3, Dharuhera, Haryana',
+    type: 'Residential Plot Development',
+    price_starting: 'On Request',
+    price_range: '88 Sq.Yds to 141 Sq.Yds Plots',
+    status: 'New Launch / Registry Ready',
+    is_featured: 1,
+    developer: 'Tulip Developers',
+    builder_name: 'Tulip Developers',
+    image: '/tulip-1.jpg',
+    description: `Tulip City is a premium residential plot development project located in Sector 3, Dharuhera, Haryana. Offering plot sizes ranging from 88 to 141 square yards with wide paved internal roads, underground utilities, and lush green parks.`,
+    amenities: ['Interlocking Paved Roads', 'Street Lighting', 'Underground Electrical Lines', 'Gated Entrance', 'Landscape Parks', 'Demarcated Plots'],
+    images: [
+      '/tulip-1.jpg',
+      '/tulip-2.jpg',
+      '/tulip-3.jpg',
+      '/tulip-4.jpg',
+      '/tulip-5.jpg'
+    ],
+    rera_number: 'HRERA Approved',
+    possession_date: 'Ready for Registry'
   }
 ];
-
 
 export const FALLBACK_LOCATIONS = [
   {
@@ -155,11 +149,11 @@ export const FALLBACK_LOCATIONS = [
   },
   {
     id: 2,
-    name: 'Anandam Awaas Township',
-    slug: 'anandam-awaas-dharuhera',
-    property_count: 28,
-    image: '/anandam/housing.jpg',
-    description: 'Premium gated residential township by MGH offering plots from 72 to 519 Sq.Yds.'
+    name: 'Sector 3 Dharuhera',
+    slug: 'sector-3-dharuhera',
+    property_count: 22,
+    image: '/tulip-1.jpg',
+    description: 'Home to Tulip City residential plot project offering 88 to 141 Sq.Yd plot options.'
   },
   {
     id: 3,
@@ -174,8 +168,8 @@ export const FALLBACK_LOCATIONS = [
 export const FALLBACK_SERVICES = [
   {
     id: 1,
-    title: 'Anandam Awaas Plot Advisory',
-    description: 'Expert guidance on available plot sizes (72 to 519 Sq.Yds) in Anandam Awaas & Anandam Estate, Sector 19 & 24 Dharuhera.',
+    title: 'Anandam Awaas & Tulip City Advisory',
+    description: 'Expert guidance on available plot sizes in Anandam Awaas (Sector 19 & 24) and Tulip City (Sector 3 Dharuhera).',
     icon: 'Home'
   },
   {
@@ -210,9 +204,9 @@ export const FALLBACK_TESTIMONIALS = [
   {
     id: 2,
     client_name: 'Suresh Sharma',
-    location: 'Sector 24, Dharuhera',
-    property_purchased: 'Anandam Awaas Residential Plot',
-    content: 'Anandam Awaas by MGH is the best planned 71-acre township in Dharuhera. Vedik Reality helped me get the best corner plot location at a great rate!',
+    location: 'Sector 3, Dharuhera',
+    property_purchased: 'Tulip City 120 Sq. Yd Plot',
+    content: 'Bought a plot in Tulip City Sector 3 Dharuhera through Vedik Reality. Excellent road work and greenery. Highly recommended!',
     rating: 5
   }
 ];
