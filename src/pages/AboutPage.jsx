@@ -24,7 +24,7 @@ export default function AboutPage() {
             About Vedik Reality – <span className="gold-gradient-text font-serif">Your Real Estate Partner in Dharuhera</span>
           </h1>
           <p className="mt-3 text-sm text-slate-600 font-medium leading-relaxed">
-            Founded on the pillars of integrity, deep local market intelligence, and uncompromised transparency, Vedik Reality is your premier real estate agent and property consultant in Dharuhera, Haryana.
+            Vedik Realty is a real estate and property consultancy based in Dharuhera, Haryana. We specialize in verified residential plots, commercial properties, ready-to-move flats, and complete property buying and selling services with transparent legal title guidance.
           </p>
         </div>
 

@@ -86,9 +86,8 @@ export default function HeroSlider() {
         </div>
 
         {/* Main Hero Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-3xl drop-shadow-lg">
-          Find the Right Property in <br />
-          <span className="gold-gradient-text font-serif">Dharuhera, Haryana</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-4xl drop-shadow-lg">
+          Vedik Realty – <span className="gold-gradient-text font-serif">Real Estate & Property in Dharuhera</span>
         </h1>
 
         {/* Subheading */}

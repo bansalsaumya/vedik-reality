@@ -77,7 +77,7 @@ export default function HomePage() {
   return (
     <div className="space-y-0 bg-ivory text-charcoal-800 font-sans">
       <SEO
-        title="Vedik Realty | Property Investment in Dharuhera Near Delhi NCR & Gurugram"
+        title="Vedik Realty | Real Estate & Property in Dharuhera"
         description="Vedik Realty is the top real estate agent & property dealer in Dharuhera. Find plots for sale in Dharuhera for investors, residential plots, commercial SCO property & 2/3 BHK flats near Delhi NCR & Gurugram."
         keywords="Plots for Sale in Dharuhera for Investors, Property Investment in Dharuhera, Residential Plots in Dharuhera, Plots Near Delhi NCR, Property Investment Near Gurugram, Dharuhera Property for Delhi Buyers, Dharuhera Property for NCR Investors, Investment Property in Haryana, Plots Near Bhiwadi, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera"
       />
