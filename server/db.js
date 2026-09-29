@@ -163,8 +163,8 @@ async function initDb(db) {
       ['address', 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106'],
       ['working_hours', 'Mon - Sat: 9:30 AM - 7:00 PM'],
       ['google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14068.329810577785!2d76.7972!3d28.2045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d359670000001%3A0x10b7eeec932e6005!2sSector%2019%2C%20Dharuhera%2C%20Haryana%20123106!5e0!3m2!1sen!2sin!4v1700000000000'],
-      ['facebook', 'https://facebook.com/vedikreality'],
-      ['instagram', 'https://instagram.com/vedikreality'],
+      ['facebook', 'https://www.facebook.com/profile.php?id=61594850518441'],
+      ['instagram', 'https://www.instagram.com/vedik_realty/'],
       ['youtube', 'https://youtube.com/@vedikreality'],
       ['meta_default_title', 'Vedik Reality | Property Dealer & Real Estate Agent in Dharuhera'],
       ['meta_default_description', 'Vedik Reality is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.']
