@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <a
-                href={settings.instagram || "https://www.instagram.com/vedik_realty/"}
+                href="https://www.instagram.com/vedik_realty/"
                 target="_blank"
                 rel="noreferrer"
                 title="Instagram Page"
@@ -47,7 +47,7 @@ export default function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href={settings.facebook || "https://www.facebook.com/profile.php?id=61594850518441"}
+                href="https://www.facebook.com/profile.php?id=61594850518441"
                 target="_blank"
                 rel="noreferrer"
                 title="Facebook Page"

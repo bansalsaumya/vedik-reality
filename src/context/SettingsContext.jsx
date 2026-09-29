@@ -13,8 +13,8 @@ export const SettingsProvider = ({ children }) => {
     email: 'info.vedikrealty@gmail.com',
     address: 'First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana – 123106',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
-    facebook: 'https://www.facebook.com/VedikRealty/',
-    instagram: 'https://www.instagram.com/vedikrealty/',
+    facebook: 'https://www.facebook.com/profile.php?id=61594850518441',
+    instagram: 'https://www.instagram.com/vedik_realty/',
     google_map_link: 'https://maps.app.goo.gl/bpCUi761odoyA34B7'
   });
 
