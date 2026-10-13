@@ -217,27 +217,45 @@ export const FALLBACK_LOCATIONS = [
 export const FALLBACK_SERVICES = [
   {
     id: 1,
-    title: 'Anandam Awaas & Tulip City Advisory',
-    description: 'Expert guidance on available plot sizes in Anandam Awaas (Sector 19 & 24) and Tulip City (Sector 3 Dharuhera).',
-    icon: 'Home'
+    title: 'Residential Property',
+    description: 'Explore verified residential homes, floors, and residential properties across Dharuhera, Haryana with end-to-end guidance.',
+    icon: 'Home',
+    link: '/properties'
   },
   {
     id: 2,
-    title: 'Commercial SCO Advisory',
-    description: 'Strategic retail shops and SCO commercial plots in Sector 19 & 24 Dharuhera for high rental yields.',
-    icon: 'Building'
+    title: 'Residential Plots',
+    description: 'Find freehold demarcated residential plots in premier developments like Anandam Awaas, Anandam Estate, and Tulip City.',
+    icon: 'Home',
+    link: '/properties'
   },
   {
     id: 3,
-    title: 'Investment Portfolio Advisory',
-    description: 'Data-backed real estate insights helping investors achieve maximum capital growth near NH-48 & Gurugram.',
-    icon: 'TrendingUp'
+    title: 'Commercial Property',
+    description: 'Commercial plots, retail shops, and SCO spaces along NH-48 and high-growth sectors for premium rental returns.',
+    icon: 'Building',
+    link: '/properties?type=Commercial'
   },
   {
     id: 4,
-    title: 'Property Legal & Registry Support',
-    description: 'End-to-end legal title check, revenue verification, mutation (दाखिल ख़ारिज), and hassle-free registry assistance.',
-    icon: 'ShieldCheck'
+    title: 'Property Buying Assistance',
+    description: 'Structured on-ground site visits, fair valuation analysis, and genuine inventory options matched to your budget.',
+    icon: 'ShieldCheck',
+    link: '/contact'
+  },
+  {
+    id: 5,
+    title: 'Property Selling Assistance',
+    description: 'Professional marketing, verified buyer network, and legal transfer documentation to sell your Dharuhera property seamlessly.',
+    icon: 'TrendingUp',
+    link: '/contact'
+  },
+  {
+    id: 6,
+    title: 'Real Estate Investment Consultation',
+    description: 'Data-driven real estate advisory identifying high-appreciation corridors and gated township investments across Dharuhera.',
+    icon: 'TrendingUp',
+    link: '/contact'
   }
 ];
 
