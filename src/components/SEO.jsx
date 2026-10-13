@@ -16,9 +16,9 @@ const DEFAULT_NAP = {
 export default function SEO({
   title = "Vedik Realty | Property Dealer & Real Estate Agent in Dharuhera",
   description = "Vedik Realty is a real estate consultant in Dharuhera, Haryana, helping clients explore residential and commercial properties, flats, plots and property investment opportunities. Contact us for property enquiries and professional assistance.",
-  keywords = "Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Properties for Sale in Dharuhera, Real Estate Company in Dharuhera, Property Consultant in Dharuhera, Flats for Sale in Dharuhera, Plots for Sale in Dharuhera, Commercial Property in Dharuhera, Sector 19 Dharuhera",
-  url = typeof window !== 'undefined' ? window.location.href : 'https://vedik-realty.vercel.app',
-  image = "https://vedik-realty.vercel.app/logo.png",
+  keywords = "Plots for Sale in Dharuhera, Property Dealer in Dharuhera, Real Estate Agent in Dharuhera, Plots in Sector 19 Dharuhera, Plots in Sector 3 Dharuhera, Tulip City Dharuhera, Anandam Awaas Dharuhera, Anandam Estate Dharuhera, Residential Plots Dharuhera, Commercial Plots Dharuhera, Freehold Plots Dharuhera, Buy Plot in Dharuhera, House for Sale in Dharuhera, 2 BHK Flats Dharuhera, 3 BHK Flats Dharuhera, Property Investment in Dharuhera, Real Estate Consultant Dharuhera, Land for Sale in Dharuhera, Cheap Plots near Gurgaon, Property near NH 48 Dharuhera, Best Property Dealer in Sector 19 Dharuhera, SCO Commercial Shops Dharuhera, Plots near Bhiwadi, Plots near Rewari",
+  url = typeof window !== 'undefined' ? window.location.href : 'https://vedikrealty.com',
+  image = "https://vedikrealty.com/logo.png",
   schemaType = "RealEstateAgent"
 }) {
   useEffect(() => {
@@ -58,17 +58,22 @@ export default function SEO({
     }
     canonicalLink.setAttribute('href', url);
 
-    // 4. JSON-LD Schema with Google Star Rating (AggregateRating)
+    // 4. JSON-LD Schema with Google Star Rating (AggregateRating) & Social Entity Linking
     const schemaData = {
       "@context": "https://schema.org",
       "@type": schemaType,
       "name": DEFAULT_NAP.name,
       "image": image,
-      "@id": "https://vedik-realty.vercel.app/#organization",
-      "url": "https://vedik-realty.vercel.app",
-      "telephone": DEFAULT_NAP.phone,
+      "@id": "https://vedikrealty.com/#organization",
+      "url": "https://vedikrealty.com",
+      "telephone": `${DEFAULT_NAP.phone}, ${DEFAULT_NAP.altPhone}`,
       "email": DEFAULT_NAP.email,
       "priceRange": "₹₹ - ₹₹₹₹",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61594850518441",
+        "https://www.instagram.com/vedik_realty/",
+        "https://maps.app.goo.gl/bpCUi761odoyA34B7"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "First Floor, Anandam Awaas, SCO-02, Sector 19",
@@ -92,16 +97,27 @@ export default function SEO({
       "areaServed": [
         "Dharuhera",
         "Sector 19 Dharuhera",
+        "Sector 3 Dharuhera",
+        "Sector 24 Dharuhera",
         "Delhi NCR",
         "Gurugram",
         "Bhiwadi",
-        "Rewari",
+        "Rewari District",
         "Manesar",
-        "Noida",
-        "Ghaziabad",
-        "Haryana",
-        "Punjab",
-        "Rajasthan"
+        "NH-48 Dharuhera",
+        "Haryana"
+      ],
+      "knowsAbout": [
+        "Plots for Sale in Dharuhera",
+        "Property Dealer in Dharuhera",
+        "Real Estate Agent in Dharuhera",
+        "Plots in Sector 19 Dharuhera",
+        "Plots in Sector 3 Dharuhera",
+        "Tulip City Dharuhera Plots",
+        "Anandam Awaas Dharuhera Plots",
+        "Commercial Property in Dharuhera",
+        "Freehold Residential Plots Dharuhera",
+        "Real Estate Consultant Dharuhera Haryana"
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",

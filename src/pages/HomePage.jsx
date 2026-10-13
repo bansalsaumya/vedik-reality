@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Building, MapPin, Sparkles, ShieldCheck, ArrowRight, PhoneCall,
-  TrendingUp, Award, ChevronRight, Star
+  TrendingUp, Award, ChevronRight, Star, ChevronDown, HelpCircle
 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import SearchFilterBar from '../components/SearchFilterBar';
@@ -24,6 +24,7 @@ export default function HomePage() {
   const [locations, setLocations] = useState(FALLBACK_LOCATIONS);
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
 
   useEffect(() => {
     const loadHomeData = async () => {
@@ -74,12 +75,35 @@ export default function HomePage() {
     }
   ];
 
+  const faqs = [
+    {
+      q: "Where can I buy the best residential plots in Dharuhera, Haryana?",
+      a: "The most sought-after residential plots in Dharuhera are in Sector 19 & Sector 24 (Anandam Awaas & Anandam Estate 71-acre gated township) and Sector 3 (Tulip City). Both developments feature demarcated plots with wide interlocking paved roads, underground utilities, green parks, and immediate registry assistance provided by Vedik Realty."
+    },
+    {
+      q: "What are the current plot prices & rates per Sq. Yard in Dharuhera?",
+      a: "Plot rates in Anandam Awaas and Anandam Estate range between ₹65,000 to ₹70,000 per Sq. Yard (Gaj) for sizes from 72 to 519 Sq. Yards. In Tulip City Sector 3, plots range from 88 to 141 Sq. Yards with attractive investor pricing. Property rates in Dharuhera are approximately 1/4th of Gurugram, ensuring superior capital growth."
+    },
+    {
+      q: "Why is Dharuhera a high ROI real estate investment corridor near Gurugram & Delhi NCR?",
+      a: "Dharuhera is strategically situated on NH-48 (Delhi-Jaipur Highway), just 25 minutes from Rajiv Chowk Gurgaon. Major growth drivers include the Delhi-Mumbai Expressway, proximity to IMT Manesar and Bhiwadi industrial hubs, and the proposed Delhi-Alwar RRTS Rapid Metro corridor."
+    },
+    {
+      q: "Who is the top property dealer and real estate consultant in Dharuhera?",
+      a: "Vedik Realty is Dharuhera's premier real estate consultancy, located at First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, Haryana. Led by Deepak Lamba and Manish, we provide verified residential plots, commercial SCO spaces, flats, and 100% legal title assistance."
+    },
+    {
+      q: "Are residential plots in Anandam Awaas and Tulip City RERA approved?",
+      a: "Yes, flagship townships such as Anandam Awaas (Sector 19 & 24) and Tulip City (Sector 3) are HRERA approved and DTCP licensed with clear title deeds, bank loan assistance from leading PSU & private banks, and immediate registry readiness."
+    }
+  ];
+
   return (
     <div className="space-y-0 bg-ivory text-charcoal-800 font-sans">
       <SEO
         title="Vedik Realty | Real Estate & Property in Dharuhera"
-        description="Vedik Realty is the top real estate agent & property dealer in Dharuhera. Find plots for sale in Dharuhera for investors, residential plots, commercial SCO property & 2/3 BHK flats near Delhi NCR & Gurugram."
-        keywords="Plots for Sale in Dharuhera for Investors, Property Investment in Dharuhera, Residential Plots in Dharuhera, Plots Near Delhi NCR, Property Investment Near Gurugram, Dharuhera Property for Delhi Buyers, Dharuhera Property for NCR Investors, Investment Property in Haryana, Plots Near Bhiwadi, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera"
+        description="Explore plots for sale in Dharuhera, Haryana. Verified residential plots in Sector 19, Sector 24 (Anandam Awaas) & Sector 3 (Tulip City). Top property dealer & real estate agent in Dharuhera."
+        keywords="Plots for Sale in Dharuhera, Property Dealer in Dharuhera, Real Estate Agent in Dharuhera, Plots in Sector 19 Dharuhera, Plots in Sector 3 Dharuhera, Tulip City Dharuhera, Anandam Awaas Dharuhera, Anandam Estate Dharuhera, Residential Plots Dharuhera, Commercial Plots Dharuhera, Freehold Plots Dharuhera, Buy Plot in Dharuhera, House for Sale in Dharuhera, 2 BHK Flats Dharuhera, 3 BHK Flats Dharuhera, Property Investment in Dharuhera, Real Estate Consultant Dharuhera"
       />
       
       {/* 1. HERO SLIDER */}
@@ -345,7 +369,87 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. CALL TO ACTION BANNER */}
+      {/* 8. DHARUHERA REAL ESTATE GUIDE & FAQ (SEO RANKING HUB) */}
+      <section className="py-20 bg-white border-t border-borderlight relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3 shadow-sm">
+              <HelpCircle className="w-3.5 h-3.5" /> Buyer & Investor FAQ
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-800 tracking-tight">
+              Dharuhera Property & Plot <span className="gold-gradient-text font-serif">Investment Guide</span>
+            </h2>
+            <p className="mt-3 text-xs sm:text-sm text-slate-600 font-medium">
+              Everything you need to know about buying freehold residential plots, commercial properties, and townships in Dharuhera, Haryana.
+            </p>
+          </div>
+
+          {/* Accordion List */}
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-borderlight bg-ivory/60 overflow-hidden transition-all duration-300 shadow-sm hover:border-gold-500/60"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  >
+                    <span className="font-serif text-sm sm:text-base font-bold text-charcoal-800 flex items-center gap-3">
+                      <span className="w-6 h-6 rounded-full bg-cream border border-borderlight text-gold-700 text-xs flex items-center justify-center shrink-0 font-sans font-bold">
+                        {idx + 1}
+                      </span>
+                      {faq.q}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-gold-700 shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium border-t border-borderlight/60 bg-white">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Top Search Corridors & Quick Links */}
+          <div className="mt-14 pt-8 border-t border-borderlight text-center">
+            <h3 className="font-serif text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+              Explore Popular Search Corridors in Dharuhera (Haryana)
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { label: 'Plots in Sector 19 Dharuhera', link: '/properties?location=Sector%2019%20%26%2024%20Dharuhera' },
+                { label: 'Anandam Awaas Plots (72-177 Sq.Yd)', link: '/properties/anandam-awaas-anandam-estate-dharuhera' },
+                { label: 'Tulip City Plots Sector 3 (88-141 Sq.Yd)', link: '/properties/tulip-city-sector-3-dharuhera' },
+                { label: 'Anandam Estate Sector 24 Luxury Plots', link: '/projects' },
+                { label: 'NH-48 Dharuhera Commercial SCO', link: '/properties?type=Commercial' },
+                { label: 'Delhi NCR Investor Guide', link: '/invest-in-dharuhera' },
+                { label: 'Property Dealer in Dharuhera', link: '/contact' }
+              ].map((corridor, i) => (
+                <Link
+                  key={i}
+                  to={corridor.link}
+                  className="px-3 py-1.5 rounded-full text-[11px] font-semibold bg-cream border border-borderlight text-charcoal-800 hover:border-gold-500 hover:text-gold-700 transition-colors shadow-2xs"
+                >
+                  {corridor.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 9. CALL TO ACTION BANNER */}
       <section className="py-20 bg-cream border-t border-borderlight relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
