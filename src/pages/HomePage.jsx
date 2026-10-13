@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Building, MapPin, Sparkles, ShieldCheck, ArrowRight, PhoneCall,
-  TrendingUp, Award, ChevronRight, Star, ChevronDown, HelpCircle
+  TrendingUp, Award, ChevronRight, Star, ChevronDown, HelpCircle,
+  MessageSquare
 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import SearchFilterBar from '../components/SearchFilterBar';
