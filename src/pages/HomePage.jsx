@@ -297,13 +297,13 @@ export default function HomePage() {
             {/* Direct Project Links */}
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
               <Link
-                to="/properties/anandam-awaas-anandam-estate-dharuhera"
+                to="/properties/anandam-awaas-dharuhera"
                 className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
               >
                 Anandam Awaas &rarr;
               </Link>
               <Link
-                to="/properties/anandam-awaas-anandam-estate-dharuhera"
+                to="/properties/anandam-estate-dharuhera"
                 className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
               >
                 Anandam Estate &rarr;

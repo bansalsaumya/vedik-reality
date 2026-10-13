@@ -14,7 +14,7 @@ export default function PropertyDetailPage() {
   const { settings } = useSettings();
 
   const [property, setProperty] = useState(() => {
-    return FALLBACK_PROPERTIES.find(p => p.slug === slugOrId || String(p.id) === String(slugOrId)) || FALLBACK_PROPERTIES[0];
+    return FALLBACK_PROPERTIES.find(p => p.slug === slugOrId || p.alternate_slug === slugOrId || String(p.id) === String(slugOrId)) || FALLBACK_PROPERTIES[0];
   });
   const [selectedImage, setSelectedImage] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,6 +25,11 @@ export default function PropertyDetailPage() {
   const [leadSubmitting, setLeadSubmitting] = useState(false);
 
   useEffect(() => {
+    const localMatch = FALLBACK_PROPERTIES.find(p => p.slug === slugOrId || p.alternate_slug === slugOrId || String(p.id) === String(slugOrId));
+    if (localMatch) {
+      setProperty(localMatch);
+    }
+
     const fetchProperty = async () => {
       try {
         const res = await fetch(`/api/properties/${slugOrId}`);
@@ -75,16 +80,20 @@ export default function PropertyDetailPage() {
   const propImages = imagesList.length > 0 ? imagesList : ['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80'];
 
   const handleWhatsApp = () => {
-    const text = encodeURIComponent(`Hi Vedik Reality, I am viewing "${property.title}" (${property.price}) at ${property.location}. Please send complete brochure and floor plans.`);
-    window.open(`https://wa.me/${settings.whatsapp}?text=${text}`, '_blank');
+    const text = encodeURIComponent(`Hi Vedik Realty, I am interested in ${property.title} in Dharuhera. Please share complete details.`);
+    window.open(`https://wa.me/${settings.whatsapp || '919053848222'}?text=${text}`, '_blank');
   };
+
+  // SEO Fallbacks matching prompts
+  const pageSeoTitle = property.meta_title || `${property.title} | Residential Plots | Vedik Realty`;
+  const pageSeoDesc = property.meta_description || `Explore ${property.title} in Dharuhera, Haryana with Vedik Realty. View residential plot options and project details.`;
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
       <SEO
-        title={`${property.title} in Dharuhera | Vedik Realty`}
-        description={`${property.title} located at ${property.location}. Price: ${property.price}. RERA & Title clear property investment near Delhi NCR & Gurugram.`}
-        keywords={`${property.title}, Plots for sale in Dharuhera, Property in ${property.location}, Buy property in Dharuhera`}
+        title={pageSeoTitle}
+        description={pageSeoDesc}
+        keywords={`${property.title}, ${property.title} Sector 19, Residential Plots in Dharuhera, Residential Plots in Sector 19 Dharuhera, MGH ${property.title}`}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -115,18 +124,27 @@ export default function PropertyDetailPage() {
               )}
             </div>
 
+            {/* H1 */}
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-800">
               {property.title}
             </h1>
-            <p className="mt-1 text-sm text-slate-600 font-medium flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-gold-600 shrink-0" />
-              <span>{property.location}</span>
-            </p>
+            
+            {/* H1 ke neeche intro */}
+            {property.subtitle ? (
+              <p className="mt-2 text-sm text-slate-700 font-medium max-w-3xl leading-relaxed">
+                {property.subtitle}
+              </p>
+            ) : (
+              <p className="mt-1 text-sm text-slate-600 font-medium flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-gold-600 shrink-0" />
+                <span>{property.location}</span>
+              </p>
+            )}
           </div>
 
-          <div className="text-left md:text-right">
+          <div className="text-left md:text-right shrink-0">
             <span className="text-xs text-slate-500 font-semibold uppercase block">Offered At</span>
-            <span className="font-serif text-3xl font-bold text-gold-700 block">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-gold-700 block">
               {property.price}
             </span>
           </div>
@@ -284,6 +302,36 @@ export default function PropertyDetailPage() {
             </div>
           </div>
 
+        </div>
+
+        {/* Bottom Project CTA */}
+        <div className="pt-12 border-t border-borderlight">
+          <div className="glass-card p-8 sm:p-12 rounded-3xl border border-borderlight bg-cream text-center shadow-md">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal-800">
+              {property.cta_heading || `Interested in ${property.title}?`}
+            </h3>
+            <p className="mt-3 text-sm sm:text-base text-slate-700 max-w-xl mx-auto font-medium">
+              {property.cta_subheading || 'Get project details and enquire with Vedik Realty.'}
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={`https://wa.me/919053848222?text=${encodeURIComponent(`Hi Vedik Realty, I am interested in ${property.title}. Please share project details.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg transition-all duration-300"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp Us</span>
+              </a>
+              <a
+                href="tel:+919053848222"
+                className="gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg"
+              >
+                <PhoneCall className="w-4 h-4" />
+                <span>Call Now</span>
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>

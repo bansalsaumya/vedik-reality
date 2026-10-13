@@ -1,34 +1,33 @@
 export const FALLBACK_PROPERTIES = [
   {
     id: 1,
-    slug: 'anandam-awaas-anandam-estate-dharuhera',
-    title: 'Anandam Awaas & Anandam Estate Residential Plots',
+    slug: 'anandam-awaas-dharuhera',
+    alternate_slug: 'anandam-awaas-anandam-estate-dharuhera',
+    title: 'Anandam Awaas, Dharuhera',
+    name: 'Anandam Awaas, Dharuhera',
     type: 'Plot',
     category: 'Sale',
     price: '₹ 65,000 - 70,000 / Sq.Yd',
     price_numeric: 65000,
-    location: 'Sector 19 & 24, Dharuhera, Haryana',
-    address: 'Anandam Awaas & Anandam Estate, Sector 19 & 24, Dharuhera, Haryana – 123106',
-    bhk: '72 to 519 Sq.Yards Plots',
-    area: '72 – 519 Sq.Yards',
+    location: 'Sector 19, Dharuhera, Haryana',
+    address: 'Anandam Awaas, Sector 19, Dharuhera, Haryana – 123106',
+    bhk: '72 to 177 Sq.Yards Residential Plots',
+    area: '72 – 177 Sq.Yards',
     status: 'Available',
     is_featured: 1,
-    description: `Anandam Awaas and Anandam Estate by MGH offer residential plot opportunities in Sector 19 & 24, Dharuhera, Haryana. Spread across a total land area of 71 acres, the projects provide multiple plot-size options for buyers looking for residential property in Dharuhera.
+    subtitle: 'Anandam Awaas by MGH is a residential plotted development in Sector 19, Dharuhera, Haryana. Explore available residential plot options and project details with Vedik Realty.',
+    description: `Anandam Awaas by MGH is a residential plotted development in Sector 19, Dharuhera, Haryana. Explore available residential plot options and project details with Vedik Realty.
 
-Plot Options:
-• Anandam Awaas — 72–177 sq. yards
-• Anandam Estate — 150–519 sq. yards
+Anandam Awaas Dharuhera provides an ideal opportunity for buyers looking for residential plots in Dharuhera. Located in the strategic corridor of Anandam Awaas Sector 19, this project offers freehold residential plots in Sector 19 Dharuhera with modern gated infrastructure developed by MGH Anandam Awaas.
 
-Why Explore This Project?
-• Residential plot options in Dharuhera
-• Located in Sector 19 & 24
-• Multiple plot-size options
-• 71-acre total project area
-• Developed Gated Township with Temple, Kids Play Parks, Wide Roads & 24x7 Security
-• Suitable for buyers exploring property opportunities in Dharuhera`,
-    amenities: ['Gated Security', '71-Acre Township', 'In-House Temple', 'Kids Play Park & Greenery', '30ft Wide Internal Roads', 'Underground Sewerage & Water', 'Immediate Registry & Demarcation', 'Street Lighting'],
+Key Highlights of Anandam Awaas Dharuhera:
+• Anandam Awaas Sector 19: Strategically positioned near NH-48 with seamless connectivity.
+• Residential Plots in Dharuhera: Well-planned plots with demarcated boundary walls.
+• Residential Plots in Sector 19 Dharuhera: Wide internal roads, street lighting, and underground services.
+• MGH Anandam Awaas: Backed by trusted development standards, parks, and community temple.
+• Immediate Registry & Demarcation: Title-verified plots ready for home construction.`,
+    amenities: ['Gated Security & CCTV', 'Wide Internal Paved Roads', 'In-House Community Temple', 'Landscaped Green Parks', 'Underground Utilities & Drainage', 'Street Lighting'],
     images: [
-      '/anandam/anandam-estate-logo.jpg',
       '/anandam/logo.png',
       '/anandam/housing.jpg',
       '/anandam/gate.jpg',
@@ -38,9 +37,54 @@ Why Explore This Project?
     video_url: '',
     rera_number: 'HRERA Registered',
     builder_name: 'MGH Group',
-    meta_title: 'Anandam Awaas & Anandam Estate | Residential Plots in Dharuhera',
-    meta_description: 'Explore Anandam Awaas and Anandam Estate by MGH in Sector 19 & 24, Dharuhera. Residential plots from 72–519 sq. yards across a 71-acre project.',
-    views: 450
+    meta_title: 'Anandam Awaas Dharuhera | Residential Plots | Vedik Realty',
+    meta_description: 'Explore Anandam Awaas in Sector 19, Dharuhera, Haryana. View residential plot options and project details with Vedik Realty.',
+    cta_heading: 'Interested in Anandam Awaas?',
+    cta_subheading: 'Get project details and enquire with Vedik Realty.',
+    views: 650
+  },
+  {
+    id: 3,
+    slug: 'anandam-estate-dharuhera',
+    title: 'Anandam Estate, Dharuhera',
+    name: 'Anandam Estate, Dharuhera',
+    type: 'Plot',
+    category: 'Sale',
+    price: '₹ 65,000 - 70,000 / Sq.Yd',
+    price_numeric: 65000,
+    location: 'Sector 24, Dharuhera, Haryana',
+    address: 'Anandam Estate, Sector 24, Dharuhera, Haryana – 123106',
+    bhk: '150 to 519 Sq.Yards Residential Plots',
+    area: '150 – 519 Sq.Yards',
+    status: 'Available',
+    is_featured: 1,
+    subtitle: 'Anandam Estate by MGH is a residential plotted development in Sector 24, Dharuhera, Haryana. Explore project details and residential plot options with Vedik Realty.',
+    description: `Anandam Estate by MGH is a residential plotted development in Sector 24, Dharuhera, Haryana. Explore project details and residential plot options with Vedik Realty.
+
+Anandam Estate Dharuhera offers premium plotted living for homebuyers and investors seeking expansive residential plots in Dharuhera. Situated inside the upscale enclave of Anandam Estate Sector 24, it features freehold residential plots in Sector 24 Dharuhera within a modern gated township setting.
+
+Key Highlights of Anandam Estate Dharuhera:
+• Anandam Estate Dharuhera: Premier destination for luxury villas and custom residences.
+• Anandam Estate Sector 24: High-growth residential zone with quick access to highway and essential hubs.
+• Residential Plots in Dharuhera: Generous plot dimensions from 150 to 519 sq. yards.
+• Residential Plots in Sector 24 Dharuhera: Surrounded by lush parks, landscaped avenues, and paved streets.
+• MGH Anandam Estate: Quality township by MGH Group with clear titles and immediate registry assistance.`,
+    amenities: ['Gated Security Entrance', 'Wide 30ft Paved Roads', 'Children Play Area & Parks', 'Dedicated Temple Complex', 'Underground Electricity & Water Lines', 'Round-the-Clock Surveillance'],
+    images: [
+      '/anandam/anandam-estate-logo.jpg',
+      '/anandam/gate.jpg',
+      '/anandam/housing.jpg',
+      '/anandam/temple.jpg',
+      '/anandam/park.jpg'
+    ],
+    video_url: '',
+    rera_number: 'HRERA Registered',
+    builder_name: 'MGH Group',
+    meta_title: 'Anandam Estate Dharuhera | Residential Plots | Vedik Realty',
+    meta_description: 'Explore Anandam Estate in Sector 24, Dharuhera, Haryana. View residential plot options and project details with Vedik Realty.',
+    cta_heading: 'Interested in Anandam Estate?',
+    cta_subheading: 'Get project details and enquire with Vedik Realty.',
+    views: 520
   },
   {
     id: 2,
