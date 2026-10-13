@@ -101,9 +101,9 @@ export default function HomePage() {
   return (
     <div className="space-y-0 bg-ivory text-charcoal-800 font-sans">
       <SEO
-        title="Vedik Realty | Real Estate & Property in Dharuhera"
-        description="Explore plots for sale in Dharuhera, Haryana. Verified residential plots in Sector 19, Sector 24 (Anandam Awaas) & Sector 3 (Tulip City). Top property dealer & real estate agent in Dharuhera."
-        keywords="Plots for Sale in Dharuhera, Property Dealer in Dharuhera, Real Estate Agent in Dharuhera, Plots in Sector 19 Dharuhera, Plots in Sector 3 Dharuhera, Tulip City Dharuhera, Anandam Awaas Dharuhera, Anandam Estate Dharuhera, Residential Plots Dharuhera, Commercial Plots Dharuhera, Freehold Plots Dharuhera, Buy Plot in Dharuhera, House for Sale in Dharuhera, 2 BHK Flats Dharuhera, 3 BHK Flats Dharuhera, Property Investment in Dharuhera, Real Estate Consultant Dharuhera"
+        title="Real Estate in Dharuhera | Property Dealer & Consultant | Vedik Realty"
+        description="Explore property in Dharuhera with Vedik Realty. Find residential plots, residential and commercial properties and real estate opportunities in Dharuhera, Haryana."
+        keywords="Property in Dharuhera, Real Estate in Dharuhera, Property Dealer in Dharuhera, Real Estate Agent in Dharuhera, Residential Plots in Dharuhera, Commercial Property in Dharuhera, Property for Sale in Dharuhera, Plots for Sale in Dharuhera"
       />
       
       {/* 1. HERO SLIDER */}
@@ -142,7 +142,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. FEATURED PROPERTIES SECTION */}
+      {/* 3. PROPERTIES IN DHARUHERA SECTION */}
       <section className="py-16 sm:py-24 bg-ivory relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -152,10 +152,10 @@ export default function HomePage() {
                 <Sparkles className="w-3.5 h-3.5" /> Curated Collection
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800 tracking-tight">
-                Featured <span className="gold-gradient-text font-serif">Properties in Dharuhera</span>
+                Properties in <span className="gold-gradient-text font-serif">Dharuhera</span>
               </h2>
-              <p className="mt-3 text-sm text-slate-600 max-w-xl font-medium">
-                Handpicked residential plots, 2 BHK / 3 BHK flats, independent houses, and SCO commercial property.
+              <p className="mt-3 text-sm text-slate-600 max-w-2xl font-medium leading-relaxed">
+                Explore residential plots, residential properties and commercial property opportunities in Dharuhera, Haryana. Vedik Realty helps buyers explore suitable properties and connect for genuine property enquiries.
               </p>
             </div>
 
@@ -163,8 +163,7 @@ export default function HomePage() {
               to="/properties"
               className="mt-6 md:mt-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-700 hover:text-charcoal-800 transition-colors"
             >
-              <span>View All Listings ({latestProperties.length})</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>View Properties &rarr;</span>
             </Link>
           </div>
 
@@ -281,17 +280,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. PRIME LOCATION CORRIDORS */}
+      {/* 6. PRIME LOCATION CORRIDORS & PROJECTS */}
       <section className="py-20 bg-cream border-t border-borderlight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3 shadow-sm">
-              <MapPin className="w-3.5 h-3.5" /> High Growth Hubs
+              <MapPin className="w-3.5 h-3.5" /> Dharuhera, Haryana
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-800">
-              Explore Prime <span className="gold-gradient-text font-serif">Corridors</span>
+              Explore Prime Properties in <span className="gold-gradient-text font-serif">Dharuhera, Haryana</span>
             </h2>
+            <p className="mt-3 text-xs sm:text-sm text-slate-600 font-medium">
+              Verified residential plots, luxury villas, and commercial real estate across Dharuhera's top developments.
+            </p>
+            {/* Direct Project Links */}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+              <Link
+                to="/properties/anandam-awaas-anandam-estate-dharuhera"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
+              >
+                Anandam Awaas &rarr;
+              </Link>
+              <Link
+                to="/properties/anandam-awaas-anandam-estate-dharuhera"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
+              >
+                Anandam Estate &rarr;
+              </Link>
+              <Link
+                to="/properties/tulip-city-sector-3-dharuhera"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
+              >
+                Tulip City &rarr;
+              </Link>
+              <Link
+                to="/properties"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-gold-500/10 text-gold-800 border border-gold-500/30 hover:bg-gold-500 hover:text-white transition shadow-xs"
+              >
+                View All Properties &rarr;
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -303,7 +332,7 @@ export default function HomePage() {
               >
                 <img
                   src={loc.image}
-                  alt={loc.name}
+                  alt={`${loc.name} - Dharuhera, Haryana Real Estate`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -449,23 +478,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. CALL TO ACTION BANNER */}
+      {/* 9. BOTTOM CTA */}
       <section className="py-20 bg-cream border-t border-borderlight relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Ready to Find Your <span className="gold-gradient-text font-serif">Dream Estate?</span>
+            Looking for a Property in <span className="gold-gradient-text font-serif">Dharuhera?</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-medium">
-            Connect with senior real estate advisors for confidential guidance, private listings, and personalized site visits.
+          <p className="mt-4 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto font-medium">
+            Talk to Vedik Realty for genuine property enquiries.
           </p>
-          <div className="mt-8 flex justify-center">
-            <button
-              onClick={() => setEnquiryModalOpen(true)}
-              className="gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl"
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://wa.me/919053848222?text=Hi%20Vedik%20Realty,%20I%20am%20looking%20for%20property%20in%20Dharuhera.%20Please%20guide%20me."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg transition-all duration-300"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>WhatsApp Us</span>
+            </a>
+            <a
+              href="tel:+919053848222"
+              className="gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>Request Private Consultation</span>
-            </button>
+              <span>Call Now</span>
+            </a>
           </div>
         </div>
       </section>

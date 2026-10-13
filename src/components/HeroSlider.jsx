@@ -87,12 +87,13 @@ export default function HeroSlider() {
 
         {/* Main Hero Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] max-w-4xl drop-shadow-lg">
-          Vedik Realty – <span className="gold-gradient-text font-serif">Real Estate & Property in Dharuhera</span>
+          Real Estate & Property in <br />
+          <span className="gold-gradient-text font-serif">Dharuhera, Haryana</span>
         </h1>
 
-        {/* Subheading */}
-        <p className="mt-6 text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed drop-shadow">
-          Your trusted <strong className="text-gold-400 font-semibold">Property Dealer & Real Estate Agent in Dharuhera</strong>. Discover plots, flats, commercial property and verified investment opportunities near Sector 19 & NH-48.
+        {/* Subheading / H1 ke immediately neeche intro */}
+        <p className="mt-6 text-base sm:text-lg text-slate-200 font-normal max-w-2xl leading-relaxed drop-shadow">
+          Vedik Realty is a real estate and property consultancy in Dharuhera, Haryana, helping buyers explore residential plots, residential properties, commercial properties and investment opportunities.
         </p>
 
         {/* Primary & Secondary CTAs */}
@@ -101,17 +102,19 @@ export default function HeroSlider() {
             to="/properties"
             className="w-full sm:w-auto gold-button px-8 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-2xl hover:scale-105 transition-all"
           >
-            <span>Explore Properties</span>
+            <span>View Properties</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
-          <button
-            onClick={() => setEnquiryModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-white bg-black/60 hover:bg-black/80 border border-gold-500/50 hover:border-gold-400 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
+          <a
+            href="https://wa.me/919053848222?text=Hello%20Vedik%20Realty,%20I%20want%20to%20inquire%20about%20properties%20and%20plots%20in%20Dharuhera."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wider text-white bg-emerald-600/90 hover:bg-emerald-600 border border-emerald-500/50 backdrop-blur-md flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
           >
-            <PhoneCall className="w-4 h-4 text-gold-500" />
-            <span>Talk to Us</span>
-          </button>
+            <span>WhatsApp Us</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
         {/* Slide Indicator Dots */}

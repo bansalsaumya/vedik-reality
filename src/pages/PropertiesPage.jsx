@@ -22,18 +22,18 @@ export default function PropertiesPage() {
   const [sort, setSort] = useState('newest');
 
   // Dynamic SEO Computation
-  let seoTitle = "Properties for Sale in Dharuhera | Vedik Reality";
-  let seoDesc = "Explore properties for sale in Dharuhera with Vedik Reality. Browse residential and commercial properties, flats, plots and investment opportunities in Dharuhera, Haryana.";
+  let seoTitle = "Property for Sale in Dharuhera | Residential & Commercial | Vedik Realty";
+  let seoDesc = "Explore properties for sale in Dharuhera, Haryana with Vedik Realty. Find residential plots, residential and commercial properties and enquire directly.";
   
   if (type === 'Plot') {
-    seoTitle = "Plots for Sale in Dharuhera | Residential Plots & Land";
-    seoDesc = "Find residential and commercial plots for sale in Dharuhera Haryana. Verified land plots near NH-48 and Sector 19 Dharuhera with Vedik Reality.";
+    seoTitle = "Plots for Sale in Dharuhera | Residential Plots & Land | Vedik Realty";
+    seoDesc = "Find residential and commercial plots for sale in Dharuhera Haryana. Verified land plots near NH-48 and Sector 19 Dharuhera with Vedik Realty.";
   } else if (type === 'Apartment') {
-    seoTitle = "Flats for Sale in Dharuhera | 2 BHK & 3 BHK Flats";
-    seoDesc = "Discover ready to move 2 BHK & 3 BHK flats for sale in Dharuhera, Haryana. Verified apartment properties with Vedik Reality.";
+    seoTitle = "Flats for Sale in Dharuhera | 2 BHK & 3 BHK Flats | Vedik Realty";
+    seoDesc = "Discover ready to move 2 BHK & 3 BHK flats for sale in Dharuhera, Haryana. Verified apartment properties with Vedik Realty.";
   } else if (type === 'Commercial') {
-    seoTitle = "Commercial Property in Dharuhera | Shops, Offices & Investment";
-    seoDesc = "Commercial shops, office spaces, and commercial property for sale in Dharuhera, Haryana. Invest in prime commercial property with Vedik Reality.";
+    seoTitle = "Commercial Property in Dharuhera | Shops & SCO | Vedik Realty";
+    seoDesc = "Commercial shops, office spaces, and commercial property for sale in Dharuhera, Haryana. Invest in prime commercial property with Vedik Realty.";
   }
 
   const fetchProperties = async () => {
@@ -83,7 +83,7 @@ export default function PropertiesPage() {
     setSearchParams(params);
   };
 
-  const handleResetFilters = () => {
+  const clearFilters = () => {
     setSearch('');
     setLocation('');
     setType('');
@@ -98,20 +98,20 @@ export default function PropertiesPage() {
       <SEO
         title={seoTitle}
         description={seoDesc}
-        keywords="Properties for Sale in Dharuhera, Plots for Sale in Dharuhera, Flats for Sale in Dharuhera, Commercial Property in Dharuhera, Real Estate Agent in Dharuhera, Property Dealer in Dharuhera, Sector 19 Dharuhera, Anandam Awaas Dharuhera"
+        keywords="Property for Sale in Dharuhera, Property in Dharuhera, Residential Property in Dharuhera, Commercial Property in Dharuhera, Plots for Sale in Dharuhera, Anandam Awaas Dharuhera, Anandam Estate, Tulip City Sector 3"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="mb-10 text-left">
           <span className="text-xs font-bold uppercase tracking-widest text-gold-700 block mb-1">
-            Real Estate Portfolio
+            Real Estate Portfolio &bull; Dharuhera, Haryana
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Explore Properties in <span className="gold-gradient-text font-serif">Dharuhera</span>
+            Properties for Sale in <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
-          <p className="mt-2 text-sm text-slate-600 font-medium max-w-2xl">
-            Explore verified residential plots, 2 BHK & 3 BHK flats, independent houses, and commercial property for sale in Dharuhera, Haryana.
+          <p className="mt-3 text-sm text-slate-700 font-medium max-w-3xl leading-relaxed">
+            Explore residential plots, residential properties and commercial property opportunities in Dharuhera, Haryana. Vedik Realty helps buyers find suitable properties for sale and connect directly for genuine property enquiries.
           </p>
         </div>
 
