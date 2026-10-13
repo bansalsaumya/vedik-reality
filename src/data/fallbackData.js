@@ -89,26 +89,29 @@ Key Highlights of Anandam Estate Dharuhera:
   {
     id: 2,
     slug: 'tulip-city-sector-3-dharuhera',
-    title: 'Tulip City Residential Plots in Sector 3 Dharuhera',
+    title: 'Tulip City, Dharuhera',
+    name: 'Tulip City, Dharuhera',
     type: 'Plot',
     category: 'Sale',
     price: 'Price On Request',
     price_numeric: 0,
     location: 'Sector 3, Dharuhera, Haryana',
     address: 'Tulip City, Sector 3, Dharuhera, Haryana – 123106',
-    bhk: '88 to 141 Sq.Yards Plots',
+    bhk: '88 to 141 Sq.Yards Residential Plots',
     area: '88 – 141 Sq.Yards',
     status: 'Available',
     is_featured: 1,
-    description: `Tulip City is a residential plot project located in Sector 3, Dharuhera, Haryana. The project offers plot options ranging from 88 to 141 square yards for buyers exploring residential property opportunities in Dharuhera.
+    subtitle: 'Tulip City is a residential plotted development in Sector 3, Dharuhera, Haryana. Explore project details and available property opportunities with Vedik Realty.',
+    description: `Tulip City is a residential plotted development in Sector 3, Dharuhera, Haryana. Explore project details and available property opportunities with Vedik Realty.
 
-Key Highlights of Tulip City:
-• Prime Location in Sector 3 Dharuhera
-• Plot Sizes: 88 Sq.Yds to 141 Sq.Yds
-• Interlocking Paved Roads & Street Lighting
-• Underground Electrical & Sewerage Infrastructure
-• Beautifully Landscaped Green Parks & Silver Oak Avenues
-• High Return on Investment (ROI) Corridor`,
+Tulip City Dharuhera offers well-planned residential plot developments suited for homebuyers and long-term investors. Located in the high-demand corridor of Tulip City Sector 3, this development presents an ideal address for residential property in Dharuhera.
+
+Key Highlights of Tulip City Dharuhera:
+• Tulip City Dharuhera: High-potential gated neighborhood with peaceful residential ambiance.
+• Tulip City Sector 3: Strategic location close to key arterial routes, schools, and markets.
+• Property in Sector 3 Dharuhera: Freehold land with clear demarcation and verified documentation.
+• Residential Property in Dharuhera: Quality planned infrastructure including paved roads and utilities.
+• Residential Plots in Dharuhera: Multiple compact to mid-size plot cuts ranging from 88 to 141 sq. yards.`,
     amenities: ['Interlocking Paved Roads', 'Street Lighting', 'Underground Electrical Lines', 'Gated Entrance', 'Landscape Parks', 'Immediate Demarcation & Registry'],
     images: [
       '/tulip-1.jpg',
@@ -120,9 +123,11 @@ Key Highlights of Tulip City:
     video_url: '',
     rera_number: 'HRERA Approved',
     builder_name: 'Tulip City Developers',
-    meta_title: 'Tulip City | Residential Plots in Sector 3, Dharuhera',
-    meta_description: 'Explore Tulip City in Sector 3, Dharuhera, offering residential plot options from 88 to 141 Sq. Yds. Contact Vedik Realty for project details.',
-    views: 320
+    meta_title: 'Tulip City Dharuhera | Residential Property | Vedik Realty',
+    meta_description: 'Explore Tulip City in Sector 3, Dharuhera, Haryana. View project details and residential property opportunities with Vedik Realty.',
+    cta_heading: 'Interested in Tulip City?',
+    cta_subheading: 'Get project details and enquire with Vedik Realty.',
+    views: 420
   }
 ];
 
