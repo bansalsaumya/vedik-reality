@@ -304,18 +304,26 @@ export default function PropertyDetailPage() {
 
         </div>
 
-        {/* Internal Link to Properties Catalog */}
+        {/* Internal Link to Properties Catalog (Step 3, 4, 5) */}
         <div className="pt-8 border-t border-borderlight flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-borderlight shadow-xs">
           <div>
-            <h4 className="font-serif text-base font-bold text-charcoal-800">Looking for more options in Dharuhera?</h4>
-            <p className="text-xs text-slate-600 mt-1">Explore our complete portfolio of residential plots, commercial properties, and luxury homes.</p>
+            <p className="text-sm sm:text-base font-semibold text-charcoal-800">
+              Looking for more property options in Dharuhera?{' '}
+              <Link
+                to="/properties"
+                className="font-bold text-gold-700 hover:text-charcoal-900 underline decoration-gold-500 decoration-2 underline-offset-4"
+              >
+                Explore Properties in Dharuhera
+              </Link>{' '}
+              with Vedik Realty.
+            </p>
           </div>
           <Link
             to="/properties"
-            className="shrink-0 px-6 py-2.5 rounded-xl bg-cream hover:bg-gold-500/20 text-charcoal-900 border border-borderlight text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5"
+            className="shrink-0 px-6 py-2.5 rounded-xl bg-charcoal-800 hover:bg-gold-500 text-white hover:text-charcoal-900 text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5 shadow-sm"
           >
             <span>Explore Properties</span>
-            <ChevronRight className="w-4 h-4 text-gold-700" />
+            <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
 
