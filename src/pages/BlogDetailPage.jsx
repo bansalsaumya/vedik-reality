@@ -880,6 +880,18 @@ export default function BlogDetailPage() {
                 You can explore available properties and projects on our website and connect with our team for further information.
               </p>
 
+              {/* Exact Line: Explore Properties in Dharuhera with Vedik Realty */}
+              <p className="text-base font-semibold text-charcoal-800 bg-white p-4 rounded-xl border border-borderlight">
+                Explore{' '}
+                <Link
+                  to="/properties"
+                  className="font-bold text-gold-700 hover:text-charcoal-900 underline decoration-gold-500 decoration-2 underline-offset-4"
+                >
+                  Properties in Dharuhera
+                </Link>{' '}
+                with Vedik Realty.
+              </p>
+
               {/* Internal Link to /properties */}
               <div className="p-6 rounded-2xl bg-white border-2 border-gold-500/40 shadow-sm text-center my-6 space-y-3">
                 <h3 className="font-serif text-lg font-bold text-charcoal-800">
