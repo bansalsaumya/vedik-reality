@@ -19,7 +19,7 @@ export const BLOG_POSTS = [
     publishedDate: '2026-10-22',
     readTime: '6 min read',
     category: "Buyer's Guide",
-    coverImage: '/anandam/gate.jpg',
+    coverImage: '/blog-property-in-dharuhera.jpg',
     canonicalUrl: 'https://vedikrealty.com/blog/property-in-dharuhera-buyers-guide-2026',
     tableOfContents: [
       { id: 'overview', title: 'Why Consider Property in Dharuhera?' },
@@ -53,7 +53,7 @@ export const BLOG_POSTS = [
     publishedDate: '2026-10-22',
     readTime: '7 min read',
     category: "Plot Buyer's Guide",
-    coverImage: '/anandam/temple.jpg',
+    coverImage: '/blog-residential-plots-dharuhera.png',
     canonicalUrl: 'https://vedikrealty.com/blog/residential-plots-in-dharuhera-buyers-checklist',
     tableOfContents: [
       { id: 'why-consider-plots', title: 'Why Consider Residential Plots in Dharuhera?' },

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Building, ShieldCheck, PhoneCall, Sparkles, X, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import EnquiryModal from '../components/EnquiryModal';
@@ -44,16 +45,26 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="mb-12 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3">
-            <Building className="w-3.5 h-3.5" /> Flagship Townships & Developments
+        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cream border border-borderlight text-xs font-bold text-gold-700 tracking-widest uppercase mb-3">
+              <Building className="w-3.5 h-3.5" /> Flagship Townships & Developments
+            </div>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
+              Developer <span className="gold-gradient-text font-serif">Flagship Projects</span>
+            </h1>
+            <p className="mt-2 text-sm text-slate-600 font-medium max-w-2xl">
+              Explore 71-Acre RERA approved integrated townships, gated residential plot schemes, and commercial SCO markets in Dharuhera, Haryana.
+            </p>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Developer <span className="gold-gradient-text font-serif">Flagship Projects</span>
-          </h1>
-          <p className="mt-2 text-sm text-slate-600 font-medium max-w-2xl">
-            Explore 71-Acre RERA approved integrated townships, gated residential plot schemes, and commercial SCO markets in Dharuhera, Haryana.
-          </p>
+
+          <Link
+            to="/properties"
+            className="shrink-0 px-6 py-3 rounded-xl bg-charcoal-800 hover:bg-gold-500 text-white hover:text-charcoal-900 font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center gap-2"
+          >
+            <span>Explore All Properties</span>
+            <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Project Grid */}
@@ -127,6 +138,26 @@ export default function ProjectsPage() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Bottom Internal Linking Banner */}
+        <div className="mt-14 p-8 rounded-3xl bg-cream border border-borderlight flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+          <div className="space-y-1 text-center md:text-left">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-charcoal-800">
+              Explore Verified Properties in Dharuhera
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl">
+              From residential plots in Sector 19 and Sector 24 to prime commercial SCO spaces along NH-48, find vetted opportunities with Vedik Realty.
+            </p>
+          </div>
+
+          <Link
+            to="/properties"
+            className="shrink-0 px-8 py-3.5 rounded-xl bg-charcoal-800 hover:bg-gold-500 text-white hover:text-charcoal-900 font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center gap-2"
+          >
+            <span>View All Properties</span>
+            <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

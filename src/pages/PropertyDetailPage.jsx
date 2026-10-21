@@ -304,8 +304,23 @@ export default function PropertyDetailPage() {
 
         </div>
 
+        {/* Internal Link to Properties Catalog */}
+        <div className="pt-8 border-t border-borderlight flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-borderlight shadow-xs">
+          <div>
+            <h4 className="font-serif text-base font-bold text-charcoal-800">Looking for more options in Dharuhera?</h4>
+            <p className="text-xs text-slate-600 mt-1">Explore our complete portfolio of residential plots, commercial properties, and luxury homes.</p>
+          </div>
+          <Link
+            to="/properties"
+            className="shrink-0 px-6 py-2.5 rounded-xl bg-cream hover:bg-gold-500/20 text-charcoal-900 border border-borderlight text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5"
+          >
+            <span>Explore Properties</span>
+            <ChevronRight className="w-4 h-4 text-gold-700" />
+          </Link>
+        </div>
+
         {/* Bottom Project CTA */}
-        <div className="pt-12 border-t border-borderlight">
+        <div className="pt-6">
           <div className="glass-card p-8 sm:p-12 rounded-3xl border border-borderlight bg-cream text-center shadow-md">
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal-800">
               {property.cta_heading || `Interested in ${property.title}?`}
