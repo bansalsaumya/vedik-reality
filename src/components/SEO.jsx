@@ -58,7 +58,7 @@ export default function SEO({
     }
     canonicalLink.setAttribute('href', url);
 
-    // 4. JSON-LD Schema with Google Star Rating (AggregateRating) & Social Entity Linking
+    // 4. JSON-LD LocalBusiness / RealEstateAgent Schema & Social Entity Linking
     const schemaData = {
       "@context": "https://schema.org",
       "@type": schemaType,
