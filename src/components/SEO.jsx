@@ -87,13 +87,7 @@ export default function SEO({
         "latitude": 28.2045,
         "longitude": 76.7972
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "128",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
+
       "areaServed": [
         "Dharuhera",
         "Sector 19 Dharuhera",
