@@ -29,5 +29,40 @@ export const BLOG_POSTS = [
       { id: 'how-to-choose', title: 'How to Choose the Right Property?' },
       { id: 'vedik-realty', title: 'Explore Property Opportunities with Vedik Realty' }
     ]
+  },
+  {
+    id: 2,
+    slug: 'residential-plots-in-dharuhera-buyers-checklist',
+    alternate_slugs: [
+      'residential-plots-in-dharuhera',
+      'residential-plots-in-dharuhera-what-buyers-should-check-before-buying'
+    ],
+    title: 'Residential Plots in Dharuhera: What Buyers Should Check Before Buying',
+    metaTitle: 'Residential Plots in Dharuhera | Buyer’s Guide | Vedik Realty',
+    metaDescription: 'Looking for residential plots in Dharuhera? Learn what to check before buying a plot, including location, documents, RERA details, connectivity and future requirements.',
+    primaryKeyword: 'Residential Plots in Dharuhera',
+    secondaryKeywords: [
+      'Residential Plots for Sale in Dharuhera',
+      'Plots for Sale in Dharuhera',
+      'Residential Plot in Dharuhera Haryana',
+      'Property in Dharuhera',
+      'Dharuhera Residential Property'
+    ],
+    excerpt: 'Looking for residential plots in Dharuhera? Learn what to check before buying a plot, including location, documents, RERA details, connectivity and future requirements.',
+    author: 'Vedik Realty',
+    publishedDate: '2026-10-22',
+    readTime: '7 min read',
+    category: "Plot Buyer's Guide",
+    coverImage: '/anandam/temple.jpg',
+    canonicalUrl: 'https://vedikrealty.com/blog/residential-plots-in-dharuhera-buyers-checklist',
+    tableOfContents: [
+      { id: 'why-consider-plots', title: 'Why Consider Residential Plots in Dharuhera?' },
+      { id: '6-things-to-check', title: '6 Things to Check Before Buying a Residential Plot' },
+      { id: 'rera-details', title: 'RERA Registration Details & Transparency' },
+      { id: 'plots-vs-ready', title: 'Residential Plot vs Ready Property' },
+      { id: 'how-to-choose-plot', title: 'How to Choose the Right Residential Plot?' },
+      { id: 'featured-projects', title: 'Flagship Plotted Developments in Dharuhera' },
+      { id: 'explore-with-vedik', title: 'Explore Residential Plots with Vedik Realty' }
+    ]
   }
 ];
