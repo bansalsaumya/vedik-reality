@@ -28,9 +28,9 @@ Key Highlights of Anandam Awaas Dharuhera:
 • Immediate Registry & Demarcation: Title-verified plots ready for home construction.`,
     amenities: ['Gated Security & CCTV', 'Wide Internal Paved Roads', 'In-House Community Temple', 'Landscaped Green Parks', 'Underground Utilities & Drainage', 'Street Lighting'],
     images: [
-      '/anandam/logo.png',
       '/anandam/housing.jpg',
       '/anandam/gate.jpg',
+      '/anandam/logo.png',
       '/anandam/temple.jpg',
       '/anandam/park.jpg'
     ],
