@@ -157,7 +157,7 @@ export default function PropertyDetailPage() {
             <img
               src={propImages[selectedImage] || propImages[0]}
               alt={property.title}
-              className="w-full h-full object-contain bg-charcoal-950/5"
+              className="w-full h-full object-cover"
             />
           </div>
 
