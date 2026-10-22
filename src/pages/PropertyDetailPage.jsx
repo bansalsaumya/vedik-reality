@@ -80,20 +80,21 @@ export default function PropertyDetailPage() {
   const propImages = imagesList.length > 0 ? imagesList : ['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80'];
 
   const handleWhatsApp = () => {
-    const text = encodeURIComponent(`Hi Vedik Realty, I am interested in ${property.title} in Dharuhera. Please share complete details.`);
+    const text = encodeURIComponent(`Hi Vedik Realty, I am interested in ${property.title} (${property.location}). Please share complete details.`);
     window.open(`https://wa.me/${settings.whatsapp || '919053848222'}?text=${text}`, '_blank');
   };
 
   // SEO Fallbacks matching prompts
   const pageSeoTitle = property.meta_title || `${property.title} | Residential Plots | Vedik Realty`;
   const pageSeoDesc = property.meta_description || `Explore ${property.title} in Dharuhera, Haryana with Vedik Realty. View residential plot options and project details.`;
+  const pageKeywords = property.meta_keywords || `${property.title}, ${property.title} Plots, ${property.location}, Residential Plots, Vedik Realty`;
 
   return (
     <div className="min-h-screen pt-28 pb-20 bg-ivory text-charcoal-800 font-sans">
       <SEO
         title={pageSeoTitle}
         description={pageSeoDesc}
-        keywords={`${property.title}, ${property.title} Sector 19, Residential Plots in Dharuhera, Residential Plots in Sector 19 Dharuhera, MGH ${property.title}`}
+        keywords={pageKeywords}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -126,7 +127,7 @@ export default function PropertyDetailPage() {
 
             {/* H1 */}
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-800">
-              {property.title}
+              {property.h1_title || property.title}
             </h1>
             
             {/* H1 ke neeche intro */}

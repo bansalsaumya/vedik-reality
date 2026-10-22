@@ -128,6 +128,59 @@ Key Highlights of Tulip City Dharuhera:
     cta_heading: 'Interested in Tulip City?',
     cta_subheading: 'Get project details and enquire with Vedik Realty.',
     views: 420
+  },
+  {
+    id: 4,
+    slug: 'ekta-enclave-bhiwadi-alwar-highway',
+    title: 'Ekta Enclave',
+    name: 'Ekta Enclave',
+    h1_title: 'Ekta Enclave – Residential Plots on Bhiwadi–Alwar Highway',
+    type: 'Residential Plots',
+    category: 'Sale',
+    price: 'Price on Request',
+    price_numeric: 0,
+    location: 'Bhiwadi–Alwar Highway, Haryana',
+    address: 'Ekta Enclave, Bhiwadi–Alwar Highway, Haryana',
+    bhk: 'Residential Plots',
+    area: 'Plots Available',
+    status: 'Registration Open',
+    is_featured: 1,
+    subtitle: 'Residential plots at Ekta Enclave on the Bhiwadi–Alwar Highway, offering a well-planned plotted development with wide roads, open spaces and convenient connectivity.',
+    description: `Ekta Enclave is a residential plotted development located on the Bhiwadi–Alwar Highway. It is an opportunity for buyers and investors looking to explore residential plots in a growing location with good road connectivity.
+
+Residential plots at Ekta Enclave on the Bhiwadi–Alwar Highway, offering a well-planned plotted development with wide roads, open spaces and convenient connectivity.
+
+Project Highlights:
+• Prime Location
+• Well-Planned Residential Plots
+• Wide Roads
+• Excellent Connectivity
+• Green Environment & Open Spaces
+• Gated Community
+• Growing Location with Future Potential
+• Limited Plots Available
+• Registration Open`,
+    amenities: [
+      'Prime Location',
+      'Well-Planned Residential Plots',
+      'Wide Roads',
+      'Excellent Connectivity',
+      'Green Environment & Open Spaces',
+      'Gated Community',
+      'Growing Location with Future Potential',
+      'Limited Plots Available',
+      'Registration Open'
+    ],
+    images: [
+      '/ekta-enclave-gate.jpg'
+    ],
+    video_url: '',
+    meta_title: 'Ekta Enclave Bhiwadi–Alwar Highway | Residential Plots | Vedik Realty',
+    meta_description: 'Explore Ekta Enclave residential plots on the Bhiwadi–Alwar Highway with Vedik Realty. Check project details, location and available plot opportunities.',
+    meta_keywords: 'Ekta Enclave, Ekta Enclave Bhiwadi, Ekta Enclave Alwar Highway, Ekta Enclave Bhiwadi Alwar Highway, Residential Plots Bhiwadi, Residential Plots on Bhiwadi Alwar Highway, Plots for Sale Bhiwadi, Property on Bhiwadi Alwar Highway, Residential Property Bhiwadi, Property Investment Bhiwadi',
+    cta_heading: 'Interested in Ekta Enclave?',
+    cta_subheading: 'Contact Vedik Realty for current project details and site visit assistance.',
+    views: 180
   }
 ];
 
@@ -184,6 +237,25 @@ export const FALLBACK_PROJECTS = [
     ],
     rera_number: 'HRERA Approved',
     possession_date: 'Ready for Registry'
+  },
+  {
+    id: 3,
+    slug: 'ekta-enclave-bhiwadi-alwar-highway',
+    title: 'Ekta Enclave',
+    name: 'Ekta Enclave',
+    location: 'Bhiwadi–Alwar Highway, Haryana',
+    type: 'Residential Plotted Development',
+    price_starting: 'Price on Request',
+    price_range: 'Residential Plots',
+    status: 'Registration Open',
+    is_featured: 1,
+    image: '/ekta-enclave-gate.jpg',
+    description: `Ekta Enclave is a residential plotted development located on the Bhiwadi–Alwar Highway. It is an opportunity for buyers and investors looking to explore residential plots in a growing location with good road connectivity.`,
+    amenities: ['Prime Location', 'Well-Planned Residential Plots', 'Wide Roads', 'Excellent Connectivity', 'Green Environment & Open Spaces', 'Gated Community', 'Growing Location with Future Potential', 'Limited Plots Available', 'Registration Open'],
+    images: [
+      '/ekta-enclave-gate.jpg'
+    ],
+    possession_date: 'Registration Open'
   }
 ];
 
