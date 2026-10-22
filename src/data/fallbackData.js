@@ -172,7 +172,8 @@ Project Highlights:
       'Registration Open'
     ],
     images: [
-      '/ekta-enclave-gate.jpg'
+      '/ekta-enclave-gate.jpg',
+      '/ekta-enclave-full.jpg'
     ],
     video_url: '',
     meta_title: 'Ekta Enclave Bhiwadi–Alwar Highway | Residential Plots | Vedik Realty',
