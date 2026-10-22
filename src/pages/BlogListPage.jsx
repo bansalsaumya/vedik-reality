@@ -23,7 +23,7 @@ export default function BlogListPage() {
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Dharuhera Property & <span className="gold-gradient-text font-serif">Buyer Guides</span>
+            Property &amp; Plot Buyer Guides for <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 font-medium">

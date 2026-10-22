@@ -108,11 +108,13 @@ export default function PropertiesPage() {
             Real Estate Portfolio &bull; Dharuhera, Haryana
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal-800">
-            Properties for Sale in <span className="gold-gradient-text font-serif">Dharuhera</span>
+            Property in <span className="gold-gradient-text font-serif">Dharuhera</span>
           </h1>
+          <p className="mt-1 text-base text-slate-500 font-semibold">Residential Plots, Flats &amp; Commercial Properties for Sale</p>
           <p className="mt-3 text-sm text-slate-700 font-medium max-w-3xl leading-relaxed">
             Explore residential plots, residential properties and commercial property opportunities in Dharuhera, Haryana. Vedik Realty helps buyers find suitable properties for sale and connect directly for genuine property enquiries.
           </p>
+
         </div>
 
         {/* Filter Toolbar & Controls */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ShieldCheck, Loader2 } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 import SEO from '../components/SEO';
@@ -55,6 +56,16 @@ export default function ContactPage() {
           </h1>
           <p className="mt-3 text-sm sm:text-base text-slate-700 font-medium max-w-3xl leading-relaxed">
             Looking for property in Dharuhera, Haryana? Contact Vedik Realty for assistance with residential plots, residential properties, commercial properties and real estate opportunities.
+          </p>
+          <p className="mt-2 text-sm text-slate-600 font-medium">
+            You can also{' '}
+            <Link
+              to="/properties"
+              className="font-bold text-gold-700 hover:text-charcoal-900 underline decoration-gold-500 decoration-2 underline-offset-4"
+            >
+              browse property in Dharuhera
+            </Link>{' '}
+            directly on our listings page.
           </p>
         </div>
 

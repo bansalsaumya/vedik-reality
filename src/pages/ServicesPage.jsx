@@ -157,6 +157,22 @@ export default function ServicesPage() {
 
       </div>
 
+      {/* Internal Link to Properties Hub */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+        <div className="p-6 rounded-2xl bg-cream border border-borderlight text-center space-y-2">
+          <p className="text-sm font-semibold text-charcoal-800">
+            Looking for property in Dharuhera?{' '}
+            <Link
+              to="/properties"
+              className="font-bold text-gold-700 hover:text-charcoal-900 underline decoration-gold-500 decoration-2 underline-offset-4"
+            >
+              Explore Properties in Dharuhera
+            </Link>{' '}
+            with Vedik Realty.
+          </p>
+        </div>
+      </div>
+
       {modalOpen && (
         <EnquiryModal
           isOpen={modalOpen}

@@ -41,6 +41,16 @@ export default function AboutPage() {
             <p>
               Situated at First Floor, Anandam Awaas, SCO-02, Sector 19, Dharuhera, we bring on-ground market expertise in <strong className="text-charcoal-900 font-bold">real estate in Dharuhera</strong>, helping buyers evaluate legal title verification, project master plans, and long-term capital growth potential.
             </p>
+            <p>
+              Explore verified{' '}
+              <Link
+                to="/properties"
+                className="font-bold text-gold-700 hover:text-charcoal-900 underline decoration-gold-500 decoration-2 underline-offset-4"
+              >
+                property in Dharuhera
+              </Link>{' '}
+              — from residential plots to commercial spaces — directly on our listings page.
+            </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="p-4 rounded-xl bg-white border border-borderlight shadow-sm">

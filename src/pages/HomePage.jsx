@@ -229,13 +229,23 @@ export default function HomePage() {
                 Exclusive <span className="gold-gradient-text font-serif">Developer Projects</span>
               </h2>
             </div>
-            <Link
-              to="/projects"
-              className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-wider text-gold-700 hover:text-charcoal-800 transition-colors flex items-center gap-1"
-            >
-              <span>Explore All Projects</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="mt-4 md:mt-0 flex items-center gap-4">
+              <Link
+                to="/properties"
+                className="text-xs font-bold uppercase tracking-wider text-gold-700 hover:text-charcoal-800 transition-colors flex items-center gap-1"
+              >
+                <span>Property in Dharuhera</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <span className="text-borderlight">|</span>
+              <Link
+                to="/projects"
+                className="text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-charcoal-800 transition-colors flex items-center gap-1"
+              >
+                <span>All Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -457,10 +467,11 @@ export default function HomePage() {
             </h3>
             <div className="flex flex-wrap justify-center gap-2">
               {[
+                { label: 'Property in Dharuhera', link: '/properties' },
                 { label: 'Plots in Sector 19 Dharuhera', link: '/properties?location=Sector%2019%20%26%2024%20Dharuhera' },
-                { label: 'Anandam Awaas Plots (72-177 Sq.Yd)', link: '/properties/anandam-awaas-anandam-estate-dharuhera' },
+                { label: 'Anandam Awaas Plots (72-177 Sq.Yd)', link: '/properties/anandam-awaas-dharuhera' },
                 { label: 'Tulip City Plots Sector 3 (88-141 Sq.Yd)', link: '/properties/tulip-city-sector-3-dharuhera' },
-                { label: 'Anandam Estate Sector 24 Luxury Plots', link: '/projects' },
+                { label: 'Anandam Estate Sector 24 Luxury Plots', link: '/properties/anandam-estate-dharuhera' },
                 { label: 'NH-48 Dharuhera Commercial SCO', link: '/properties?type=Commercial' },
                 { label: 'Delhi NCR Investor Guide', link: '/invest-in-dharuhera' },
                 { label: 'Property Dealer in Dharuhera', link: '/contact' }
