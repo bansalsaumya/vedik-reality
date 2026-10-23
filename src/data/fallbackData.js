@@ -284,6 +284,14 @@ export const FALLBACK_LOCATIONS = [
     property_count: 20,
     image: '/anandam/park.jpg',
     description: 'Strategic highway location with direct access to Delhi, Gurgaon & Rewari.'
+  },
+  {
+    id: 4,
+    name: 'Bhiwadi–Alwar Highway',
+    slug: 'bhiwadi-alwar-highway',
+    property_count: 18,
+    image: '/ekta-enclave-gate.jpg',
+    description: 'Home to Ekta Enclave residential plotted development offering well-planned plots with excellent road connectivity.'
   }
 ];
 
@@ -298,7 +306,7 @@ export const FALLBACK_SERVICES = [
   {
     id: 2,
     title: 'Residential Plots',
-    description: 'Find freehold demarcated residential plots in premier developments like Anandam Awaas, Anandam Estate, and Tulip City.',
+    description: 'Find freehold demarcated residential plots in premier developments like Anandam Awaas, Anandam Estate, Tulip City, and Ekta Enclave.',
     icon: 'Home',
     link: '/properties'
   },

@@ -99,8 +99,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/properties/ekta-enclave-bhiwadi-alwar-highway" className="text-gold-700 hover:text-gold-800 font-bold transition-colors flex items-center gap-1">
+                  <span>★ Ekta Enclave (Bhiwadi–Alwar Hwy)</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/projects" className="hover:text-gold-600 transition-colors flex items-center gap-1">
-                  <span>Flagship Projects & Anandam Awaas</span>
+                  <span>Flagship Projects & Townships</span>
                 </Link>
               </li>
               <li>

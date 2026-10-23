@@ -146,6 +146,19 @@ export default function AboutPage() {
             </Link>
 
             <Link
+              to="/properties/ekta-enclave-bhiwadi-alwar-highway"
+              className="p-4 rounded-2xl bg-ivory border border-borderlight hover:border-gold-500 transition-all flex items-center justify-between group shadow-2xs"
+            >
+              <div>
+                <h4 className="font-serif text-sm font-bold text-charcoal-800 group-hover:text-gold-700 transition-colors">
+                  Ekta Enclave
+                </h4>
+                <p className="text-[11px] text-slate-500 font-medium mt-0.5">Residential plots on Bhiwadi–Alwar Highway</p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-gold-700 group-hover:translate-x-1 transition-transform shrink-0" />
+            </Link>
+
+            <Link
               to="/contact"
               className="p-4 rounded-2xl bg-ivory border border-borderlight hover:border-gold-500 transition-all flex items-center justify-between group shadow-2xs"
             >

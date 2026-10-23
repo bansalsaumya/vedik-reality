@@ -461,7 +461,7 @@ export default function BlogDetailPage() {
                 Buyers exploring residential plots in Dharuhera often consider key residential developments across prime sectors:
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
                 <Link
                   to="/properties/anandam-awaas-dharuhera"
                   className="p-5 rounded-2xl border border-borderlight bg-white hover:border-gold-500 hover:shadow-md transition text-center space-y-1.5 block group"
@@ -489,6 +489,16 @@ export default function BlogDetailPage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-gold-700 block">Sector 3 Dharuhera</span>
                   <h4 className="font-serif text-base font-bold text-charcoal-800 group-hover:text-gold-700 transition">Tulip City</h4>
                   <p className="text-xs text-slate-500">Residential plots (88 – 141 Sq.Yd)</p>
+                  <span className="inline-block text-xs font-bold text-gold-700 pt-1">Explore Project &rarr;</span>
+                </Link>
+
+                <Link
+                  to="/properties/ekta-enclave-bhiwadi-alwar-highway"
+                  className="p-5 rounded-2xl border border-borderlight bg-white hover:border-gold-500 hover:shadow-md transition text-center space-y-1.5 block group"
+                >
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold-700 block">Bhiwadi–Alwar Hwy</span>
+                  <h4 className="font-serif text-base font-bold text-charcoal-800 group-hover:text-gold-700 transition">Ekta Enclave</h4>
+                  <p className="text-xs text-slate-500">Residential plots (Reg. Open)</p>
                   <span className="inline-block text-xs font-bold text-gold-700 pt-1">Explore Project &rarr;</span>
                 </Link>
               </div>
@@ -766,7 +776,7 @@ export default function BlogDetailPage() {
               </p>
 
               {/* Quick Project Showcase Links */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
                 <Link
                   to="/properties/anandam-awaas-dharuhera"
                   className="p-4 rounded-xl border border-borderlight bg-white hover:border-gold-500 hover:shadow-md transition text-center space-y-1 block"
@@ -791,6 +801,15 @@ export default function BlogDetailPage() {
                 >
                   <span className="text-[10px] font-bold uppercase tracking-wider text-gold-700 block">Sector 3</span>
                   <h4 className="font-serif text-sm font-bold text-charcoal-800">Tulip City</h4>
+                  <p className="text-[11px] text-slate-500">View project details &rarr;</p>
+                </Link>
+
+                <Link
+                  to="/properties/ekta-enclave-bhiwadi-alwar-highway"
+                  className="p-4 rounded-xl border border-borderlight bg-white hover:border-gold-500 hover:shadow-md transition text-center space-y-1 block"
+                >
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold-700 block">Bhiwadi Hwy</span>
+                  <h4 className="font-serif text-sm font-bold text-charcoal-800">Ekta Enclave</h4>
                   <p className="text-[11px] text-slate-500">View project details &rarr;</p>
                 </Link>
               </div>

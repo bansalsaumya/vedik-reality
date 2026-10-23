@@ -326,6 +326,12 @@ export default function HomePage() {
                 Tulip City &rarr;
               </Link>
               <Link
+                to="/properties/ekta-enclave-bhiwadi-alwar-highway"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-charcoal-800 border border-borderlight hover:border-gold-500 hover:text-gold-700 transition shadow-xs"
+              >
+                Ekta Enclave &rarr;
+              </Link>
+              <Link
                 to="/properties"
                 className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-gold-500/10 text-gold-800 border border-gold-500/30 hover:bg-gold-500 hover:text-white transition shadow-xs"
               >
@@ -471,6 +477,7 @@ export default function HomePage() {
                 { label: 'Plots in Sector 19 Dharuhera', link: '/properties?location=Sector%2019%20%26%2024%20Dharuhera' },
                 { label: 'Anandam Awaas Plots (72-177 Sq.Yd)', link: '/properties/anandam-awaas-dharuhera' },
                 { label: 'Tulip City Plots Sector 3 (88-141 Sq.Yd)', link: '/properties/tulip-city-sector-3-dharuhera' },
+                { label: 'Ekta Enclave Plots (Bhiwadi–Alwar Hwy)', link: '/properties/ekta-enclave-bhiwadi-alwar-highway' },
                 { label: 'Anandam Estate Sector 24 Luxury Plots', link: '/properties/anandam-estate-dharuhera' },
                 { label: 'NH-48 Dharuhera Commercial SCO', link: '/properties?type=Commercial' },
                 { label: 'Delhi NCR Investor Guide', link: '/invest-in-dharuhera' },
