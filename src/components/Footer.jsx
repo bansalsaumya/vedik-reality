@@ -148,6 +148,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/blog/property-investment-in-dharuhera" className="text-gold-700 hover:text-gold-800 font-bold transition-colors">
+                  Property Investment in Dharuhera (Location Guide)
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="hover:text-gold-600 transition-colors">
                   Real Estate Blog & Articles
                 </Link>

@@ -64,5 +64,49 @@ export const BLOG_POSTS = [
       { id: 'featured-projects', title: 'Flagship Plotted Developments in Dharuhera' },
       { id: 'explore-with-vedik', title: 'Explore Residential Plots with Vedik Realty' }
     ]
+  },
+  {
+    id: 3,
+    slug: 'property-investment-in-dharuhera',
+    alternate_slugs: [
+      'property-investment-in-dharuhera-why-location-matters',
+      'property-investment-in-dharuhera-why-location-matters-for-buyers'
+    ],
+    title: 'Property Investment in Dharuhera: Why Location Matters for Buyers',
+    metaTitle: 'Property Investment in Dharuhera: Why Location Matters | Vedik Realty',
+    metaDescription: 'Explore property investment in Dharuhera and understand why location, connectivity, property type and future development matter when choosing a property.',
+    primaryKeyword: 'property investment in Dharuhera',
+    secondaryKeywords: [
+      'property in Dharuhera',
+      'Dharuhera real estate',
+      'real estate investment in Dharuhera',
+      'residential property in Dharuhera',
+      'residential plots in Dharuhera',
+      'property investment opportunities in Dharuhera',
+      'property for sale in Dharuhera',
+      'plots for sale in Dharuhera',
+      'property consultant in Dharuhera',
+      'real estate in Dharuhera',
+      'investment property in Dharuhera',
+      'Dharuhera property market'
+    ],
+    excerpt: 'Explore property investment in Dharuhera and understand why location, connectivity, property type and future development matter when choosing a property.',
+    author: 'Vedik Realty',
+    publishedDate: '2026-10-24',
+    readTime: '7 min read',
+    category: "Investment Guide",
+    coverImage: '/property-investment-in-dharuhera.jpg',
+    canonicalUrl: 'https://vedikrealty.com/blog/property-investment-in-dharuhera',
+    tableOfContents: [
+      { id: 'why-dharuhera-considered', title: '1. Why Dharuhera Is Considered by Property Buyers' },
+      { id: 'why-location-matters', title: '2. Why Location Matters in Property Investment' },
+      { id: 'plots-vs-residential-property', title: '3. Residential Plots vs Residential Property' },
+      { id: 'what-buyers-should-check', title: '4. What Should Buyers Check Before Investing?' },
+      { id: 'residential-plots-considerations', title: '5. Residential Plots in Dharuhera: What Buyers Should Consider' },
+      { id: 'how-to-evaluate-location', title: '6. How to Evaluate a Property Location (Framework)' },
+      { id: 'common-mistakes-to-avoid', title: '7. Common Mistakes Property Buyers Should Avoid' },
+      { id: 'why-local-guidance-matters', title: '8. Why Local Property Guidance Can Help' },
+      { id: 'final-takeaway', title: '9. Final Takeaway' }
+    ]
   }
 ];
