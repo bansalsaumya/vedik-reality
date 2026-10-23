@@ -59,6 +59,7 @@ export default function App() {
             <Route path="/property-in-dharuhera-buyers-guide-2026" element={<BlogDetailPage />} />
             <Route path="/residential-plots-in-dharuhera-buyers-checklist" element={<BlogDetailPage />} />
             <Route path="/residential-plots-in-dharuhera" element={<BlogDetailPage />} />
+            <Route path="/property-investment-in-dharuhera" element={<BlogDetailPage />} />
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
           </Routes>

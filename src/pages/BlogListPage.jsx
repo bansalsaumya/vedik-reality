@@ -54,7 +54,7 @@ export default function BlogListPage() {
                   <div className="flex items-center gap-4 text-[11px] text-slate-500 font-semibold">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-gold-700" />
-                      Oct 22, 2026
+                      {post.publishedDate}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5 text-gold-700" />
